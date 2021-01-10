@@ -7,9 +7,9 @@ class frontend
 	public function listPosts()
 	{
 		$postManager = new PostManager; 
-		$posts = $postManager->getAllPosts; 
+		$posts = $postManager->getAllPosts(); 
 
-		require ('view/frontend/listPostview.php'); 
+		require ('../public/view/frontend/listpostview.php'); 
 	}
 
 	public function post()
@@ -17,7 +17,7 @@ class frontend
 		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
 
-		require('view/frontend/postView.php'); 
+		require('../public/view/frontend/postview.php'); 
 	}
 }
 

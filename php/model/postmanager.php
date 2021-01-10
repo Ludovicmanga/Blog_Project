@@ -1,8 +1,8 @@
 <?php
-
+require ('manager.php'); 
 class PostManager extends Manager
 {
-	public function getPosts()
+	public function getAllPosts()
 	{
 		$db = $this->dbConnect(); 
 		$req = $db->query('SELECT * FROM posts ORDER BY creation_date DESC'); 
@@ -13,9 +13,10 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect(); 
 		$req = $db->query('SELECT * FROM posts WHERE id = ?'); 
-		$req->execute(array $postId); 
+		$req->execute(array ($postId)); 
 		$post = $req->fetch(); 
 
 		return $post; 
 	}
 }
+
