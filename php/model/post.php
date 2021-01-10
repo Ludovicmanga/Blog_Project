@@ -2,9 +2,7 @@
 
 class Post
 {
-
 	//attribute
-
 	private $_id; 
 	private $_title; 
 	private $_slug; 
@@ -17,9 +15,7 @@ class Post
 	private $_modification_date; 
 
 	//methods
-
-		//setters
-
+	//setters
 	public function setId($id)
 	{
 		$this->_id = $id; 
