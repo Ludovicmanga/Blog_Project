@@ -53,7 +53,7 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url(<?= $post['image'] ?>)">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -61,7 +61,7 @@
           <div class="post-heading">
             <h1><?php echo $post['title'] ?></h1>
             <h2 class="subheading"><?php echo $post['subtitle'] ?></h2>
-            <span class="meta">Posted by
+            <span class="meta">Posté par
               <?php echo $post['author'] ?> 
           </div>
         </div>
