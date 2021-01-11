@@ -13,9 +13,11 @@ try {
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
+		} elseif($_GET['action' === 'homepage']) {
+			$frontend->homePage(); 
 		}
 	} else {
-		$frontend->listPosts(); 
+		$frontend->homePage(); 
 	}	
 } 
 catch(Exception $e) {

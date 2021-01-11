@@ -20,7 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../public/css/clean-blog.min.css" rel="stylesheet">
-
+  <link href="../public/css/custom_style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
             <a class="nav-link" href="post.html">Sample Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">Connexion</a>
           </li>
         </ul>
       </div>
@@ -59,8 +59,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Mes articles</h1>
-            <span class="subheading">Le meilleur de mon actu</span>
+            <h1>Le blog de Ludovic</h1>
+            <span class="subheading">Suivez-moi dans mon quotidien</span>
           </div>
         </div>
       </div>
@@ -70,36 +70,54 @@
   <!-- Main Content -->
   <div class="container">
 
-    <?php
-
-    while($data = $posts->fetch())
-    {
-      ?>
+      <!-- Début bootstrap-->
 
       <div class="post-preview">
-          <a href= <?= 'index.php?action=post&id='.$data['post_id']?>>
+          <a href="index.php?action=listposts">
             <h2 class="post-title">
-              <?= $data['title'] ?>
+              Mon actualité
             </h2>
             <h3 class="post-subtitle">
-              <?= $data['subtitle'] ?>
+              Voir mes articles
             </h3>
           </a>
-          <p class="post-meta">Posted by
-            <?= $data['author'] ?></p>
+          <p class="post-meta">Articles à la une
+            </p>
         </div>
         <hr>
-      <?php
-    }
 
-     ?> 
+        <div class="post-preview">
+          <a href="https://www.linkedin.com/in/ludovic-manga-jocky/">
+            <h2 class="post-title">
+              Mes références
+            </h2>
+            <h3 class="post-subtitle">
+              Voir mes références
+            </h3>
+          </a>
+          <p class="post-meta">Des références sérieuses
+            </p>
+        </div>
+        <hr>
+
+
+      <!-- Contact form -->
+
+    <div class="form_container">
+      <h1 class="form_title">Me contacter</h1>
+      <form class="contact_form">
+      <label>Nom</label> <input class="input_nom" type="text"></input><br>
+      <label>Prenom</label> <input class="input_prenom"type="text"></input><br>
+      <label>Mail</label> <input class="input_mail" type="mail"></input><br>
+      <div class="container_form_button"><button type="submit">Envoyer</button>
+      </form></div>
+    </div>
+    
         
         <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <a class="btn btn-primary float-right" href="https://www.linkedin.com/in/ludovic-manga-jocky/">Voir mon CV &rarr;</a>
         </div>
-      </div>
-    </div>
   </div>
 
   <hr>

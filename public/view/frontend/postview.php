@@ -59,10 +59,10 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1><?php echo $post['title'] ?></h1>
-            <h2 class="subheading"><?php echo $post['subtitle'] ?></h2>
+            <h1><?= $post['title'] ?></h1>
+            <h2 class="subheading"><?= $post['subtitle'] ?></h2>
             <span class="meta">Posté par
-              <?php echo $post['author'] ?> 
+              <?= $post['author'] ?> 
           </div>
         </div>
       </div>
