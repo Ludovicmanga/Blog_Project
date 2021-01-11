@@ -1,3 +1,5 @@
+/*contact form homepage*/
+
 .form_container
 {
 	background: #0484A4;
@@ -36,6 +38,57 @@
 .contact_form button
 {
 	margin-left: 130px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+
+}
+
+
+/*contact form connexion*/
+
+.connexion_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 500px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+}
+
+.connexion_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.connexion_form_input_password
+{
+	margin-left: 12px;
+}
+
+.connexion_form_input_mail
+{
+	margin-left: 94px;
+}
+
+.connexion_form
+{
+	color: white;
+}
+
+.connexion_form_container_input_password
+{
+	margin-top: 10px;
+}
+
+.connexion_form button
+{
+	margin-left: 160px; 
 	margin-top: 10px;
 	margin-bottom: 5px;
 

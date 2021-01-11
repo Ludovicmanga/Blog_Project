@@ -20,9 +20,14 @@ class frontend
 		require('../public/view/frontend/postview.php'); 
 	}
 
-	public function homepage()
+	public function homePage()
 	{
 		require('../public/view/frontend/homepageview.php'); 
+	}
+
+	public function connexionPage()
+	{
+		require('../public/view/frontend/connexionpageview.php'); 
 	}
 }
 

@@ -13,9 +13,12 @@ try {
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
-		} elseif($_GET['action' === 'homepage']) {
+		} elseif($_GET['action'] === 'homepage') {
 			$frontend->homePage(); 
+		} elseif($_GET['action'] === 'connexionpage') {
+			$frontend->connexionPage(); 
 		}
+
 	} else {
 		$frontend->homePage(); 
 	}	
