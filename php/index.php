@@ -17,7 +17,9 @@ try {
 			$frontend->homePage(); 
 		} elseif($_GET['action'] === 'connexionpage') {
 			$frontend->connexionPage(); 
-		}
+		} elseif($_GET['action'] === 'messagesent') {
+			$frontend->messagesent(); 
+		} 
 
 	} else {
 		$frontend->homePage(); 

@@ -29,6 +29,11 @@ class frontend
 	{
 		require('../public/view/frontend/connexionpageview.php'); 
 	}
+
+	public function messagesent()
+	{
+		require('../public/view/frontend/messagesentview.php'); 
+	}
 }
 
 
