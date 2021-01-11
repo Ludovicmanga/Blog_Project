@@ -106,9 +106,17 @@
     <div class="form_container">
       <h1 class="form_title">Me contacter</h1>
       <form class="contact_form">
-      <label>Nom</label> <input class="input_nom" type="text"></input><br>
-      <label>Prenom</label> <input class="input_prenom"type="text"></input><br>
+      <label>Nom</label> <input class="input_lastname" type="text"></input><br>
+      <label>Prenom</label> <input class="input_name"type="text"></input><br>
       <label>Mail</label> <input class="input_mail" type="mail"></input><br>
+      <div class="contact_form_container_textarea">
+        <div>
+          <label>Message</label>
+        </div>
+        <div>
+            <textarea class="textarea_message"></textarea><br>
+        </div>
+      </div>
       <div class="container_form_button"><button type="submit">Envoyer</button>
       </form></div>
     </div>

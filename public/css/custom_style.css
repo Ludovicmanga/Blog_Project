@@ -20,14 +20,30 @@
 	margin-bottom: 30px;
 }
 
-.input_nom
+.input_lastname
 {
-	margin-left: 29px;
+	margin-left: 43px;
 }
+
+.input_name
+{
+	margin-left: 13px;
+}
+
 
 .input_mail
 {
-	margin-left: 34px;
+	margin-left: 47px;
+}
+
+.textarea_message
+{
+	margin-left: 14px;
+}
+
+.contact_form_container_textarea
+{
+	display: flex;
 }
 
 .contact_form
@@ -44,7 +60,7 @@
 }
 
 
-/*contact form connexion*/
+/*connexion form*/
 
 .connexion_form_container
 {
