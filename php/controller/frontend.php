@@ -34,6 +34,12 @@ class frontend
 	{
 		require('../public/view/frontend/messagesentview.php'); 
 	}
+
+	public function postCreation()
+	{
+		require('../public/view/frontend/postcreationview.php'); 
+	}
+
 }
 
 

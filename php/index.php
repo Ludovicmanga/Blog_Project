@@ -20,6 +20,9 @@ try {
 		} elseif($_GET['action'] === 'messagesent') {
 			$frontend->messagesent(); 
 		} 
+		elseif($_GET['action'] === 'postcreation') {
+			$frontend->postCreation(); 
+		} 
 
 	} else {
 		$frontend->homePage(); 

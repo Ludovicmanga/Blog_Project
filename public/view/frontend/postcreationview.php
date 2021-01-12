@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Le blog de Ludovic Manga</title>
+  <title>Créer un post</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,14 +53,14 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../public/img/ludovic-carre.png')">
+  <header class="masthead" style="background-image: url('../public/img/post_writing.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Le blog de Ludovic</h1>
-            <span class="subheading">Suivez-moi dans mon quotidien</span>
+            <h1>Créer un post</h1>
+            <span class="subheading">Publiez un article</span>
           </div>
         </div>
       </div>
@@ -70,63 +70,21 @@
   <!-- Main Content -->
   <div class="container">
 
-      <div class="post-preview">
-          <a href="index.php?action=listposts">
-            <h2 class="post-title">
-              Mon actualité
-            </h2>
-            <h3 class="post-subtitle">
-              Voir mes articles
-            </h3>
-          </a>
-          <p class="post-meta">Articles à la une
-            </p>
-        </div>
-        <hr>
-
-        <div class="post-preview">
-          <a href="https://www.linkedin.com/in/ludovic-manga-jocky/">
-            <h2 class="post-title">
-              Mes références
-            </h2>
-            <h3 class="post-subtitle">
-              Voir mes références
-            </h3>
-          </a>
-          <p class="post-meta">Des références sérieuses
-            </p>
-        </div>
-        <hr>
-
-        <div class="post-preview">
-          <a href="https://www.linkedin.com/in/ludovic-manga-jocky/">
-            <h2 class="post-title">
-              Mon CV
-            </h2>
-            <h3 class="post-subtitle">
-              Voir mes expériences
-            </h3>
-          </a>
-          <p class="post-meta">Un parcours cohérent
-            </p>
-        </div>
-        <hr>
-
-
+      
       <!-- Contact form -->
 
-    <div class="form_container">
-      <h1 class="form_title">Me contacter</h1>
-      <form action="index.php?action=messagesent" method = "POST" class="contact_form">
-      <label>Nom</label> <input class="input_lastname" type="text"></input><br>
-      <label>Prenom</label> <input class="input_name"type="text"></input><br>
-      <label>Mail</label> <input class="input_mail" type="mail"></input><br>
-      <div class="contact_form_container_textarea">
+    <div class="post_form_container">
+      <h1 class="post_form_title">Rédiger un article</h1>
+      <form action="index.php?action=messagesent" method = "POST" class="post_form">
+      <label>Titre article</label> <input class="post_form_input_post_title" type="text"></input><br>
+      <label>Sous-titre article</label> <input class="post_form_input_post_subtitle"type="text"></input><br>
+      <label>Sujet article</label> <input class="post_form_input_post_topic" type="mail"></input><br>
+      <div class="post_form_container_textarea">
         <div>
-          <label>Message</label>
+          <label>Contenu article</label>
         </div>
         <div>
-            <textarea class="textarea_message"></textarea><br>
+            <textarea class="post_form_textarea_content"></textarea><br>
         </div>
       </div>
       <div class="container_form_button"><button type="submit">Envoyer</button>
