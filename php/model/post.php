@@ -13,6 +13,8 @@ class Post
 	private $_published; 
 	private $_creation_date;
 	private $_modification_date; 
+	private $_subtitle; 
+	private $_topic; 
 
 	//methods
 	//setters
@@ -74,6 +76,18 @@ class Post
 	{
 		$this->_modificationDate = $modificationDate; 
 		return $this->_modificationDate;
+	}
+
+	public function setSubtitle($subtitle)
+	{
+		$this->_subtitle = $subtitle; 
+		return $this->_subtitle;
+	}
+
+	public function setTopic($topic)
+	{
+		$this->_topic = $topic; 
+		return $this->_topic;
 	}
 
 

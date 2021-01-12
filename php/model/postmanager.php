@@ -18,5 +18,18 @@ class PostManager extends Manager
 
 		return $post; 
 	}
+
+	public function updatePost(Post $post)
+	{
+		$q = $this->db->prepare('UPDATE post SET title = :title, topic = :topic, subtitle = :subtitle, content = :content WHERE id = :id'); 
+
+		$q->bindValue(':title', $post->title(), PDO::PARAM_INT); 
+		$q->bindValue(':topic', $post->topic(), PDO::PARAM_INT); 
+		$q->bindValue(':subtitle', $post->subtitle(), PDO::PARAM_INT); 
+		$q->bindValue(':id', $post->id(), PDO::PARAM_INT); 
+
+		$q->execute(); 
+
+	}
 }
 

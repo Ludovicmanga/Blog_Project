@@ -1,6 +1,7 @@
 <?php
 
 require('model/Postmanager.php'); 
+require('model/Post.php'); 
 
 class frontend 
 {
@@ -40,12 +41,20 @@ class frontend
 		require('../public/view/frontend/postcreationview.php'); 
 	}
 
-	public function postModification()
+	public function displayPostUpdate()
 	{
 		$postManager = new Postmanager; 
 		$post = $postManager->getPost($_GET['id']); 
 
-		require('../public/view/frontend/postmodificationview.php'); 
+		require('../public/view/frontend/displaypostupdateview.php'); 
+	}
+
+	public function postUpdate()
+	{
+		$postManager = new Postmanager; 
+		$post = new Post;  
+
+		require('../public/view/frontend/postupdateview.php'); 
 	}
 
 }
