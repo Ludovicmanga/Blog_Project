@@ -40,6 +40,14 @@ class frontend
 		require('../public/view/frontend/postcreationview.php'); 
 	}
 
+	public function postModification()
+	{
+		$postManager = new Postmanager; 
+		$post = $postManager->getPost($_GET['id']); 
+
+		require('../public/view/frontend/postmodificationview.php'); 
+	}
+
 }
 
 

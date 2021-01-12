@@ -23,6 +23,13 @@ try {
 		elseif($_GET['action'] === 'postcreation') {
 			$frontend->postCreation(); 
 		} 
+		elseif($_GET['action'] === 'postmodification') {
+			if(isset($_GET['id'])){
+				$frontend->postModification();
+			} else {
+				throw new Exception('pas d\'identifiant de post'); 
+			}
+		} 
 
 	} else {
 		$frontend->homePage(); 

@@ -170,5 +170,74 @@
 	margin-left: 130px; 
 	margin-top: 10px;
 	margin-bottom: 5px;
-
 }
+
+/* post modification form*/
+
+.post_modification_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 900px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+.post_modification_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.post_modification_form_input_post_title
+{
+	margin-left: 62px;
+	width: 610px;
+}
+
+.post_modification_form_input_post_subtitle
+{
+	margin-left: 13px;
+	width: 610px;
+}
+
+.post_modification_form_input_post_topic
+{
+	margin-left: 62px;
+	width: 610px;
+}
+
+.post_modification_form_textarea_content
+{
+	margin-left: 32px;
+	width: 610px;
+	height: 700px;
+}
+
+.post_modification_form_container_textarea
+{
+	display: flex;
+}
+
+.post_modification_form
+{
+	color: white;
+}
+
+.post_modification_form button
+{
+	margin-left: 390px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+
+
