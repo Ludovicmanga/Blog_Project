@@ -14,10 +14,11 @@ class Post
 	private $_creation_date;
 	private $_modification_date; 
 	private $_subtitle; 
-	private $_topic; 
+	private $_topic;  
 
 	//methods
 	//setters
+
 	public function setId($id)
 	{
 		$this->_id = $id; 
@@ -93,30 +94,66 @@ class Post
 
 		//getters
 
-	public function getId()
+	public function id()
 	{
-
+		return $this->_id; 
 	} 
 
-	public function getTitle()
+	public function title()
 	{
-
+		return $this->_title; 
 	} 
 
-	public function getSlug()
+	public function slug()
 	{
-
+		return $this->_slug; 
 	} 
 
-	public function getViews()
+	public function views()
 	{
-
+		return $this->_views; 
 	} 
 
-	public function getImage()
+	public function image()
 	{
-
+		return $this->_image; 
 	} 
+
+	public function content()
+	{
+		return $this->_content; 
+	} 
+
+	public function userId()
+	{
+		return $this->_userId; 
+	} 
+
+	public function published()
+	{
+		return $this->_published; 
+	} 
+
+	public function creation_date()
+	{
+		return $this->_creation_date; 
+	} 
+
+	public function modification_date()
+	{
+		return $this->_modification_date; 
+	} 
+
+	public function subtitle()
+	{
+		return $this->_subtitle; 
+	} 
+
+	public function topic()
+	{
+		return $this->_topic; 
+	} 
+
 
 	public function hydrate()
 	{
