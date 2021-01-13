@@ -1,4 +1,5 @@
 <?php
+namespace Openclassrooms\blog; 
 
 class Post
 {

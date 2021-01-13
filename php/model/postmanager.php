@@ -1,5 +1,9 @@
 <?php
+
+namespace Openclassrooms\blog; 
+
 require ('manager.php'); 
+
 class PostManager extends Manager
 {
 
@@ -9,7 +13,7 @@ class PostManager extends Manager
 
 	public function __construct()
 	{
-		$this->db = new PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
+		$this->db = new \PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
 	}
 
 	public function getAllPosts()

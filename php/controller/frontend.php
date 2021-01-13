@@ -7,7 +7,7 @@ class frontend
 {
 	public function listPosts()
 	{
-		$postManager = new PostManager; 
+		$postManager = new \Openclassrooms\blog\PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
 		require ('../public/view/frontend/listpostview.php'); 
@@ -15,7 +15,7 @@ class frontend
 
 	public function post()
 	{
-		$postManager = new PostManager; 
+		$postManager = new \Openclassrooms\blog\PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
 
 		require('../public/view/frontend/postview.php'); 
@@ -43,15 +43,15 @@ class frontend
 
 	public function postCreated()
 	{
-		$postManager = new postManager; 
-		$post = new Post; 
+		$postManager = new \Openclassrooms\blog\PostManager; 
+		$post = new \Openclassrooms\blog\Post; 
 		require('../public/view/frontend/postcreatedview.php'); 
 	}
 
 
 	public function displayPostUpdate()
 	{
-		$postManager = new Postmanager; 
+		$postManager = new \Openclassrooms\blog\Postmanager; 
 		$post = $postManager->getPost($_GET['id']); 
 
 		require('../public/view/frontend/displaypostupdateview.php'); 
@@ -59,8 +59,8 @@ class frontend
 
 	public function postUpdate()
 	{
-		$postManager = new Postmanager; 
-		$post = new Post;  
+		$postManager = new \Openclassrooms\blog\Postmanager; 
+		$post = new \Openclassrooms\blog\Post;  
 
 		require('../public/view/frontend/postupdateview.php'); 
 	}

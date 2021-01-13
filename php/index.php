@@ -22,18 +22,15 @@ try {
 		} 
 		elseif($_GET['action'] === 'postcreation') {
 			$frontend->postCreation(); 
-		} 
-		elseif($_GET['action'] === 'postcreated') {
+		} elseif($_GET['action'] === 'postcreated') {
 			$frontend->postCreated(); 
-		} 
-		elseif($_GET['action'] === 'displaypostupdate') {
+		} elseif($_GET['action'] === 'displaypostupdate') {
 			if(isset($_GET['id']))	{
 				$frontend->displayPostUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}
-		} 
-		elseif($_GET['action'] === 'postupdate') {
+		} elseif($_GET['action'] === 'postupdate') {
 			if(isset($_GET['id'])) {
 				$frontend->postUpdate();
 			} else {
