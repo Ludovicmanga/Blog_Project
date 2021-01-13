@@ -23,6 +23,9 @@ try {
 		elseif($_GET['action'] === 'postcreation') {
 			$frontend->postCreation(); 
 		} 
+		elseif($_GET['action'] === 'postcreated') {
+			$frontend->postCreated(); 
+		} 
 		elseif($_GET['action'] === 'displaypostupdate') {
 			if(isset($_GET['id']))	{
 				$frontend->displayPostUpdate();

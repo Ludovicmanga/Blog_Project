@@ -42,5 +42,17 @@ class PostManager extends Manager
 		$q->execute(); 
 
 	}
+
+	public function addPost(Post $post)
+	{
+		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topic, content) VALUES (:title, :subtitle, :topic, :content)'); 
+
+		$q->bindValue('title', $post->title()); 
+		$q->bindValue('subtitle', $post->subtitle()); 
+		$q->bindValue('topic', $post->topic()); 
+		$q->bindValue('content', $post->content()); 
+
+		$q->execute(); 
+	}
 }
 

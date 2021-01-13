@@ -41,6 +41,14 @@ class frontend
 		require('../public/view/frontend/postcreationview.php'); 
 	}
 
+	public function postCreated()
+	{
+		$postManager = new postManager; 
+		$post = new Post; 
+		require('../public/view/frontend/postcreatedview.php'); 
+	}
+
+
 	public function displayPostUpdate()
 	{
 		$postManager = new Postmanager; 

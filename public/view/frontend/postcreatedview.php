@@ -73,23 +73,16 @@
       
       <!-- Contact form -->
 
-    <div class="post_form_container">
-      <h1 class="post_form_title">Rédiger un article</h1>
-      <form action="index.php?action=postcreated" method = "POST" class="post_form">
-      <label>Titre article</label> <input class="post_form_input_post_title" type="text"></input><br>
-      <label>Sous-titre article</label> <input class="post_form_input_post_subtitle"type="text"></input><br>
-      <label>Sujet article</label> <input class="post_form_input_post_topic" type="mail"></input><br>
-      <div class="post_form_container_textarea">
-        <div>
-          <label>Contenu article</label>
-        </div>
-        <div>
-            <textarea class="post_form_textarea_content"></textarea><br>
-        </div>
-      </div>
-      <div class="container_form_button"><button type="submit">Envoyer</button>
-      </form></div>
-    </div>
+       <?php
+
+            $post->setTitle($_POST['title']); 
+            $post->setTopic($_POST['topic']); 
+            $post->setSubtitle($_POST['subtitle']); 
+            $post->setContent($_POST['content']);
+            $postManager->updatePost($post);  
+      ?>
+
+    <p>Votre article a bien été publié! </p><b><a href="">Voir mon post</a></b>
     
         
         <!-- Pager -->
