@@ -100,6 +100,18 @@
         </div>
         <hr>
 
+        <?php
+
+        $message->setName($_POST['name']); 
+        $message->setLastname($_POST['lastname']); 
+        $message->setMail($_POST['mail']); 
+        $message->setMessagecontent($_POST['content']); 
+
+        $messageManager->addMessage($message); 
+
+
+         ?>
+
 
           <p>Merci, votre message a été reçu, nous reviondrons rapidement vers vous!</p>
       

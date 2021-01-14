@@ -2,9 +2,8 @@
 
 namespace Openclassrooms\blog; 
 
-require ('manager.php'); 
 
-class MessageManager extends Manager
+class MessageManager 
  {
  	protected $db; 
 

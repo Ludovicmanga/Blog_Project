@@ -2,9 +2,7 @@
 
 namespace Openclassrooms\blog; 
 
-require ('manager.php'); 
-
-class PostManager extends Manager
+class PostManager
 {
 
 	protected $db; 
