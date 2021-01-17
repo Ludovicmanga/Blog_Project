@@ -17,14 +17,14 @@ class PostManager
 	public function getAllPosts()
 	{
 		
-		$req = $this->db->query('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.user_id = user.id ORDER BY creation_date DESC LIMIT 0,5'); 
+		$req = $this->db->query('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id ORDER BY creationDate DESC LIMIT 0,5'); 
 		return $req; 
 	}
 
 	public function getPost($postId)
 	{
 		
-		$req = $this->db->prepare('SELECT post.*, user.name as author FROM post INNER JOIN user WHERE user.id = post.user_id AND post.id = ?'); 
+		$req = $this->db->prepare('SELECT post.*, user.name as author FROM post INNER JOIN user WHERE user.id = post.userId AND post.id = ?'); 
 		$req->execute(array ($postId)); 
 		$post = $req->fetch(); 
 
@@ -33,12 +33,13 @@ class PostManager
 
 	public function updatePost(Post $post)
 	{
-		$q = $this->db->prepare('UPDATE post SET title = :title, topic = :topic, subtitle = :subtitle, content = :content WHERE id = :id');           
+		$q = $this->db->prepare('UPDATE post SET title = :title, topic = :topic, subtitle = :subtitle, content = :content, creationDate = creationDate, modificationDate = NOW() WHERE id = :id');           
 
 		$q->bindValue(':title', $post->title(), \PDO::PARAM_INT); 
 		$q->bindValue(':topic', $post->topic(), \PDO::PARAM_INT); 
 		$q->bindValue(':content', $post->content(), \PDO::PARAM_INT); 
 		$q->bindValue(':subtitle', $post->subtitle(), \PDO::PARAM_INT); 
+		$q->bindValue(':creationDate', $post->creationDate(), \PDO::PARAM_INT);
 		$q->bindValue(':id', $post->id(), \PDO::PARAM_INT); 
 
 		$q->execute(); 

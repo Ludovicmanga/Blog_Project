@@ -5,7 +5,7 @@ $frontend = new frontend;
 
 try {
 	if (isset($_GET['action'])) {
-		if ($_GET['action'] === 'listposts') {
+		if ($_GET['action'] === 'listPosts') {
 			$frontend->listPosts(); 
 		} elseif ($_GET['action'] === 'post') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
@@ -13,31 +13,30 @@ try {
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
-		} elseif($_GET['action'] === 'homepage') {
+		} elseif($_GET['action'] === 'homePage') {
 			$frontend->homePage(); 
-		} elseif($_GET['action'] === 'connexionpage') {
+		} elseif($_GET['action'] === 'connexionPage') {
 			$frontend->connexionPage(); 
-		} elseif($_GET['action'] === 'messagesent') {
+		} elseif($_GET['action'] === 'messageSent') {
 			$frontend->messagesent(); 
 		} 
-		elseif($_GET['action'] === 'postcreation') {
+		elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
-		} elseif($_GET['action'] === 'postcreated') {
-			$frontend->postCreated(); 
-		} elseif($_GET['action'] === 'displaypostupdate') {
-			if(isset($_GET['id']))	{
+		} elseif($_GET['action'] === 'adminPage') {
+			$frontend->adminPage(); 
+		} elseif($_GET['action'] === 'displayPostUpdate') {
+			if(isset($_GET['id'])) {
 				$frontend->displayPostUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}
-		} elseif($_GET['action'] === 'postupdate') {
+		} elseif($_GET['action'] === 'postUpdate') {
 			if(isset($_GET['id'])) {
 				$frontend->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}
 		} 
-
 	} else {
 		$frontend->homePage(); 
 	}	

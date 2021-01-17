@@ -12,8 +12,8 @@ class Post
 	private $_content; 
 	private $_userId; 
 	private $_published; 
-	private $_creation_date;
-	private $_modification_date; 
+	private $_creationDate;
+	private $_modificationDate; 
 	private $_subtitle; 
 	private $_topic;  
 
@@ -135,12 +135,12 @@ class Post
 		return $this->_published; 
 	} 
 
-	public function creation_date()
+	public function creationDate()
 	{
 		return $this->_creation_date; 
 	} 
 
-	public function modification_date()
+	public function modificationDate()
 	{
 		return $this->_modification_date; 
 	} 
