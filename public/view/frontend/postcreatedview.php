@@ -79,7 +79,7 @@
             $post->setTopic($_POST['topic']); 
             $post->setSubtitle($_POST['subtitle']); 
             $post->setContent($_POST['content']);
-            $postManager->updatePost($post);  
+            $postManager->addPost($post);  
       ?>
 
     <p>Votre article a bien été publié! </p><b><a href="">Voir mon post</a></b>

@@ -2,6 +2,8 @@
 
 require('model/Postmanager.php'); 
 require('model/Post.php'); 
+require('model/message.php'); 
+require('model/messagemanager.php');
 
 class frontend 
 {
@@ -33,6 +35,8 @@ class frontend
 
 	public function messagesent()
 	{
+		$messageManager = new \Openclassrooms\blog\MessageManager; 
+		$message = new \Openclassrooms\blog\Message; 
 		require('../public/view/frontend/messagesentview.php'); 
 	}
 
