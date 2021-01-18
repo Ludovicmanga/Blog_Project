@@ -30,13 +30,7 @@ try {
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}
-		} elseif($_GET['action'] === 'postUpdate') {
-			if(isset($_GET['id'])) {
-				$frontend->postUpdate();
-			} else {
-				throw new Exception('pas d\'identifiant de post'); 
-			}
-		} 
+		}
 	} else {
 		$frontend->homePage(); 
 	}	

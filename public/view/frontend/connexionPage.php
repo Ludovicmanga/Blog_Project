@@ -11,6 +11,15 @@
 
   <?php require("include/navbar.php") ?>
 
+  <!-- Page Header -->
+
+  <?php 
+
+   $backgroundImage = '../public/img/matrix.jpg'; 
+   require('include/pageheader.php'); 
+
+  ?>
+   
 
   <!-- Main Content -->
   
@@ -28,10 +37,6 @@
       <div class="container_connexion_form_button"><button type="submit">Se connecter</button>
       </form></div>
     </div>
-
-    <!-- Pager -->
-    
-    <?php require("include/footer.php") ?>
         
     
   </div>

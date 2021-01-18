@@ -18,15 +18,7 @@
       
       <!-- Contact form --> 
 
-      <?php
-
-            $post->setTitle($_POST['title']); 
-            $post->setTopic($_POST['topic']); 
-            $post->setSubtitle($_POST['subtitle']); 
-            $post->setContent($_POST['content']);
-            $post->id($_GET['id']); 
-            $postManager->updatePost($post);  
-      ?>
+   
       
 
     <p> Votre article a bien été modifié!<br><a href="index.php?action=post&id= <?= $_GET['id']; ?>">Voir l'article</a></p>

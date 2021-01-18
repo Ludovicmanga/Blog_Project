@@ -59,28 +59,31 @@ class frontend
          $post->setuserId($_POST['userId']); 
          $post->setContent($_POST['content']); 
          $postManager->addPost($post);} else {
-
-         require('../public/view/frontend/postCreation.php');
-
+        	 require('../public/view/frontend/postCreation.php');
          }
-
 	}
 
 	public function displayPostUpdate()
 	{
-		$postManager = new \Openclassrooms\blog\Postmanager; 
-		$post = $postManager->getPost($_GET['id']); 
 
-		require('../public/view/frontend/displayPostUpdate.php'); 
+		$postManager = new PostManager; 
+		$getPost = $postManager->getPost($_GET['id']); 
+
+
+		if(isset($_POST['title'])){
+			$post = new Post; 
+			require('../public/view/frontend/displayPostUpdate.php'); 
+			$post->setTitle($_POST['title']); 
+	        $post->setTopicId($_POST['topicId']); 
+	        $post->setSubtitle($_POST['subtitle']); 
+	        $post->setContent($_POST['content']);
+	        $post->id($_GET['id']); 
+	        $postManager->updatePost($post);  
+		} else {
+			require('../public/view/frontend/displayPostUpdate.php'); 
+		}	
 	}
 
-	public function postUpdate()
-	{
-		$postManager = new Postmanager; 
-		$post = new Post;  
-
-		require('../public/view/frontend/postUpdate.php'); 
-	}
 
 	public function adminPage()
 	{
