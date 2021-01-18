@@ -12,26 +12,21 @@
   <?php require("include/navbar.php") ?>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../public/img/ludovic-carre.png')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Le blog de Ludovic</h1>
-            <span class="subheading">Suivez-moi dans mon quotidien</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <?php 
+
+   $backgroundImage = '../public/img/ludovic-carre.png'; 
+   $headerTitle = 'Le blog de Ludovic'; 
+   $headerSubtitle = 'Suivez-moi au quotidien'; 
+   require('include/pageheader.php'); 
+
+  ?>
 
 
   <!-- Main Content -->
   <div class="container">
 
       <div class="post-preview">
-          <a href="index.php?action=listposts">
+          <a href="index.php?action=listPosts">
             <h2 class="post-title">
               Mon actualité
             </h2>

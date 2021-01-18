@@ -8,20 +8,16 @@
 
   <?php require("include/navbar.php") ?>
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../public/img/admin.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Espace admin</h1>
-            <span class="subheading">Gestion de votre compte</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+
+<!-- Page Header -->
+ <?php 
+
+   $backgroundImage = '../public/img/admin.jpg'; 
+   $headerTitle = 'Espace admin'; 
+   $headerSubtitle = 'Gérez votre compte'; 
+   require('include/pageheader.php'); 
+
+  ?>
 
 
   <!-- Main Content -->

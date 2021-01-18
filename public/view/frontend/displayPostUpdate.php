@@ -10,6 +10,16 @@
 
   <?php require("include/navbar.php") ?>
 
+<!-- Page Header -->
+
+<?php 
+
+   $backgroundImage = '../public/img/matrix.jpg'; 
+   $headerTitle = 'Modifier un article'; 
+   $headerSubtitle = 'Mettez à jour votre article'; 
+   require('include/pageheader.php'); 
+
+  ?>
 
   <!-- Main Content -->
   

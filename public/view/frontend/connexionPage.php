@@ -16,6 +16,8 @@
   <?php 
 
    $backgroundImage = '../public/img/matrix.jpg'; 
+   $headerTitle = 'Connexion'; 
+   $headerSubtitle = 'Connectez-vous à votre compte'; 
    require('include/pageheader.php'); 
 
   ?>
@@ -37,7 +39,6 @@
       <div class="container_connexion_form_button"><button type="submit">Se connecter</button>
       </form></div>
     </div>
-        
     
   </div>
 

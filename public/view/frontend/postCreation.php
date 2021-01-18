@@ -12,21 +12,16 @@
 
   <?php require("include/navbar.php") ?>
 
+  <!-- Page Header -->
 
- <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../public/img/post_writing.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Créer un post </h1>
-            <span class="subheading">Créez un super article</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <?php 
+
+   $backgroundImage = '../public/img/post_writing.jpg'; 
+   $headerTitle = 'Ecrire un article'; 
+   $headerSubtitle = 'Postez votre plus belle création'; 
+   require('include/pageheader.php'); 
+
+  ?>
 
   <!-- Main Content -->
   <div class="container">
@@ -67,8 +62,6 @@
       }
 
       ?>
-
-
 
   <hr>
 

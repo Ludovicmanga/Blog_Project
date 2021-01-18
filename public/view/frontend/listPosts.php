@@ -10,23 +10,17 @@
   <!-- Navigation -->
 
   <?php require("include/navbar.php") ?>
+    
+    <!-- Page Header -->
+  
+  <?php 
 
-  <!-- Page Header -->
+   $backgroundImage = '../public/img/newspaper.jpg'; 
+   $headerTitle = 'Mes articles'; 
+   $headerSubtitle = 'Plongez-vous dans mon actu'; 
+   require('include/pageheader.php'); 
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('../public/img/newspaper.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Mes articles</h1>
-            <span class="subheading">Le meilleur de mon actu</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  ?>
 
 
   <!-- Main Content -->
