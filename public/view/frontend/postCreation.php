@@ -39,7 +39,7 @@
          if(isset($_POST['title'])){
 
           echo '<b>votre article a bien été créé</b>'; 
-
+         
         } else {
 
         ?>
@@ -49,7 +49,8 @@
           <form action="index.php?action=postCreation" method = "POST" class="post_form">
           <label>Titre article</label> <input class="post_form_input_post_title" name="title" type="text" required></input><br>
           <label>Sous-titre article</label> <input class="post_form_input_post_subtitle" name="subtitle" type="text" required></input><br>
-          <label>Sujet article</label> <input class="post_form_input_post_topic" name="topic" type="mail" required></input><br>
+          <label>id sujet article</label> <input class="post_form_input_post_topic" name="topicId" type="mail" required></input><br>
+          <label>id user</label> <input class="post_form_input_post_topic" name="userId" type="mail" required></input><br>
           <div class="post_form_container_textarea">
             <div>
               <label>Contenu article</label>
@@ -68,14 +69,6 @@
       ?>
 
 
-
-    
-        
-        <!-- Pager -->
-    
-    <?php require("include/footer.php") ?>
-
-  </div>
 
   <hr>
 

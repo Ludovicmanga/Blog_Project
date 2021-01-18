@@ -48,11 +48,12 @@ class PostManager
 
 	public function addPost(Post $post)
 	{
-		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topic, content) VALUES (:title, :subtitle, :topic, :content)'); 
+		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId) VALUES (:title, :subtitle, :topicId, :content, :userId)'); 
 
 		$q->bindValue('title', $post->title()); 
 		$q->bindValue('subtitle', $post->subtitle()); 
-		$q->bindValue('topic', $post->topic()); 
+		$q->bindValue('topicId', $post->topicId()); 
+		$q->bindValue('userId', $post->userId());
 		$q->bindValue('content', $post->content()); 
 
 		$q->execute(); 

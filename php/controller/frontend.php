@@ -47,37 +47,24 @@ class frontend
 
 	public function postCreation()
 	{
-		require('../public/view/frontend/postCreation.php');
 		
-		if(isset($_POST['title'])){
 
+         if(isset($_POST['title'])){
          $postManager = new PostManager; 
-		 $post = new Post; 
-		 $post->setTitle($_POST['title']); 
-         $post->setTopic($_POST['topic']); 
+       	 $post = new Post; 
+       	 require('../public/view/frontend/postCreation.php');
+         $post->setTitle($_POST['title']); 
+         $post->setTopicId($_POST['topicId']); 
          $post->setSubtitle($_POST['subtitle']); 
+         $post->setuserId($_POST['userId']); 
          $post->setContent($_POST['content']); 
-         $postManager->addPost($post);
-        } 
-		  
+         $postManager->addPost($post);} else {
+
+         require('../public/view/frontend/postCreation.php');
+
+         }
+
 	}
-
-	public function postCreated()
-	{
-		 $postManager = new PostManager; 
-		 $post = new Post; 
-		 $post->setTitle($_POST['title']); 
-         $post->setTopic($_POST['topic']); 
-         $post->setSubtitle($_POST['subtitle']); 
-         $post->setContent($_POST['content']); 
-         $postManager->addPost($post);
-         // recuperer le last_insert_id LAST_INSERT_ID depuis MYSQL
-
-         // redirect vers la list postdisplay
-         
-		require('../public/view/frontend/postCreated.php'); 
-	}
-
 
 	public function displayPostUpdate()
 	{
