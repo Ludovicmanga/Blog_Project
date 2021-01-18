@@ -46,8 +46,11 @@ class PostManager
 
 	public function addPost(Post $post)
 	{
-		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId) VALUES (:title, :subtitle, :topicId, :content, :userId)'); 
+		if(filter_var($post->title(), FILTER_SANITIZE_STRING) OR filter_var($post->subtitle(), FILTER_SANITIZE_STRING) OR filter_var($post->content(), FILTER_SANITIZE_STRING)  OR filter_var($post->userId(), FILTER_SANITIZE_NUMBER_INT ) OR filter_var($post->topicId(), FILTER_SANITIZE_NUMBER_INT))
+		{
 
+		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId) VALUES (:title, :subtitle, :topicId, :content, :userId)'); 
+		
 		$q->bindValue('title', $post->title()); 
 		$q->bindValue('subtitle', $post->subtitle()); 
 		$q->bindValue('topicId', $post->topicId()); 
@@ -55,6 +58,8 @@ class PostManager
 		$q->bindValue('content', $post->content()); 
 
 		$q->execute(); 
+		} else {
+			throw New Exception('les charactères ne sont pas acceptés'); 
+		}
 	}
 }
-

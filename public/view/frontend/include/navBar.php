@@ -18,7 +18,7 @@
             <a class="nav-link" href="post.html">Sample Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?action=connexionpage">Connexion</a>
+            <a class="nav-link" href="index.php?action=connexionPage">Connexion</a>
           </li>
         </ul>
       </div>
