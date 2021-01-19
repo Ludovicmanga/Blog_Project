@@ -17,16 +17,14 @@ try {
 			$frontend->homePage(); 
 		} elseif($_GET['action'] === 'connexionPage') {
 			$frontend->connexionPage(); 
-		} elseif($_GET['action'] === 'messageSent') {
-			$frontend->messagesent(); 
 		} 
 		elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
 		} elseif($_GET['action'] === 'adminPage') {
 			$frontend->adminPage(); 
-		} elseif($_GET['action'] === 'displayPostUpdate') {
+		} elseif($_GET['action'] === 'postUpdate') {
 			if(isset($_GET['id'])) {
-				$frontend->displayPostUpdate();
+				$frontend->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}

@@ -30,7 +30,18 @@ class frontend
 
 	public function homePage()
 	{
-		require('../public/view/frontend/homePage.php'); 
+		if(isset($_POST['mail'])){
+			$messageManager = new MessageManager; 
+			$message = new Message;  
+			$message->setName($_POST['name']); 
+			$message->setLastName($_POST['lastName']); 
+			$message->setMail($_POST['mail']); 
+			$message->setMessageContent($_POST['messageContent']); 
+			$messageManager->addMessage($message);
+			require('../public/view/frontend/homePage.php'); 
+		} else {
+			require('../public/view/frontend/homePage.php'); 
+		}
 	}
 
 	public function connexionPage()
@@ -40,8 +51,7 @@ class frontend
 
 	public function messagesent()
 	{
-		$messageManager = new MessageManager; 
-		$message = new Message; 
+		
 		require('../public/view/frontend/messagesentview.php'); 
 	}
 
@@ -52,35 +62,34 @@ class frontend
          if(isset($_POST['title'])){
          $postManager = new PostManager; 
        	 $post = new Post; 
-       	 require('../public/view/frontend/postCreation.php');
-         $post->setTitle($_POST['title']); 
+       	 $post->setTitle($_POST['title']); 
          $post->setTopicId($_POST['topicId']); 
          $post->setSubtitle($_POST['subtitle']); 
          $post->setuserId($_POST['userId']); 
          $post->setContent($_POST['content']); 
-         $postManager->addPost($post);} else {
+         $postManager->addPost($post);
+       	 require('../public/view/frontend/postCreation.php');
+         } else {
         	 require('../public/view/frontend/postCreation.php');
          }
 	}
 
-	public function displayPostUpdate()
+	public function postUpdate()
 	{
-
 		$postManager = new PostManager; 
 		$getPost = $postManager->getPost($_GET['id']); 
 
-
 		if(isset($_POST['title'])){
 			$post = new Post; 
-			require('../public/view/frontend/displayPostUpdate.php'); 
 			$post->setTitle($_POST['title']); 
 	        $post->setTopicId($_POST['topicId']); 
 	        $post->setSubtitle($_POST['subtitle']); 
 	        $post->setContent($_POST['content']);
 	        $post->id($_GET['id']); 
-	        $postManager->updatePost($post);  
+	        $postManager->updatePost($post); 
+			require('../public/view/frontend/displayPostUpdate.php');  
 		} else {
-			require('../public/view/frontend/displayPostUpdate.php'); 
+			require('../public/view/frontend/postUpdate.php'); 
 		}	
 	}
 

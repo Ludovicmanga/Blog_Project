@@ -12,6 +12,7 @@
   <?php require("include/navbar.php") ?>
 
   <!-- Page Header -->
+  
   <?php 
 
    $backgroundImage = '../public/img/ludovic-carre.png'; 
@@ -70,10 +71,20 @@
 
       <!-- Contact form -->
 
-    <div class="form_container">
+   <?php 
+
+   if(isset($_POST['mail'])){
+
+   	echo '<b>Votre message a bien été envoyé!</b>'; 
+
+  } else {
+
+  	?> 
+
+  	<div class="form_container">
       <h1 class="form_title">Me contacter</h1>
-      <form action="index.php?action=messagesent" method = "POST" class="contact_form">
-      <label>Nom</label> <input class="input_lastname" name="lastname" type="text"></input><br>
+      <form action="index.php?action=homePage" method = "POST" class="contact_form">
+      <label>Nom</label> <input class="input_lastname" name="lastName" type="text"></input><br>
       <label>Prenom</label> <input class="input_name" name="name"type="text"></input><br>
       <label>Mail</label> <input class="input_mail" name="mail" type="mail"></input><br>
       <div class="contact_form_container_textarea">
@@ -81,12 +92,19 @@
           <label>Message</label>
         </div>
         <div>
-            <textarea class="textarea_message" name="content"></textarea><br>
+            <textarea class="textarea_message" name="messageContent"></textarea><br>
         </div>
       </div>
       <div class="container_form_button"><button type="submit">Envoyer</button>
       </form></div>
     </div>
+
+  	<?php
+  }
+
+   ?>   
+
+    
 
     <!-- Pager -->
     

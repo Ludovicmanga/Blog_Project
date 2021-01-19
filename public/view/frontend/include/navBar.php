@@ -9,13 +9,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link" href="index.php?action=listPosts">Mes articles</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+            <a class="nav-link" href="https://www.linkedin.com/in/ludovic-manga-jocky/">Mon CV</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.php?action=connexionPage">Connexion</a>
