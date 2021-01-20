@@ -58,7 +58,7 @@
                 </textarea><br>
             </div>
           </div>
-          <div class="container_form_button"><button type="submit">Modifier</button>
+          <div class="container_form_button"><button type="submit" name="submit">Modifier</button>
           </form></div>
         </div>
 

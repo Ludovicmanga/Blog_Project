@@ -54,7 +54,7 @@
                 <textarea class="post_form_textarea_content" name="content" required></textarea><br>
             </div>
           </div>
-          <div class="container_form_button"><button type="submit">Envoyer</button>
+          <div class="container_form_button"><button type="submit" name="submit">Envoyer</button>
           </form></div>
         </div>
 

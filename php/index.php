@@ -1,7 +1,10 @@
 <?php 
 
 require('controller/frontend.php'); 
-$frontend = new frontend; 
+require('controller/users.php'); 
+
+$frontend = new Frontend; 
+$users = new Users; 
 
 try {
 	if (isset($_GET['action'])) {
@@ -13,15 +16,18 @@ try {
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
-		} elseif($_GET['action'] === 'homePage') {
-			$frontend->homePage(); 
-		} elseif($_GET['action'] === 'connexionPage') {
-			$frontend->connexionPage(); 
+		} elseif($_GET['action'] === 'home') {
+			$frontend->home(); 
+		} elseif($_GET['action'] === 'login') {
+			$users->login(); 
+		} 
+		elseif($_GET['action'] === 'register') {
+			$users->register(); 
 		} 
 		elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
-		} elseif($_GET['action'] === 'adminPage') {
-			$frontend->adminPage(); 
+		} elseif($_GET['action'] === 'admin') {
+			$frontend->admin(); 
 		} elseif($_GET['action'] === 'postUpdate') {
 			if(isset($_GET['id'])) {
 				$frontend->postUpdate();

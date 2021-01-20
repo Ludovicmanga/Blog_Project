@@ -10,7 +10,7 @@ require('model/Post.php');
 require('model/message.php'); 
 require('model/messagemanager.php');
 
-class frontend 
+class Frontend 
 {
 	public function listPosts()
 	{
@@ -28,7 +28,7 @@ class frontend
 		require('../public/view/frontend/post.php'); 
 	}
 
-	public function homePage()
+	public function home()
 	{
 		if(isset($_POST['mail'])){
 			$messageManager = new MessageManager; 
@@ -38,15 +38,10 @@ class frontend
 			$message->setMail($_POST['mail']); 
 			$message->setMessageContent($_POST['messageContent']); 
 			$messageManager->addMessage($message);
-			require('../public/view/frontend/homePage.php'); 
+			require('../public/view/frontend/home.php'); 
 		} else {
-			require('../public/view/frontend/homePage.php'); 
+			require('../public/view/frontend/home.php'); 
 		}
-	}
-
-	public function connexionPage()
-	{
-		require('../public/view/frontend/connexionPage.php'); 
 	}
 
 	public function messagesent()
@@ -59,7 +54,7 @@ class frontend
 	{
 		
 
-         if(isset($_POST['title'])){
+         if(isset($_POST['submit'])){
          $postManager = new PostManager; 
        	 $post = new Post; 
        	 $post->setTitle($_POST['title']); 
@@ -79,7 +74,7 @@ class frontend
 		$postManager = new PostManager; 
 		$getPost = $postManager->getPost($_GET['id']); 
 
-		if(isset($_POST['title'])){
+		if(isset($_POST['submit'])){
 			$post = new Post; 
 			$post->setTitle($_POST['title']); 
 	        $post->setTopicId($_POST['topicId']); 
@@ -94,9 +89,9 @@ class frontend
 	}
 
 
-	public function adminPage()
+	public function admin()
 	{
-		require('../public/view/frontend/adminPage.php'); 
+		require('../public/view/frontend/admin.php'); 
 	}
 
 }
