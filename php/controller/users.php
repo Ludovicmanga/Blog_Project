@@ -11,6 +11,8 @@ class Users
 	public function login()
 	{
 		$userManager = new UserManager; 
+		$user = new User; 
+
 		$data = [
 			'mailError' => '',
 			'passwordError' => '', 
@@ -24,7 +26,6 @@ class Users
 	{
 		$userManager = new UserManager; 
 		$user = new User; 
-
 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') 
@@ -129,6 +130,6 @@ class Users
 			}
 		}
 
-		require('../public/view/frontend/login.php'); 
+		require('../public/view/frontend/register.php'); 
 	}
 }

@@ -24,6 +24,12 @@ class UserManager
 		$q->bindValue('password', $user->password());
 		$q->execute(); 
 
+		if($q->execute()) {
+			return true; 
+		} else {
+			return false; 
+		}
+
 	}
 
 	// Find user by email. Email is passed in by the Controller.
@@ -31,8 +37,8 @@ class UserManager
 	{
 		$q = $this->db->query('SELECT * FROM users WHERE mail = :mail'); 
 		$q->execute(array($mail)); 
-		$user = $q->fetch(); 
-		return $user ; 
+		$userReturn = $q->fetch(); 
+		return $userReturn ; 
 
 		//check if email is already registered
 

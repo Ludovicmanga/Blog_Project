@@ -36,7 +36,7 @@ try {
 			}
 		}
 	} else {
-		$frontend->homePage(); 
+		$frontend->home(); 
 	}	
 } 
 catch(Exception $e) {
