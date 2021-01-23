@@ -17,7 +17,7 @@ class Frontend
 		$postManager = new PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
-		require ('../public/view/frontend/listPosts.php'); 
+		require ('../view/frontend/listPosts.php'); 
 	}
 
 	public function post()

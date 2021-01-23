@@ -19,7 +19,7 @@ class Users
 
 		]; 
 
-		require('../public/view/frontend/login.php'); 
+		require('../view/frontend/login.php'); 
 	}
 
 	public function register()
@@ -130,6 +130,6 @@ class Users
 			}
 		}
 
-		require('../public/view/frontend/register.php'); 
+		require('../view/frontend/register.php'); 
 	}
 }
