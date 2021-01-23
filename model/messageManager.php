@@ -1,6 +1,7 @@
 <?php 
 
-namespace Openclassrooms\blog; 
+namespace Blog; 
+
 
 
 class MessageManager 

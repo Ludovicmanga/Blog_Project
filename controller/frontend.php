@@ -1,9 +1,9 @@
 <?php
 
-use Openclassrooms\blog\PostManager; 
-use Openclassrooms\blog\Post; 
-use Openclassrooms\blog\MessageManager; 
-use Openclassrooms\blog\Message; 
+use Blog\PostManager; 
+use Blog\Post; 
+use Blog\MessageManager; 
+use Blog\Message; 
 
 require('../model/Postmanager.php'); 
 require('../model/Post.php'); 

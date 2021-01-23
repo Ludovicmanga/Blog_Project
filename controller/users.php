@@ -1,7 +1,7 @@
 <?php
 
-use Openclassrooms\blog\UserManager;
-use Openclassrooms\blog\User;
+use Blog\UserManager;
+use Blog\User;
 
 require('../model/UserManager.php');
 require('../model/User.php');
