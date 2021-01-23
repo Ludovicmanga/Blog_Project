@@ -130,6 +130,6 @@ class Users
 			}
 		}
 
-		require('../view/frontend/register.php'); 
+		require('../view/frontend/register.php');  
 	}
 }
