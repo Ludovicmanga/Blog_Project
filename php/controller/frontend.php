@@ -1,72 +1,97 @@
 <?php
 
+use Openclassrooms\blog\PostManager; 
+use Openclassrooms\blog\Post; 
+use Openclassrooms\blog\MessageManager; 
+use Openclassrooms\blog\Message; 
+
 require('model/Postmanager.php'); 
 require('model/Post.php'); 
 require('model/message.php'); 
 require('model/messagemanager.php');
 
-class frontend 
+class Frontend 
 {
 	public function listPosts()
 	{
-		$postManager = new \Openclassrooms\blog\PostManager; 
+		$postManager = new PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
-		require ('../public/view/frontend/listpostview.php'); 
+		require ('../public/view/frontend/listPosts.php'); 
 	}
 
 	public function post()
 	{
-		$postManager = new \Openclassrooms\blog\PostManager; 
+		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
 
-		require('../public/view/frontend/postview.php'); 
+		require('../public/view/frontend/post.php'); 
 	}
 
-	public function homePage()
+	public function home()
 	{
-		require('../public/view/frontend/homepageview.php'); 
-	}
-
-	public function connexionPage()
-	{
-		require('../public/view/frontend/connexionpageview.php'); 
+		if(isset($_POST['mail'])){
+			$messageManager = new MessageManager; 
+			$message = new Message;  
+			$message->setName($_POST['name']); 
+			$message->setLastName($_POST['lastName']); 
+			$message->setMail($_POST['mail']); 
+			$message->setMessageContent($_POST['messageContent']); 
+			$messageManager->addMessage($message);
+			require('../public/view/frontend/home.php'); 
+		} else {
+			require('../public/view/frontend/home.php'); 
+		}
 	}
 
 	public function messagesent()
 	{
-		$messageManager = new \Openclassrooms\blog\MessageManager; 
-		$message = new \Openclassrooms\blog\Message; 
+		
 		require('../public/view/frontend/messagesentview.php'); 
 	}
 
 	public function postCreation()
 	{
-		require('../public/view/frontend/postcreationview.php'); 
-	}
+		
 
-	public function postCreated()
-	{
-		$postManager = new \Openclassrooms\blog\PostManager; 
-		$post = new \Openclassrooms\blog\Post; 
-		require('../public/view/frontend/postcreatedview.php'); 
-	}
-
-
-	public function displayPostUpdate()
-	{
-		$postManager = new \Openclassrooms\blog\Postmanager; 
-		$post = $postManager->getPost($_GET['id']); 
-
-		require('../public/view/frontend/displaypostupdateview.php'); 
+         if(isset($_POST['submit'])){
+         $postManager = new PostManager; 
+       	 $post = new Post; 
+       	 $post->setTitle($_POST['title']); 
+         $post->setTopicId($_POST['topicId']); 
+         $post->setSubtitle($_POST['subtitle']); 
+         $post->setuserId($_POST['userId']); 
+         $post->setContent($_POST['content']); 
+         $postManager->addPost($post);
+       	 require('../public/view/frontend/postCreation.php');
+         } else {
+        	 require('../public/view/frontend/postCreation.php');
+         }
 	}
 
 	public function postUpdate()
 	{
-		$postManager = new \Openclassrooms\blog\Postmanager; 
-		$post = new \Openclassrooms\blog\Post;  
+		$postManager = new PostManager; 
+		$getPost = $postManager->getPost($_GET['id']); 
 
-		require('../public/view/frontend/postupdateview.php'); 
+		if(isset($_POST['submit'])){
+			$post = new Post; 
+			$post->setTitle($_POST['title']); 
+	        $post->setTopicId($_POST['topicId']); 
+	        $post->setSubtitle($_POST['subtitle']); 
+	        $post->setContent($_POST['content']);
+	        $post->id($_GET['id']); 
+	        $postManager->updatePost($post); 
+			require('../public/view/frontend/displayPostUpdate.php');  
+		} else {
+			require('../public/view/frontend/postUpdate.php'); 
+		}	
+	}
+
+
+	public function admin()
+	{
+		require('../public/view/frontend/admin.php'); 
 	}
 
 }

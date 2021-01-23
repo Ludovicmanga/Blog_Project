@@ -16,10 +16,10 @@ class MessageManager
 
 	public function addMessage(Message $message)
 	{
-		$q = $this->db->prepare('INSERT INTO message (name, lastname, mail, message) VALUES (:name, :lastname, :mail, :messageContent)'); 
+		$q = $this->db->prepare('INSERT INTO message (name, lastName, mail, message) VALUES (:name, :lastName, :mail, :messageContent)'); 
 
 		$q->bindValue('name', $message->name()); 
-		$q->bindValue('lastname', $message->lastname()); 
+		$q->bindValue('lastName', $message->lastName()); 
 		$q->bindValue('mail', $message->mail()); 
 		$q->bindValue('messageContent', $message->messageContent()); 
 

@@ -6,7 +6,7 @@ class Message
 {
 	private $_id; 
 	private $_name; 
-	private $_lastname; 
+	private $_lastName; 
 	private $_mail; 
 	private $_messageContent; 
 
@@ -20,9 +20,9 @@ class Message
 		return $this->_name; 
 	}
 
-	public function lastname()
+	public function lastName()
 	{
-		return $this->_lastname; 
+		return $this->_lastName; 
 	}
 
 	public function mail()
@@ -47,10 +47,10 @@ class Message
 		return $this->_name;  
 	}
 
-	public function setLastname($lastname)
+	public function setLastName($lastName)
 	{
-		$this->_lastname = $lastname;
-		return $this->_lastname;  
+		$this->_lastName = $lastName;
+		return $this->_lastName;  
 	}
 
 	public function setMail($mail)
