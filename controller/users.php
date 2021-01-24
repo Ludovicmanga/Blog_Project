@@ -120,7 +120,7 @@ class Users
 
 				// Register user from model function 
 
-				if ($userManager->register($user)){
+				if($userManager->register($user)){
 					// redirect to the login page
 					header('location: index.php?action=login'); 
 				} else {

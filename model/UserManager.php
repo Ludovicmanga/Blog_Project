@@ -15,7 +15,6 @@ class UserManager extends Manager
 		$q->bindValue('lastName', $user->lastName()); 
 		$q->bindValue('mail', $user->mail()); 
 		$q->bindValue('password', $user->password());
-		$q->execute(); 
 
 		if($q->execute()) {
 			return true; 
