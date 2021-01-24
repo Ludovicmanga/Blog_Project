@@ -6,7 +6,7 @@ class UserManager
 {
 	protected $db; 
 
-	public function __contruct ()
+	public function __construct()
 	{
 		$this->db = new \PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
 	}
@@ -28,7 +28,6 @@ class UserManager
 		} else {
 			return false; 
 		}
-
 	}
 
 	// Find user by email. Email is passed in by the Controller.
