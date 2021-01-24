@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog; 
+namespace ProjetBlog\model; 
 
 class UserManager
 {

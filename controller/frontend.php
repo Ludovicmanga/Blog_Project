@@ -1,20 +1,20 @@
 <?php
 
-use Blog\PostManager; 
-use Blog\Post; 
-use Blog\MessageManager; 
-use Blog\Message; 
 
-require('../model/Postmanager.php'); 
-require('../model/Post.php'); 
-require('../model/message.php'); 
-require('../model/messagemanager.php');
+
+function chargerClassFrontend($class)
+{
+	require('../../'.$class.'.php'); 
+}
+
+spl_autoload_register('chargerClassFrontend'); 
+
 
 class Frontend 
 {
 	public function listPosts()
 	{
-		$postManager = new PostManager; 
+		$postManager = new ProjetBlog\Model\PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
 		require ('../view/frontend/listPosts.php'); 
@@ -22,7 +22,7 @@ class Frontend
 
 	public function post()
 	{
-		$postManager = new PostManager; 
+		$postManager = new ProjetBlog\Model\PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
 
 		require('../view/frontend/post.php'); 
@@ -31,8 +31,8 @@ class Frontend
 	public function home()
 	{
 		if(isset($_POST['mail'])){
-			$messageManager = new MessageManager; 
-			$message = new Message;  
+			$messageManager = new ProjetBlog\Model\MessageManager; 
+			$message = new ProjetBlog\Model\Message;  
 			$message->setName($_POST['name']); 
 			$message->setLastName($_POST['lastName']); 
 			$message->setMail($_POST['mail']); 
@@ -55,8 +55,8 @@ class Frontend
 		
 
          if(isset($_POST['submit'])){
-         $postManager = new PostManager; 
-       	 $post = new Post; 
+         $postManager = new ProjetBlog\Model\PostManager; 
+       	 $post = new ProjetBlog\Model\Post; 
        	 $post->setTitle($_POST['title']); 
          $post->setTopicId($_POST['topicId']); 
          $post->setSubtitle($_POST['subtitle']); 
@@ -71,11 +71,11 @@ class Frontend
 
 	public function postUpdate()
 	{
-		$postManager = new PostManager; 
+		$postManager = new ProjetBlog\Model\PostManager; 
 		$getPost = $postManager->getPost($_GET['id']); 
 
 		if(isset($_POST['submit'])){
-			$post = new Post; 
+			$post = new ProjetBlog\Model\Post; 
 			$post->setTitle($_POST['title']); 
 	        $post->setTopicId($_POST['topicId']); 
 	        $post->setSubtitle($_POST['subtitle']); 
