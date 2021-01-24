@@ -34,20 +34,20 @@ class Users
 		{
 			
 			//Sanitize post data
-			$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
-			$user->setName(trim($_POST['name'])); 
-			$user->setNameError(trim($_POST['nameError'])); 
-			$user->setLastName(trim($_POST['lastName'])); 
-			$user->setLastNameError(trim($_POST['lastNameError'])); 
-			$user->setMail(trim($_POST['mail'])); 
-			$user->setMailError(trim($_POST['mailError']));
-			$user->setConfirmMail(trim($_POST['confirmMail'])); 
-			$user->setConfirmMailError(trim($_POST['confirmMailError'])); 
-			$user->setPassword(trim($_POST['password'])); 
-			$user->setPasswordError(trim($_POST['passwordError'])); 
-			$user->setConfirmPassword(trim($_POST['confirmPassword'])); 
-			$user->setConfirmPasswordError(trim($_POST['confirmPasswordError'])); 
+			$user->setName(trim($_POST_CLEAN['name'])); 
+			$user->setNameError(trim($_POST_CLEAN['nameError'])); 
+			$user->setLastName(trim($_POST_CLEAN['lastName'])); 
+			$user->setLastNameError(trim($_POST_CLEAN['lastNameError'])); 
+			$user->setMail(trim($_POST_CLEAN['mail'])); 
+			$user->setMailError(trim($_POST_CLEAN['mailError']));
+			$user->setConfirmMail(trim($_POST_CLEAN['confirmMail'])); 
+			$user->setConfirmMailError(trim($_POST_CLEAN['confirmMailError'])); 
+			$user->setPassword(trim($_POST_CLEAN['password'])); 
+			$user->setPasswordError(trim($_POST_CLEAN['passwordError'])); 
+			$user->setConfirmPassword(trim($_POST_CLEAN['confirmPassword'])); 
+			$user->setConfirmPasswordError(trim($_POST_CLEAN['confirmPasswordError'])); 
 
 
 			$nameValidation = "/^[a-zA-Z0-9]*$/";
