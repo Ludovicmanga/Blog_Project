@@ -37,21 +37,15 @@ class Users
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
 			$user->setName(trim($_POST_CLEAN['name'])); 
-			$user->setNameError(trim($_POST_CLEAN['nameError'])); 
 			$user->setLastName(trim($_POST_CLEAN['lastName'])); 
-			$user->setLastNameError(trim($_POST_CLEAN['lastNameError'])); 
 			$user->setMail(trim($_POST_CLEAN['mail'])); 
-			$user->setMailError(trim($_POST_CLEAN['mailError']));
 			$user->setConfirmMail(trim($_POST_CLEAN['confirmMail'])); 
-			$user->setConfirmMailError(trim($_POST_CLEAN['confirmMailError'])); 
 			$user->setPassword(trim($_POST_CLEAN['password'])); 
-			$user->setPasswordError(trim($_POST_CLEAN['passwordError'])); 
 			$user->setConfirmPassword(trim($_POST_CLEAN['confirmPassword'])); 
-			$user->setConfirmPasswordError(trim($_POST_CLEAN['confirmPasswordError'])); 
 
 
 			$nameValidation = "/^[a-zA-Z0-9]*$/";
-			$passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$i";   
+			$passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";   
 
 			// validate name 
 
@@ -128,7 +122,6 @@ class Users
 				} else {
 					die('une erreur s\'est produite'); 
 				}
-
 			}
 		}
 
