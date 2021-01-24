@@ -29,9 +29,10 @@
 
 <!-- connexion form --> 
 
+
    <div class="connexion_form_container">
       <h1 class="connexion_form_title">Créer un compte</h1>
-      <form class="connexion_form" action="index.php?action=register">
+      <form class="connexion_form" method="POST" action="index.php?action=register">
       <label>Votre mail</label> <input class="connexion_form_input_mail" type="mail" placeholder="adresse mail *" name="mail">
       <span> <?= $user->mailError();  ?></span>
       <br>
