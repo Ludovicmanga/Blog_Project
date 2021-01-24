@@ -1,15 +1,9 @@
 <?php
 
-namespace ProjetBlog\model; 
+namespace ProjetBlog\Model; 
 
-class UserManager
+class UserManager extends Manager
 {
-	protected $db; 
-
-	public function __contruct ()
-	{
-		$this->db = new \PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
-	}
 
 	public function register(User $user) 
 	{
@@ -28,20 +22,19 @@ class UserManager
 		} else {
 			return false; 
 		}
-
 	}
 
 	// Find user by email. Email is passed in by the Controller.
 	public function findUserByMail($mail)
 	{
-		$q = $this->db->query('SELECT * FROM users WHERE mail = :mail'); 
-		$q->execute(array($mail)); 
-		$userReturn = $q->fetch(); 
+		$q = $this->db->prepare('SELECT * FROM user WHERE mail = :mail'); 
+		$q->execute([':mail' => $mail]); 
+		$userReturn = $q->fetch(\PDO::FETCH_ASSOC); 
 		return $userReturn ; 
 
 		//check if email is already registered
 
-		if($this->db::ROWCOUNT > 0) {
+		if($q->rowCount() > 0) {
 			return true; 
 		} else {
 			return false; 

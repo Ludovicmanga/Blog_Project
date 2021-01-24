@@ -1,19 +1,11 @@
 <?php 
 
-namespace ProjetBlog\model; 
+namespace ProjetBlog\Model; 
 
 
-class MessageManager 
+class MessageManager extends Manager
  {
- 	protected $db; 
-
-	// construct
-
-	public function __construct()
-	{
-		$this->db = new \PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
-	}
-
+ 	
 	public function addMessage(Message $message)
 	{
 		$q = $this->db->prepare('INSERT INTO message (name, lastName, mail, message) VALUES (:name, :lastName, :mail, :messageContent)'); 

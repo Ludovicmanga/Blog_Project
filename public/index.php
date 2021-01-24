@@ -23,8 +23,9 @@ try {
 		} 
 		elseif($_GET['action'] === 'register') {
 			$users->register(); 
-		} 
-		elseif($_GET['action'] === 'postCreation') {
+		} elseif($_GET['action'] === 'testRegister') {
+			$users->testRegister(); 
+		} elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
 		} elseif($_GET['action'] === 'admin') {
 			$frontend->admin(); 

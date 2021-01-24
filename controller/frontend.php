@@ -1,7 +1,6 @@
 <?php
 
 
-
 function chargerClassFrontend($class)
 {
 	require('../../'.$class.'.php'); 

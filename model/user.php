@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\model; 
+namespace ProjetBlog\Model; 
 
 class User
 {
@@ -73,63 +73,63 @@ class User
 
 
 	public function setName($name) {
-		$this->_name == $name; 
+		$this->_name = $name; 
 		return $this->_name;  
 	}
 
 	public function setNameError($nameError) {
-		$this->_nameError == $nameError; 
+		$this->_nameError = $nameError; 
 		return $this->_nameError;  
 	}
 
 	public function setlastName($lastName) {
-		$this->_lastName == $lastName; 
+		$this->_lastName = $lastName; 
 		return $this->_lastName;  
 	}
 
 	public function setlastNameError($lastNameError) {
-		$this->_lastNameError == $lastNameError; 
+		$this->_lastNameError = $lastNameError; 
 		return $this->_lastNameError;  
 	}
 	
 	public function setMail($mail) {
-		$this->_mail == $mail; 
+		$this->_mail = $mail; 
 		return $this->_mail;  
 	}
 
 	public function setMailError($mailError) {
-		$this->_mailError == $mailError; 
+		$this->_mailError = $mailError; 
 		return $this->_mailError;  
 	}
 
 
 	public function setConfirmMail($confirmMail) {
-		$this->_confirmMail == $confirmMail; 
+		$this->_confirmMail = $confirmMail; 
 		return $this->_confirmMail;  
 	}
 
 	public function setConfirmMailError($confirmMailError) {
-		$this->_confirmMailError == $confirmMailError; 
+		$this->_confirmMailError = $confirmMailError; 
 		return $this->_confirmMailError;  
 	}
 
 	public function setPassword($password) {
-		$this->_password == $password; 
+		$this->_password = $password; 
 		return $this->_password;  
 	}
 
 	public function setPasswordError($passwordError) {
-		$this->_passwordError == $passwordError; 
+		$this->_passwordError = $passwordError; 
 		return $this->_passwordError;  
 	}
 
 	public function setConfirmPassword($confirmPassword) {
-		$this->_confirmPassword == $confirmPassword; 
+		$this->_confirmPassword = $confirmPassword; 
 		return $this->_confirmPassword;  
 	}
 
 	public function setConfirmPasswordError($confirmPasswordError) {
-		$this->_confirmPasswordError == $confirmPasswordError; 
+		$this->_confirmPasswordError = $confirmPasswordError; 
 		return $this->_confirmPasswordError;  
 	}
 
