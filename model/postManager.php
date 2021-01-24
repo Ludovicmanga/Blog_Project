@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\model; 
+namespace ProjetBlog\Model; 
 
 class PostManager
 {
@@ -48,7 +48,7 @@ class PostManager
 	{
 		if(filter_var($post->title(), FILTER_SANITIZE_STRING) OR filter_var($post->subtitle(), FILTER_SANITIZE_STRING) OR filter_var($post->content(), FILTER_SANITIZE_STRING)  OR filter_var($post->userId(), FILTER_SANITIZE_NUMBER_INT ) OR filter_var($post->topicId(), FILTER_SANITIZE_NUMBER_INT))
 		{ 
-		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId) VALUES (:title, :subtitle, :topicId, :content, :userId)'); 
+		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId, creationDate) VALUES (:title, :subtitle, :topicId, :content, :userId, NOW())'); 
 		
 		$q->bindValue('title', $post->title()); 
 		$q->bindValue('subtitle', $post->subtitle()); 
