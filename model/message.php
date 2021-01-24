@@ -1,6 +1,6 @@
 <?php
 
-namespace Openclassrooms\blog; 
+namespace ProjetBlog\model; 
 
 class Message
 {

@@ -1,17 +1,19 @@
 <?php
 
-use Openclassrooms\blog\UserManager;
-use Openclassrooms\blog\User;
 
-require('../model/UserManager.php');
-require('../model/User.php');
+function chargerClassUsers($class)
+{
+	require('../../'.$class.'.php'); 
+}
+
+spl_autoload_register('chargerClassUsers'); 
 
 class Users
 {
 	public function login()
 	{
-		$userManager = new UserManager; 
-		$user = new User; 
+		$userManager = new ProjetBlog\Model\UserManager; 
+		$user = new ProjetBlog\Model\User; 
 
 		$data = [
 			'mailError' => '',
@@ -24,8 +26,8 @@ class Users
 
 	public function register()
 	{
-		$userManager = new UserManager; 
-		$user = new User; 
+		$userManager = new ProjetBlog\Model\UserManager; 
+		$user = new ProjetBlog\Model\User; 
 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') 
