@@ -2,17 +2,8 @@
 
 namespace ProjetBlog\Model; 
 
-class PostManager
+class PostManager extends Manager
 {
-
-	protected $db; 
-
-	// construct
-
-	public function __construct()
-	{
-		$this->db = new \PDO('mysql:host=localhost;dbname=projet_blog;charset=utf8', 'root', '');
-	}
 
 	public function getAllPosts()
 	{

@@ -1,12 +1,17 @@
 <?php
 
-
 function chargerClassUsers($class)
 {
 	require('../../'.$class.'.php'); 
 }
 
 spl_autoload_register('chargerClassUsers'); 
+
+require_once('../model/Manager.php'); 
+require_once('../model/UserManager.php'); 
+require_once('../model/Post.php'); 
+require_once('../model/PostManager.php'); 
+
 
 class Users
 {
@@ -18,7 +23,6 @@ class Users
 		$data = [
 			'mailError' => '',
 			'passwordError' => '', 
-
 		]; 
 
 		require('../view/frontend/login.php'); 
