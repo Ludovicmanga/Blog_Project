@@ -15,18 +15,6 @@ require_once('../model/PostManager.php');
 
 class Users
 {
-	public function login()
-	{
-		$userManager = new ProjetBlog\Model\UserManager; 
-		$user = new ProjetBlog\Model\User; 
-
-		$data = [
-			'mailError' => '',
-			'passwordError' => '', 
-		]; 
-
-		require('../view/frontend/login.php'); 
-	}
 
 	public function register()
 	{
@@ -116,11 +104,11 @@ class Users
 			if(empty($user->nameError()) && empty($user->lastNameError()) && empty($user->mailError()) && empty($user->confirmMailError()) && empty($user->passwordError()) && empty($user->confirmPasswordError())) {
 
 				// Hash password
-				$user->setPassword(password_hash($data['password'], PASSWORD_DEFAULT)); 
+				$user->setPassword(password_hash($user->password(), PASSWORD_DEFAULT)); 
 
 				// Register user from model function 
 
-				if ($userManager->register($user)){
+				if($userManager->register($user)){
 					// redirect to the login page
 					header('location: index.php?action=login'); 
 				} else {
@@ -132,8 +120,51 @@ class Users
 		require('../view/frontend/register.php');  
 	}
 
-	public function testRegister() {
 
-		require('../view/frontend/testRegister.php'); 
+	public function login()
+	{
+		$userManager = new ProjetBlog\Model\UserManager; 
+		$user = new ProjetBlog\Model\User; 
+
+		if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+			// Sanitize post data
+
+			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
+			$user->setMail(trim($_POST_CLEAN['mail'])); 
+			$user->setPassword(trim($_POST_CLEAN['password'])); 
+
+			// validate mail
+			if(empty($_POST_CLEAN['mail'])){
+				$user->setMailError('vous devez entrer une adresse mail');
+			}
+
+			// validate password
+			if(empty($_POST_CLEAN['password'])){
+				$user->setPasswordError('vous devez entrer un mot de passe');
+			}
+
+			// check if all errors are empty
+
+			if(empty($user->mailError()) && empty($user->passwordError())){
+				$loggedInUser = $userManager->login($user->mail(), $user->password()); 
+
+				if($loggedInUser){
+					$this->createUserSession($loggedInUser); 
+				} else {
+					$user->setPasswordError('Le mot de passe ou l\'adresse mail est incorrect. Merci de réessayer.'); 
+				}
+			}
+		}
+
+		require('../view/frontend/login.php'); 
+	}
+
+	public function createUserSession($user){
+		session_start(); 
+		$_SESSION['userId'] = $user['id'] ; 
+		$_SESSION['mail'] = $user['mail'] ; 
+
 	}
 }

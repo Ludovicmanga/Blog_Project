@@ -60,7 +60,7 @@
 }
 
 
-/*connexion form*/
+/*login form*/
 
 .connexion_form_container
 {
@@ -239,5 +239,51 @@
 	margin-bottom: 5px;
 }
 
+/*login form*/
 
+.registration_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 500px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+}
 
+.registration_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.registration_form_input_password
+{
+	margin-left: 12px;
+}
+
+.registration_form_input_mail
+{
+	margin-left: 94px;
+}
+
+.registration_form
+{
+	color: white;
+}
+
+.registration_form_container_input_password
+{
+	margin-top: 10px;
+}
+
+.registration_form button
+{
+	margin-left: 160px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+}

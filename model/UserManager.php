@@ -15,13 +15,32 @@ class UserManager extends Manager
 		$q->bindValue('lastName', $user->lastName()); 
 		$q->bindValue('mail', $user->mail()); 
 		$q->bindValue('password', $user->password());
-		$q->execute(); 
 
 		if($q->execute()) {
 			return true; 
 		} else {
 			return false; 
 		}
+	}
+
+	public function login($mail, $password) {
+
+		$q = $this->db->prepare('SELECT * FROM user WHERE mail = :mail'); 
+		
+		// bind value
+
+		$q->execute([':mail' => $mail]); 
+
+		$row = $q->fetch(); 
+
+		$hashedPassword = $row['password']; 
+
+		if(password_verify($password, $hashedPassword)){
+			return $row; 
+		} else {
+			return false; 
+		}
+
 	}
 
 	// Find user by email. Email is passed in by the Controller.
