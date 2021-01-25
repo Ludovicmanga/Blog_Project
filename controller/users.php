@@ -131,9 +131,4 @@ class Users
 
 		require('../view/frontend/register.php');  
 	}
-
-	public function testRegister() {
-
-		require('../view/frontend/testRegister.php'); 
-	}
 }
