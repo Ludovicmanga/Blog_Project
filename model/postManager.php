@@ -8,16 +8,16 @@ class PostManager extends Manager
 	public function getAllPosts()
 	{
 		
-		$req = $this->db->query('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id ORDER BY creationDate DESC LIMIT 0,5'); 
-		return $req; 
+		$q = $this->db->query('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id ORDER BY creationDate DESC LIMIT 0,5'); 
+		return $q; 
 	}
 
 	public function getPost($postId)
 	{
 		
-		$req = $this->db->prepare('SELECT post.*, user.name as author FROM post INNER JOIN user WHERE user.id = post.userId AND post.id = ?'); 
-		$req->execute(array ($postId)); 
-		$post = $req->fetch(); 
+		$q = $this->db->prepare('SELECT post.*, user.name as author FROM post INNER JOIN user WHERE user.id = post.userId AND post.id = ?'); 
+		$q->execute(array ($postId)); 
+		$post = $q->fetch(); 
 
 		return $post; 
 	}
