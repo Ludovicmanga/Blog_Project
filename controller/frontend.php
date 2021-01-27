@@ -29,13 +29,16 @@ class Frontend
 
 	public function home()
 	{
-		if(isset($_POST['mail'])){
+			if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+		 	$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
 			$messageManager = new ProjetBlog\Model\MessageManager; 
 			$message = new ProjetBlog\Model\Message;  
-			$message->setName($_POST['name']); 
-			$message->setLastName($_POST['lastName']); 
-			$message->setMail($_POST['mail']); 
-			$message->setMessageContent($_POST['messageContent']); 
+			$message->setName($_POST_CLEAN['name']); 
+			$message->setLastName($_POST_CLEAN['lastName']); 
+			$message->setMail($_POST_CLEAN['mail']); 
+			$message->setMessageContent($_POST_CLEAN['messageContent']); 
 			$messageManager->addMessage($message);
 			require('../view/frontend/home.php'); 
 		} else {
@@ -56,14 +59,17 @@ class Frontend
        	$allTopics = $topicManager->getAllTopics(); 
 		
 
-         if(isset($_POST['submit'])){
+         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
          $postManager = new ProjetBlog\Model\PostManager; 
        	 $newPost = new ProjetBlog\Model\Post; 
-       	 $newPost->setTitle($_POST['title']); 
-         $newPost->setTopicId($_POST['topicId']); 
-         $newPost->setSubtitle($_POST['subtitle']); 
+       	 $newPost->setTitle($_POST_CLEAN['title']); 
+         $newPost->setTopicId($_POST_CLEAN['topicId']); 
+         $newPost->setSubtitle($_POST_CLEAN['subtitle']); 
          $newPost->setuserId($_GET['userId']); 
-         $newPost->setContent($_POST['content']); 
+         $newPost->setContent($_POST_CLEAN['content']); 
          $postManager->addPost($newPost);
        	 require('../view/frontend/postCreation.php');
          } else {
@@ -76,12 +82,15 @@ class Frontend
 		$postManager = new ProjetBlog\Model\PostManager; 
 		$getPost = $postManager->getPost($_GET['id']); 
 
-		if(isset($_POST['submit'])){
+		if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
 			$post = new ProjetBlog\Model\Post; 
-			$post->setTitle($_POST['title']); 
-	        $post->setTopicId($_POST['topicId']); 
-	        $post->setSubtitle($_POST['subtitle']); 
-	        $post->setContent($_POST['content']);
+			$post->setTitle($_POST_CLEAN['title']); 
+	        $post->setTopicId($_POST_CLEAN['topicId']); 
+	        $post->setSubtitle($_POST_CLEAN['subtitle']); 
+	        $post->setContent($_POST_CLEAN['content']);
 	        $post->id($_GET['id']); 
 	        $postManager->updatePost($post); 
 			require('../view/frontend/displayPostUpdate.php');  
