@@ -35,8 +35,6 @@
          if(isset($_POST['title'])){
 
           echo '<b>votre article a bien été créé</b>'; 
-
-          echo '<br>'.$_POST_CLEAN['userId'];
          
         } else {
 

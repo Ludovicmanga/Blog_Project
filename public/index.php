@@ -28,7 +28,7 @@ try {
 		} elseif($_GET['action'] === 'admin') {
 			$frontend->admin(); 
 		} elseif($_GET['action'] === 'postUpdate') {
-			if(isset($_GET['id'])) {
+			if(isset($_GET['postId']) OR $_POST['postId']) {
 				$frontend->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 

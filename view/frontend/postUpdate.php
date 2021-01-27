@@ -34,9 +34,16 @@
 
      <?php
      
-     if(isset($_POST['title'])) {
+     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
        echo '<p> Votre article a bien été modifié!<p/><br>'; 
+
+       echo 
+          $post->title().'<br>'.
+          $post->topicId().'<br>'.
+          $post->subtitle().'<br>'.
+          $post->content().'<br>'.
+          $post->id(); 
 
       } else {
 
@@ -44,10 +51,22 @@
 
         <div class="post_modification_form_container">
           <h1 class="post_form_title">Modifier un article</h1>
-          <form action="index.php?action=displayPostUpdate&id= <?= $getPost['id'] ?> " method = "POST" class="post_modification_form">
-          <label>Titre article</label><input class= "post_modification_form_input_post_title" type="text" name="title" value="<?= $getPost['title'];?>"></input><br>
-          <label>Sous-titre article</label> <input class="post_modification_form_input_post_subtitle"type="text" name="subtitle" value="<?= $getPost['subtitle'];?>"></input><br>
-          <label>Sujet article</label><input class="post_modification_form_input_post_topic" type="mail" name="topicId" value="<?= $getPost['topicId'];?>"></input><br>
+          <form action="index.php?action=postUpdate" method = "POST" class="post_modification_form">
+          <input type="hidden" name="postId" value=" <?= $_GET['postId'] ?> ">
+          <label>Titre article</label><input class= "post_modification_form_input_post_title" type="text" name="title" value="<?= $getPost['title'];?>"><br>
+          <label>Sous-titre article</label> <input class="post_modification_form_input_post_subtitle"type="text" name="subtitle" value="<?= $getPost['subtitle'];?>"><br>
+          <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>
+
+            <?php
+
+            while($allTopicsFetch = $allTopics->fetch()){
+
+              echo '<option name="topicId" value='.$allTopicsFetch['id'].'>'.$allTopicsFetch['topic_content'].'</option>'; 
+            }
+
+             ?>
+             
+          </select><br>
           <div class="post_form_container_textarea">
             <div>
               <label>Contenu article</label>

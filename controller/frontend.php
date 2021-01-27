@@ -82,22 +82,28 @@ class Frontend
 
 	public function postUpdate()
 	{
+
 		$postManager = new ProjetBlog\Model\PostManager; 
-		$getPost = $postManager->getPost($_GET['id']); 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
 			$post = new ProjetBlog\Model\Post; 
+
 			$post->setTitle($_POST_CLEAN['title']); 
 	        $post->setTopicId($_POST_CLEAN['topicId']); 
 	        $post->setSubtitle($_POST_CLEAN['subtitle']); 
 	        $post->setContent($_POST_CLEAN['content']);
-	        $post->id($_GET['id']); 
+	        $post->setId($_POST_CLEAN['postId']); 
 	        $postManager->updatePost($post); 
-			require('../view/frontend/displayPostUpdate.php');  
+			require('../view/frontend/postUpdate.php');  
 		} else {
+		
+				$getPost = $postManager->getPost($_GET['postId']); 
+				$topicManager = new ProjetBlog\Model\TopicManager; 
+       			$allTopics = $topicManager->getAllTopics(); 
+
 			require('../view/frontend/postUpdate.php'); 
 		}	
 	}
