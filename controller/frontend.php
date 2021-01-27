@@ -8,6 +8,7 @@ function chargerClassFrontend($class)
 
 spl_autoload_register('chargerClassFrontend'); 
 
+
 class Frontend 
 {
 	public function listPosts()

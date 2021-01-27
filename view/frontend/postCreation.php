@@ -45,6 +45,7 @@
           <label>Titre article</label> <input class="post_form_input_post_title" name="title" type="text" required><br>
           <label>Sous-titre article</label> <input class="post_form_input_post_subtitle" name="subtitle" type="text" required><br>
           <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>
+            
             <?php
 
             while($allTopicsFetch = $allTopics->fetch()){
@@ -53,6 +54,7 @@
             }
 
              ?>
+             
           </select><br>
           <div class="post_form_container_textarea">
             <div>

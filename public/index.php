@@ -25,6 +25,8 @@ try {
 			$users->register(); 
 		} elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
+		} elseif($_GET['action'] === 'testGetTopics') {
+			$frontend->testGetTopics(); 
 		} elseif($_GET['action'] === 'admin') {
 			$frontend->admin(); 
 		} elseif($_GET['action'] === 'postUpdate') {
