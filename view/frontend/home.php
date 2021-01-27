@@ -73,17 +73,18 @@
 
    <?php 
 
-   if(isset($_POST['mail'])){
+   if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-   	echo '<b>Votre message a bien été envoyé!</b>'; 
+   	echo '<b>Votre message a bien été envoyé!</b><br>'; 
 
   } else {
 
   	?> 
 
+
   	<div class="form_container">
       <h1 class="form_title">Me contacter</h1>
-      <form action="index.php?action=homePage" method = "POST" class="contact_form">
+      <form action="index.php?action=home" method = "POST" class="contact_form">
       <label>Nom</label> <input class="input_lastname" name="lastName" type="text"></input><br>
       <label>Prenom</label> <input class="input_name" name="name"type="text"></input><br>
       <label>Mail</label> <input class="input_mail" name="mail" type="mail"></input><br>
@@ -103,8 +104,6 @@
   }
 
    ?>   
-
-    
 
     <!-- Pager -->
     

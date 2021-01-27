@@ -16,7 +16,7 @@ class Post
 	private $_creationDate;
 	private $_modificationDate; 
 	private $_subtitle; 
-	private $_topicId;  
+	private $_topic;  
 
 	//methods
 	//setters

@@ -36,7 +36,7 @@ if(!isset($_SESSION['userId'])){
 
     <h1>Articles</h1>
     <ul>
-      <li><a href="index.php?action=postCreation&id= <?= $_SESSION['userId'] ?> ">Créer un article</a></li>
+      <li><a href="index.php?action=postCreation">Créer un article</a></li>
       <li><a href="">Modifier ou supprimer un article</a></li>
     </ul>
 
