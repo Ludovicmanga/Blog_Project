@@ -27,6 +27,8 @@ try {
 			$frontend->postCreation(); 
 		} elseif($_GET['action'] === 'admin') {
 			$frontend->admin(); 
+		}  elseif($_GET['action'] === 'listUserPosts') {
+			$frontend->listUserPosts(); 
 		} elseif($_GET['action'] === 'postUpdate') {
 			if(isset($_GET['postId']) OR $_POST['postId']) {
 				$frontend->postUpdate();

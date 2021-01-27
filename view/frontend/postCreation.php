@@ -50,9 +50,9 @@
 
             <?php
 
-            while($allTopicsFetch = $allTopics->fetch()){
+            while($topicsFetch = $topics->fetch()){
 
-              echo '<option name="topicId" value='.$allTopicsFetch['id'].'>'.$allTopicsFetch['topic_content'].'</option>'; 
+              echo '<option name="topicId" value='.$topicsFetch['id'].'>'.$topicsFetch['topic_content'].'</option>'; 
             }
 
              ?>

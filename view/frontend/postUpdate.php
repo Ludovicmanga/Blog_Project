@@ -38,13 +38,6 @@
 
        echo '<p> Votre article a bien été modifié!<p/><br>'; 
 
-       echo 
-          $post->title().'<br>'.
-          $post->topicId().'<br>'.
-          $post->subtitle().'<br>'.
-          $post->content().'<br>'.
-          $post->id(); 
-
       } else {
 
         ?>
@@ -59,9 +52,9 @@
 
             <?php
 
-            while($allTopicsFetch = $allTopics->fetch()){
+            while($topicsFetch = $topics->fetch()){
 
-              echo '<option name="topicId" value='.$allTopicsFetch['id'].'>'.$allTopicsFetch['topic_content'].'</option>'; 
+              echo '<option name="topicId" value='.$topicsFetch['id'].'>'.$topicsFetch['topic_content'].'</option>'; 
             }
 
              ?>

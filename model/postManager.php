@@ -52,4 +52,15 @@ class PostManager extends Manager
 			throw New Exception('les charactères ne sont pas acceptés'); 
 		}
 	}
+
+	public function getAllUserPosts($userId)
+	{
+
+		$q = $this->db->prepare('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id AND userId = :userId ORDER BY creationDate DESC'); 
+		$q->execute([':userId' => $userId]); 
+
+		return $q; 
+
+	}
+
 }

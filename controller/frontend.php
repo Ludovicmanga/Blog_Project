@@ -102,18 +102,29 @@ class Frontend
 		
 				$getPost = $postManager->getPost($_GET['postId']); 
 				$topicManager = new ProjetBlog\Model\TopicManager; 
-       			$allTopics = $topicManager->getAllTopics(); 
+       			$topics = $topicManager->getAllTopics(); 
 
 			require('../view/frontend/postUpdate.php'); 
 		}	
 	}
 
 
-
 	public function admin()
 	{
 		require('../view/frontend/admin.php'); 
 	}
+
+	public function listUserPosts()
+	{
+
+		session_start(); 
+
+		$postManager = new ProjetBlog\Model\PostManager; 
+		$userPosts = $postManager->getAllUserPosts($_SESSION['userId']); 
+
+		require('../view/frontend/listUserPosts.php'); 
+	}
+
 
 }
 
