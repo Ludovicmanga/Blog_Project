@@ -51,14 +51,14 @@ class Frontend
 
 	public function postCreation()
 	{
+
+		$topicManager = new ProjetBlog\Model\TopicManager; 
+       	$allTopics = $topicManager->getAllTopics(); 
 		
 
          if(isset($_POST['submit'])){
          $postManager = new ProjetBlog\Model\PostManager; 
        	 $newPost = new ProjetBlog\Model\Post; 
-       	 $topicManager = new ProjetBlog\Model\TopicManager; 
-       	 $allTopics = $topicManager->getAllTopics(); 
-
        	 $newPost->setTitle($_POST['title']); 
          $newPost->setTopicId($_POST['topicId']); 
          $newPost->setSubtitle($_POST['subtitle']); 
@@ -89,6 +89,7 @@ class Frontend
 			require('../view/frontend/postUpdate.php'); 
 		}	
 	}
+
 
 
 	public function admin()
