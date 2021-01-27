@@ -26,11 +26,11 @@ class PostManager extends Manager
 	{
 		$q = $this->db->prepare('UPDATE post SET title = :title, topicId = :topicId, subtitle = :subtitle, content = :content, modificationDate = NOW() WHERE id = :id');           
 
-		$q->bindValue(':title', $post->title(), \PDO::PARAM_INT); 
-		$q->bindValue(':topicId', $post->topicId(), \PDO::PARAM_INT); 
-		$q->bindValue(':content', $post->content(), \PDO::PARAM_INT); 
-		$q->bindValue(':subtitle', $post->subtitle(), \PDO::PARAM_INT); 
-		$q->bindValue(':id', $post->id(), \PDO::PARAM_INT); 
+		$q->bindValue(':title', $post->title()); 
+		$q->bindValue(':topicId', $post->topicId()); 
+		$q->bindValue(':content', $post->content()); 
+		$q->bindValue(':subtitle', $post->subtitle()); 
+		$q->bindValue(':id', $post->id()); 
 
 		$q->execute(); 
 	}
