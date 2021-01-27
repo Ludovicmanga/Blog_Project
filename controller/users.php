@@ -7,12 +7,6 @@ function chargerClassUsers($class)
 
 spl_autoload_register('chargerClassUsers'); 
 
-require_once('../model/Manager.php'); 
-require_once('../model/UserManager.php'); 
-require_once('../model/Post.php'); 
-require_once('../model/PostManager.php'); 
-
-
 class Users
 {
 

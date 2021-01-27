@@ -51,17 +51,20 @@ class Frontend
 
 	public function postCreation()
 	{
+
+		$topicManager = new ProjetBlog\Model\TopicManager; 
+       	$allTopics = $topicManager->getAllTopics(); 
 		
 
          if(isset($_POST['submit'])){
          $postManager = new ProjetBlog\Model\PostManager; 
-       	 $post = new ProjetBlog\Model\Post; 
-       	 $post->setTitle($_POST['title']); 
-         $post->setTopicId($_POST['topicId']); 
-         $post->setSubtitle($_POST['subtitle']); 
-         $post->setuserId($_POST['userId']); 
-         $post->setContent($_POST['content']); 
-         $postManager->addPost($post);
+       	 $newPost = new ProjetBlog\Model\Post; 
+       	 $newPost->setTitle($_POST['title']); 
+         $newPost->setTopicId($_POST['topicId']); 
+         $newPost->setSubtitle($_POST['subtitle']); 
+         $newPost->setuserId($_GET['userId']); 
+         $newPost->setContent($_POST['content']); 
+         $postManager->addPost($newPost);
        	 require('../view/frontend/postCreation.php');
          } else {
         	 require('../view/frontend/postCreation.php');
@@ -86,6 +89,7 @@ class Frontend
 			require('../view/frontend/postUpdate.php'); 
 		}	
 	}
+
 
 
 	public function admin()

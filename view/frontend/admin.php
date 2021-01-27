@@ -1,3 +1,15 @@
+<?php 
+
+if(!isset($_SESSION['userId'])){
+
+  require('view/frontend/login.php'); 
+
+} else {
+
+  ?>
+
+<html>
+
 <!-- header -->
 
 <?php require("include/pageHeadTemplate.php") ?>
@@ -24,7 +36,7 @@
 
     <h1>Articles</h1>
     <ul>
-      <li><a href="">Créer un article</a></li>
+      <li><a href="index.php?action=postCreation&id= <?= $_SESSION['userId'] ?> ">Créer un article</a></li>
       <li><a href="">Modifier ou supprimer un article</a></li>
     </ul>
 
@@ -61,3 +73,10 @@
 </body>
 
 </html>
+
+
+  <?php
+}
+
+?>
+
