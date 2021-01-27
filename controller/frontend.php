@@ -35,11 +35,14 @@ class Frontend
 
 			$messageManager = new ProjetBlog\Model\MessageManager; 
 			$message = new ProjetBlog\Model\Message;  
+
 			$message->setName($_POST_CLEAN['name']); 
 			$message->setLastName($_POST_CLEAN['lastName']); 
 			$message->setMail($_POST_CLEAN['mail']); 
 			$message->setMessageContent($_POST_CLEAN['messageContent']); 
+
 			$messageManager->addMessage($message);
+
 			require('../view/frontend/home.php'); 
 		} else {
 			require('../view/frontend/home.php'); 
@@ -54,11 +57,6 @@ class Frontend
 
 	public function postCreation()
 	{
-
-		$topicManager = new ProjetBlog\Model\TopicManager; 
-       	$allTopics = $topicManager->getAllTopics(); 
-		
-
          if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
@@ -66,13 +64,18 @@ class Frontend
          $postManager = new ProjetBlog\Model\PostManager; 
        	 $newPost = new ProjetBlog\Model\Post; 
        	 $newPost->setTitle($_POST_CLEAN['title']); 
-         $newPost->setTopicId($_POST_CLEAN['topicId']); 
+         $newPost->setTopic($_POST_CLEAN['topic']); 
          $newPost->setSubtitle($_POST_CLEAN['subtitle']); 
          $newPost->setuserId($_GET['userId']); 
          $newPost->setContent($_POST_CLEAN['content']); 
          $postManager->addPost($newPost);
+
        	 require('../view/frontend/postCreation.php');
          } else {
+
+		$topicManager = new ProjetBlog\Model\TopicManager; 
+       	$allTopics = $topicManager->getAllTopics(); 
+
         	 require('../view/frontend/postCreation.php');
          }
 	}

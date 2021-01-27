@@ -16,7 +16,7 @@ class Post
 	private $_creationDate;
 	private $_modificationDate; 
 	private $_subtitle; 
-	private $_topicId;  
+	private $_topic;  
 
 	//methods
 	//setters
@@ -87,10 +87,10 @@ class Post
 		return $this->_subtitle;
 	}
 
-	public function setTopicId($topicId)
+	public function setTopic($topic)
 	{
-		$this->_topicId = $topicId; 
-		return $this->_topicId;
+		$this->_topicId = $topic; 
+		return $this->_topic;
 	}
 
 
@@ -151,9 +151,9 @@ class Post
 		return $this->_subtitle; 
 	} 
 
-	public function topicId()
+	public function topic()
 	{
-		return $this->_topicId; 
+		return $this->_topic; 
 	} 
 
 
