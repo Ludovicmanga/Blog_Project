@@ -64,9 +64,9 @@ class Frontend
          $postManager = new ProjetBlog\Model\PostManager; 
        	 $newPost = new ProjetBlog\Model\Post; 
        	 $newPost->setTitle($_POST_CLEAN['title']); 
-         $newPost->setTopic($_POST_CLEAN['topic']); 
+         $newPost->setTopicId($_POST_CLEAN['topicId']); 
          $newPost->setSubtitle($_POST_CLEAN['subtitle']); 
-         $newPost->setuserId($_GET['userId']); 
+         $newPost->setuserId($_POST_CLEAN['userId']); 
          $newPost->setContent($_POST_CLEAN['content']); 
          $postManager->addPost($newPost);
 

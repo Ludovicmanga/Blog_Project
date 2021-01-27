@@ -17,6 +17,5 @@ class MessageManager extends Manager
 
 		$q->execute(); 
 
-
 	}
  }

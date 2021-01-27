@@ -1,3 +1,4 @@
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +35,8 @@
          if(isset($_POST['title'])){
 
           echo '<b>votre article a bien été créé</b>'; 
+
+          echo '<br>'.$_POST_CLEAN['userId'];
          
         } else {
 
@@ -42,6 +45,7 @@
         <div class="post_form_container">
           <h1 class="post_form_title">Rédiger un article</h1>
           <form action="index.php?action=postCreation" method = "POST" class="post_form">
+          <input type="hidden" name="userId" value=" <?= $_SESSION['userId'] ?> ">
           <label>Titre article</label> <input class="post_form_input_post_title" name="title" type="text" required><br>
           <label>Sous-titre article</label> <input class="post_form_input_post_subtitle" name="subtitle" type="text" required><br>
           <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>
@@ -50,7 +54,7 @@
 
             while($allTopicsFetch = $allTopics->fetch()){
 
-              echo '<option name="topic" value='.$allTopicsFetch['topic_content'].'>'.$allTopicsFetch['topic_content'].'</option>'; 
+              echo '<option name="topicId" value='.$allTopicsFetch['id'].'>'.$allTopicsFetch['topic_content'].'</option>'; 
             }
 
              ?>
