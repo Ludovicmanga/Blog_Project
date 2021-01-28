@@ -17,10 +17,33 @@
           <li class="nav-item">
             <a class="nav-link" href="https://www.linkedin.com/in/ludovic-manga-jocky/">Mon CV</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php?action=login">Connexion</a>
-          </li>
+
+             <?php if(isset($_SESSION['userId'])){
+
+              ?>
+
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?action=logout">Se déconnecter</a>
+              </li>
+
+              <?php
+
+             } else {
+
+              ?>
+
+                <li class="nav-item">
+                <a class="nav-link" href="index.php?action=login">Connexion</a>
+              </li>
+
+              <?php
+
+             }
+
+             ?>
+
         </ul>
       </div>
     </div>
   </nav>
+

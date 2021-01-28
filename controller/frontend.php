@@ -74,7 +74,7 @@ class Frontend
          } else {
 
 		$topicManager = new ProjetBlog\Model\TopicManager; 
-       	$allTopics = $topicManager->getAllTopics(); 
+       	$topics = $topicManager->getAllTopics(); 
 
         	 require('../view/frontend/postCreation.php');
          }
@@ -124,6 +124,7 @@ class Frontend
 
 		require('../view/frontend/listUserPosts.php'); 
 	}
+
 
 
 }

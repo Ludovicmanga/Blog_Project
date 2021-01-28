@@ -159,6 +159,11 @@ class Users
 		session_start(); 
 		$_SESSION['userId'] = $user['id'] ; 
 		$_SESSION['mail'] = $user['mail'] ; 
-
 	}
+
+	public function logout()
+	{
+		require('../view/frontend/logout.php'); 
+	}
+
 }

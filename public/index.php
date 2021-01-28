@@ -20,6 +20,8 @@ try {
 			$frontend->home(); 
 		} elseif($_GET['action'] === 'login') {
 			$users->login(); 
+		} elseif($_GET['action'] === 'logout') {
+			$users->logout(); 
 		} 
 		elseif($_GET['action'] === 'register') {
 			$users->register(); 
