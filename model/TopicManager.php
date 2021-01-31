@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 class TopicManager extends Manager
 {

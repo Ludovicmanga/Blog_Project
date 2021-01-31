@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 class User
 {
@@ -17,95 +17,44 @@ class User
 	private $_confirmPassword; 
 	private $_confirmPasswordError;
 
-	//getters
-
-	public function name() {
-		return $this->_name; 
-	}
-
-	public function nameError() {
-		return $this->_nameError;
-	}
-
-	public function lastName() {
-		return $this->_lastName; 
-	}
-
-	public function lastNameError() {
-		return $this->_lastNameError;
-	}
-
-	public function mail() {
-		return $this->_mail; 
-	}
-
-	public function mailError() {
-		return $this->_mailError; 
-	}
-
-	public function confirmMail() {
-		return $this->_confirmMail; 
-	}
-
-
-	public function confirmMailError() {
-		return $this->_confirmMailError; 
-	}
-
-
-	public function password() {
-		return $this->_password; 
-	}
-
-	public function passwordError() {
-		return $this->_passwordError; 
-	}
-
-	public function confirmPassword() {
-		return $this->_confirmPassword; 
-	}
-
-	public function confirmPasswordError() {
-		return $this->_confirmPasswordError; 
-	}
 
 	// Setters
 
 
 	public function setName($name) {
 		$this->_name = $name; 
-		return $this->_name;  
+		return $this;  
 	}
 
 	public function setNameError($nameError) {
 		$this->_nameError = $nameError; 
-		return $this->_nameError;  
+		return $this;  
 	}
 
 	public function setlastName($lastName) {
 		$this->_lastName = $lastName; 
-		return $this->_lastName;  
+		return $this;  
 	}
 
 	public function setlastNameError($lastNameError) {
 		$this->_lastNameError = $lastNameError; 
-		return $this->_lastNameError;  
+		return $this;  
 	}
 	
 	public function setMail($mail) {
 		$this->_mail = $mail; 
-		return $this->_mail;  
+		return $this;  
 	}
 
 	public function setMailError($mailError) {
 		$this->_mailError = $mailError; 
-		return $this->_mailError;  
+		return $this;  
 	}
 
 
 	public function setConfirmMail($confirmMail) {
 		$this->_confirmMail = $confirmMail; 
-		return $this->_confirmMail;  
+		return $this;  
 	}
 
 	public function setConfirmMailError($confirmMailError) {
@@ -120,17 +69,70 @@ class User
 
 	public function setPasswordError($passwordError) {
 		$this->_passwordError = $passwordError; 
-		return $this->_passwordError;  
+		return $this;  
 	}
 
 	public function setConfirmPassword($confirmPassword) {
 		$this->_confirmPassword = $confirmPassword; 
-		return $this->_confirmPassword;  
+		return $this;  
 	}
 
 	public function setConfirmPasswordError($confirmPasswordError) {
 		$this->_confirmPasswordError = $confirmPasswordError; 
-		return $this->_confirmPasswordError;  
+		return $this;  
 	}
+
+	//getters
+
+	public function getName() {
+		return $this->_name; 
+	}
+
+	public function getNameError() {
+		return $this->_nameError;
+	}
+
+	public function getLastName() {
+		return $this->_lastName; 
+	}
+
+	public function getLastNameError() {
+		return $this->_lastNameError;
+	}
+
+	public function getMail() {
+		return $this->_mail; 
+	}
+
+	public function getMailError() {
+		return $this->_mailError; 
+	}
+
+	public function confirmMail() {
+		return $this->_confirmMail; 
+	}
+
+
+	public function getConfirmMailError() {
+		return $this->_confirmMailError; 
+	}
+
+
+	public function getPassword() {
+		return $this->_password; 
+	}
+
+	public function getPasswordError() {
+		return $this->_passwordError; 
+	}
+
+	public function getConfirmPassword() {
+		return $this->_confirmPassword; 
+	}
+
+	public function getConfirmPasswordError() {
+		return $this->_confirmPasswordError; 
+	}
+
 
 }

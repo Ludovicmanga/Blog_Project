@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 class Message
 {
@@ -10,30 +10,7 @@ class Message
 	private $_mail; 
 	private $_messageContent; 
 
-	public function id()
-	{
-		return $this->_id; 
-	}
-
-	public function name()
-	{
-		return $this->_name; 
-	}
-
-	public function lastName()
-	{
-		return $this->_lastName; 
-	}
-
-	public function mail()
-	{
-		return $this->_mail; 
-	}
-
-	public function messageContent()
-	{
-		return $this->_messageContent; 
-	}
+	// setters
 
 	public function setId($id)
 	{
@@ -64,5 +41,33 @@ class Message
 		$this->_messageContent = $messageContent;
 		return $this->_messageContent;  
 	}
+
+	//getters
+
+	public function getId()
+	{
+		return $this->_id; 
+	}
+
+	public function getName()
+	{
+		return $this->_name; 
+	}
+
+	public function getLastName()
+	{
+		return $this->_lastName; 
+	}
+
+	public function getMail()
+	{
+		return $this->_mail; 
+	}
+
+	public function getMessageContent()
+	{
+		return $this->_messageContent; 
+	}
+
 
 }

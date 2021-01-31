@@ -1,19 +1,23 @@
 <?php
 
-function chargerClassUsers($class)
-{
-	require('../../'.$class.'.php'); 
-}
+use Model\Manager; 
+use Model\UserManager; 
+use Model\User; 
+use Model\PostManager; 
+use Model\Post; 
+use Model\TopicManager; 
+use Model\Topic; 
+use Model\MessageManager; 
+use Model\Message; 
 
-spl_autoload_register('chargerClassUsers'); 
 
 class Users
 {
 
 	public function register()
 	{
-		$userManager = new ProjetBlog\Model\UserManager; 
-		$user = new ProjetBlog\Model\User; 
+		$userManager = new UserManager; 
+		$user = new User; 
 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') 
@@ -117,8 +121,8 @@ class Users
 
 	public function login()
 	{
-		$userManager = new ProjetBlog\Model\UserManager; 
-		$user = new ProjetBlog\Model\User; 
+		$userManager = new UserManager; 
+		$user = new User; 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -159,6 +163,11 @@ class Users
 		session_start(); 
 		$_SESSION['userId'] = $user['id'] ; 
 		$_SESSION['mail'] = $user['mail'] ; 
-
 	}
+
+	public function logout()
+	{
+		require('../view/frontend/logout.php'); 
+	}
+
 }
