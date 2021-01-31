@@ -27,11 +27,11 @@ class Users
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
 			$user
-				->setName(trim($_POST_CLEAN['name'])); 
-				->setLastName(trim($_POST_CLEAN['lastName'])); 
-				->setMail(trim($_POST_CLEAN['mail'])); 
-				->setConfirmMail(trim($_POST_CLEAN['confirmMail'])); 
-				->setPassword(trim($_POST_CLEAN['password'])); 
+				->setName(trim($_POST_CLEAN['name']))
+				->setLastName(trim($_POST_CLEAN['lastName']))
+				->setMail(trim($_POST_CLEAN['mail']))
+				->setConfirmMail(trim($_POST_CLEAN['confirmMail']))
+				->setPassword(trim($_POST_CLEAN['password']))
 				->setConfirmPassword(trim($_POST_CLEAN['confirmPassword']))
 			; 
 
@@ -41,29 +41,29 @@ class Users
 
 			// validate name 
 
-			if(empty($user->name())) {
+			if(empty($user->getName())) {
 				$user->setNameError('Vous devez entrer un prénom'); 
-			} elseif (!preg_match($nameValidation, $user->name())) {
+			} elseif (!preg_match($nameValidation, $user->getName())) {
 				$user->setNameError('les prénoms ne peuvent contenir que des lettres et des chiffres'); 
 			} 
 
 			// validate last name
 
-			if(empty($user->lastName())) {
+			if(empty($user->getLastName())) {
 				$user->setLastNameError('Vous devez entrer un nom'); 
-			} elseif (!preg_match($nameValidation, $user->lastName())) {
+			} elseif (!preg_match($nameValidation, $user->getLastName())) {
 				$user->setLastNameError('les noms ne peuvent contenir que des lettres et des chiffres'); 
 			} 
 
 			 // validate email
 
-			if(empty($user->mail())) {
+			if(empty($user->getMail())) {
 				$user->setMailError('Vous devez entrer une adresse e-mail'); 
-			} elseif (!filter_var($user->mail(), FILTER_VALIDATE_EMAIL)) {
+			} elseif (!filter_var($user->getMail(), FILTER_VALIDATE_EMAIL)) {
 				$user->setMailError('l\'adresse e-mail n\'est pas valide'); 
 			} else {
 				// check if e-mail exists 
-				if($userManager->findUserByMail($user->mail())) {
+				if($userManager->findUserByMail($user->getMail())) {
 					$user->setMailError('un compte avec cette adresse e-mail existe déjà'); 
 				}
 			}
@@ -73,7 +73,7 @@ class Users
 			if(empty($user->confirmMail())) {
 				$user->setConfirmMailError('Vous devez entrer une adresse e-mail'); 
 			} else {
-				if($user->mail() != $user->confirmMail()) {
+				if($user->getMail() != $user->confirmMail()) {
 					$user->setConfirmMailError('les adresses e-mail ne correspondent pas'); 
 				}
 			}
@@ -81,30 +81,30 @@ class Users
 
 			//validate password on length and numeric values
 
-			if(empty($user->password())) {
+			if(empty($user->getPassword())) {
 				$user->setPasswordError('Vous devez entrer un mot de passe'); 
-			} elseif (strlen($user->password()) < 8) {
+			} elseif (strlen($user->getPassword()) < 8) {
 				$user->setPasswordError('le mot de passe doit faire au moins 8 caractères'); 
-			} elseif (!preg_match($passwordValidation, $user->password())) {
+			} elseif (!preg_match($passwordValidation, $user->getPassword())) {
 				$user->setPasswordError('Les mots de passe doivent contenir au moins un numéro'); 
 			} 
 
 			//validate confirm password
 
-			if(empty($user->confirmPassword())) {
+			if(empty($user->getConfirmPassword())) {
 				$user->setConfirmPasswordError('Vous devez confirmer votre mot de passe'); 
 			} else {
-				if($user->password() != $user->confirmPassword()) {
+				if($user->getPassword() != $user->getConfirmPassword()) {
 					$user->setConfirmPasswordError('les mots de passe ne correspondent pas'); 
 				}
 			}
 
 			//make sure that errors are empty
 
-			if(empty($user->nameError()) && empty($user->lastNameError()) && empty($user->mailError()) && empty($user->confirmMailError()) && empty($user->passwordError()) && empty($user->confirmPasswordError())) {
+			if(empty($user->getNameError()) && empty($user->getLastNameError()) && empty($user->getMailError()) && empty($user->getConfirmMailError()) && empty($user->getPasswordError()) && empty($user->getConfirmPasswordError())) {
 
 				// Hash password
-				$user->setPassword(password_hash($user->password(), PASSWORD_DEFAULT)); 
+				$user->setPassword(password_hash($user->getPassword(), PASSWORD_DEFAULT)); 
 
 				// Register user from model function 
 
@@ -147,8 +147,8 @@ class Users
 
 			// check if all errors are empty
 
-			if(empty($user->mailError()) && empty($user->passwordError())){
-				$loggedInUser = $userManager->login($user->mail(), $user->password()); 
+			if(empty($user->getMailError()) && empty($user->getPasswordError())){
+				$loggedInUser = $userManager->login($user->getMail(), $user->getPassword()); 
 
 				if($loggedInUser){
 					$this->createUserSession($loggedInUser); 

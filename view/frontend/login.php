@@ -42,13 +42,13 @@ if(isset($_SESSION['userId'])){
 
 
   <div class="connexion_form_container">
-      <h1 class="connexion_form_title">Créer un compte</h1>
+      <h1 class="connexion_form_title">Se connecter</h1>
       <form class="connexion_form" method="POST" action="index.php?action=login">
       <label>Votre mail</label> <input class="registration_form_input_mail" type="mail" placeholder="adresse mail *" name="mail">
-      <span> <?= $user->mailError();  ?></span>
+      <span> <?= $user->getMailError();  ?></span>
       <br>
       <label>Mot de passe</label> <input class="registration_form_input_mail" type="password" placeholder="mot de passe *" name="password">
-      <span> <?= $user->passwordError() ?></span>
+      <span> <?= $user->getPasswordError() ?></span>
       <br>
       <div class="container_registration_form_button">
         <button type="submit">Se connecter</button>

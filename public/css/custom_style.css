@@ -239,13 +239,13 @@
 	margin-bottom: 5px;
 }
 
-/*login form*/
+/*registration form*/
 
 .registration_form_container
 {
 	background: #0484A4;
 	border-radius: 20px;
-	width: 500px;
+	width: 800px;
 	padding-left: 30px;
 	padding-top: 20px;
 	padding-bottom: 15px;
@@ -261,14 +261,37 @@
 	margin-bottom: 30px;
 }
 
+.registration_form_input_name 
+{
+	margin-left: 165px;
+}
+
+.registration_form_input_lastname
+{
+	margin-left: 196px;
+}
+
 .registration_form_input_password
 {
-	margin-left: 12px;
+	margin-left: 112px;
 }
 
 .registration_form_input_mail
 {
-	margin-left: 94px;
+	margin-left: 200px;
+}
+
+.registration_form_input_mail_confirmation
+{
+	margin-left: 100px;
+}
+
+.connexion_form_input_password {
+    margin-left: 115px;
+}
+
+.connexion_form_input_password_confirmation {
+    margin-left: 15px;
 }
 
 .registration_form
@@ -276,14 +299,15 @@
 	color: white;
 }
 
-.registration_form_container_input_password
+.registration_form input 
 {
-	margin-top: 10px;
+	margin-top: 15px;
+	width: 320px;
 }
 
 .registration_form button
 {
-	margin-left: 160px; 
-	margin-top: 10px;
+	margin-left: 310px; 
+	margin-top: 30px;
 	margin-bottom: 5px;
 }

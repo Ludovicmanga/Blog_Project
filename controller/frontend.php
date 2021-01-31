@@ -39,9 +39,9 @@ class Frontend
 			$message = new Message;  
 
 			$message
-				->setName($_POST_CLEAN['name']); 
-				->setLastName($_POST_CLEAN['lastName']); 
-				->setMail($_POST_CLEAN['mail']); 
+				->setName($_POST_CLEAN['name'])
+				->setLastName($_POST_CLEAN['lastName'])
+				->setMail($_POST_CLEAN['mail'])
 				->setMessageContent($_POST_CLEAN['messageContent'])
 			; 
 
