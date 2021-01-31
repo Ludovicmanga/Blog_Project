@@ -38,10 +38,12 @@ class Frontend
 			$messageManager = new MessageManager; 
 			$message = new Message;  
 
-			$message->setName($_POST_CLEAN['name']); 
-			$message->setLastName($_POST_CLEAN['lastName']); 
-			$message->setMail($_POST_CLEAN['mail']); 
-			$message->setMessageContent($_POST_CLEAN['messageContent']); 
+			$message
+				->setName($_POST_CLEAN['name']); 
+				->setLastName($_POST_CLEAN['lastName']); 
+				->setMail($_POST_CLEAN['mail']); 
+				->setMessageContent($_POST_CLEAN['messageContent'])
+			; 
 
 			$messageManager->addMessage($message);
 
@@ -65,11 +67,13 @@ class Frontend
 
          $postManager = new PostManager; 
        	 $newPost = new Post; 
-       	 $newPost->setTitle($_POST_CLEAN['title']); 
-         $newPost->setTopicId($_POST_CLEAN['topicId']); 
-         $newPost->setSubtitle($_POST_CLEAN['subtitle']); 
-         $newPost->setuserId($_POST_CLEAN['userId']); 
-         $newPost->setContent($_POST_CLEAN['content']); 
+       	 $newPost
+       	 	->setTitle($_POST_CLEAN['title']) 
+       	 	->setTopicId($_POST_CLEAN['topicId'])
+         	->setSubtitle($_POST_CLEAN['subtitle'])
+         	->setuserId($_POST_CLEAN['userId'])
+         	->setContent($_POST_CLEAN['content'])
+         ;
          $postManager->addPost($newPost);
 
        	 require('../view/frontend/postCreation.php');

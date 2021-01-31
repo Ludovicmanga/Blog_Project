@@ -26,12 +26,14 @@ class Users
 			//Sanitize post data
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
-			$user->setName(trim($_POST_CLEAN['name'])); 
-			$user->setLastName(trim($_POST_CLEAN['lastName'])); 
-			$user->setMail(trim($_POST_CLEAN['mail'])); 
-			$user->setConfirmMail(trim($_POST_CLEAN['confirmMail'])); 
-			$user->setPassword(trim($_POST_CLEAN['password'])); 
-			$user->setConfirmPassword(trim($_POST_CLEAN['confirmPassword'])); 
+			$user
+				->setName(trim($_POST_CLEAN['name'])); 
+				->setLastName(trim($_POST_CLEAN['lastName'])); 
+				->setMail(trim($_POST_CLEAN['mail'])); 
+				->setConfirmMail(trim($_POST_CLEAN['confirmMail'])); 
+				->setPassword(trim($_POST_CLEAN['password'])); 
+				->setConfirmPassword(trim($_POST_CLEAN['confirmPassword']))
+			; 
 
 
 			$nameValidation = "/^[a-zA-Z0-9]*$/";
