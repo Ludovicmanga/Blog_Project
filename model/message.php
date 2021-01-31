@@ -15,31 +15,31 @@ class Message
 	public function setId($id)
 	{
 		$this->_id = $id;
-		return $this->_id;  
+		return $this;  
 	}
 
 	public function setName($name)
 	{
 		$this->_name = $name;
-		return $this->_name;  
+		return $this;  
 	}
 
 	public function setLastName($lastName)
 	{
 		$this->_lastName = $lastName;
-		return $this->_lastName;  
+		return $this;  
 	}
 
 	public function setMail($mail)
 	{
 		$this->_mail = $mail;
-		return $this->_mail;  
+		return $this;  
 	}
 
 	public function setMessagecontent($messageContent)
 	{
 		$this->_messageContent = $messageContent;
-		return $this->_messageContent;  
+		return $this;  
 	}
 
 	//getters

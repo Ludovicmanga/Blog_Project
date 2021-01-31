@@ -27,13 +27,13 @@
 
 .input_name
 {
-	margin-left: 13px;
+	margin-left: 14px;
 }
 
 
 .input_mail
 {
-	margin-left: 47px;
+	margin-left: 48px;
 }
 
 .textarea_message
@@ -49,6 +49,11 @@
 .contact_form
 {
 	color: white;
+}
+
+.contact_form textarea
+{
+	width: 238px;
 }
 
 .contact_form button

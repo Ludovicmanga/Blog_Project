@@ -53,11 +53,6 @@ class Frontend
 		}
 	}
 
-	public function messagesent()
-	{
-		
-		require('../view/frontend/messagesentview.php'); 
-	}
 
 	public function postCreation()
 	{
