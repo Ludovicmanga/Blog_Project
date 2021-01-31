@@ -1,6 +1,6 @@
 <?php 
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 Class Manager
 {

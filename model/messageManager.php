@@ -1,6 +1,6 @@
 <?php 
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 
 class MessageManager extends Manager
@@ -10,10 +10,10 @@ class MessageManager extends Manager
 	{
 		$q = $this->db->prepare('INSERT INTO message (name, lastName, mail, message, creationDate) VALUES (:name, :lastName, :mail, :messageContent, NOW())'); 
 
-		$q->bindValue('name', $message->name()); 
-		$q->bindValue('lastName', $message->lastName()); 
-		$q->bindValue('mail', $message->mail()); 
-		$q->bindValue('messageContent', $message->messageContent()); 
+		$q->bindValue('name', $message->getName()); 
+		$q->bindValue('lastName', $message->getLastName()); 
+		$q->bindValue('mail', $message->getMail()); 
+		$q->bindValue('messageContent', $message->getMessageContent()); 
 
 		$q->execute(); 
 

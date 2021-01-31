@@ -1,7 +1,27 @@
 <?php 
 
-require('../controller/frontend.php'); 
-require('../controller/users.php'); 
+use Model\Manager; 
+use Model\UserManager; 
+use Model\User; 
+use Model\PostManager; 
+use Model\Post; 
+use Model\TopicManager; 
+use Model\Topic; 
+use Model\MessageManager; 
+use Model\Message; 
+
+require('../Controller/frontend.php'); 
+require('../Controller/users.php'); 
+
+
+function chargerClass($class)
+{
+	$className = '../'.str_replace('\\', '/', $class).'.php'; 
+	require($className); 
+}
+
+spl_autoload_register('chargerClass'); 
+
 
 $frontend = new Frontend; 
 $users = new Users; 

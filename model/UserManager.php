@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetBlog\Model; 
+namespace Model; 
 
 class UserManager extends Manager
 {
@@ -11,10 +11,10 @@ class UserManager extends Manager
 
 		//bind values
 
-		$q->bindValue('name', $user->name()); 
-		$q->bindValue('lastName', $user->lastName()); 
-		$q->bindValue('mail', $user->mail()); 
-		$q->bindValue('password', $user->password());
+		$q->bindValue('name', $user->getName()); 
+		$q->bindValue('lastName', $user->getLastName()); 
+		$q->bindValue('mail', $user->getMail()); 
+		$q->bindValue('password', $user->getPassword());
 
 		if($q->execute()) {
 			return true; 

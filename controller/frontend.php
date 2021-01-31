@@ -1,19 +1,21 @@
 <?php
 
-
-function chargerClassFrontend($class)
-{
-	require('../../'.$class.'.php'); 
-}
-
-spl_autoload_register('chargerClassFrontend'); 
+use Model\Manager; 
+use Model\UserManager; 
+use Model\User; 
+use Model\PostManager; 
+use Model\Post; 
+use Model\TopicManager; 
+use Model\Topic; 
+use Model\MessageManager; 
+use Model\Message;
 
 
 class Frontend 
 {
 	public function listPosts()
 	{
-		$postManager = new ProjetBlog\Model\PostManager; 
+		$postManager = new PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
 		require ('../view/frontend/listPosts.php'); 
@@ -21,7 +23,7 @@ class Frontend
 
 	public function post()
 	{
-		$postManager = new ProjetBlog\Model\PostManager; 
+		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
 
 		require('../view/frontend/post.php'); 
@@ -33,8 +35,8 @@ class Frontend
 
 		 	$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
-			$messageManager = new ProjetBlog\Model\MessageManager; 
-			$message = new ProjetBlog\Model\Message;  
+			$messageManager = new MessageManager; 
+			$message = new Message;  
 
 			$message->setName($_POST_CLEAN['name']); 
 			$message->setLastName($_POST_CLEAN['lastName']); 
@@ -61,8 +63,8 @@ class Frontend
 
 		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
-         $postManager = new ProjetBlog\Model\PostManager; 
-       	 $newPost = new ProjetBlog\Model\Post; 
+         $postManager = new PostManager; 
+       	 $newPost = new Post; 
        	 $newPost->setTitle($_POST_CLEAN['title']); 
          $newPost->setTopicId($_POST_CLEAN['topicId']); 
          $newPost->setSubtitle($_POST_CLEAN['subtitle']); 
@@ -73,7 +75,7 @@ class Frontend
        	 require('../view/frontend/postCreation.php');
          } else {
 
-		$topicManager = new ProjetBlog\Model\TopicManager; 
+		$topicManager = new TopicManager; 
        	$topics = $topicManager->getAllTopics(); 
 
         	 require('../view/frontend/postCreation.php');
@@ -83,25 +85,27 @@ class Frontend
 	public function postUpdate()
 	{
 
-		$postManager = new ProjetBlog\Model\PostManager; 
+		$postManager = new PostManager; 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
-			$post = new ProjetBlog\Model\Post; 
+			$post = new Post; 
 
-			$post->setTitle($_POST_CLEAN['title']); 
-	        $post->setTopicId($_POST_CLEAN['topicId']); 
-	        $post->setSubtitle($_POST_CLEAN['subtitle']); 
-	        $post->setContent($_POST_CLEAN['content']);
-	        $post->setId($_POST_CLEAN['postId']); 
+			$post
+				->setTitle($_POST_CLEAN['title'])
+	        	->setTopicId($_POST_CLEAN['topicId'])
+	        	->setSubtitle($_POST_CLEAN['subtitle'])
+	        	->setContent($_POST_CLEAN['content'])
+	        	->setId($_POST_CLEAN['postId'])
+	        ;
 	        $postManager->updatePost($post); 
 			require('../view/frontend/postUpdate.php');  
 		} else {
 		
 				$getPost = $postManager->getPost($_GET['postId']); 
-				$topicManager = new ProjetBlog\Model\TopicManager; 
+				$topicManager = new TopicManager; 
        			$topics = $topicManager->getAllTopics(); 
 
 			require('../view/frontend/postUpdate.php'); 
@@ -119,7 +123,7 @@ class Frontend
 
 		session_start(); 
 
-		$postManager = new ProjetBlog\Model\PostManager; 
+		$postManager = new PostManager; 
 		$userPosts = $postManager->getAllUserPosts($_SESSION['userId']); 
 
 		require('../view/frontend/listUserPosts.php'); 
