@@ -62,11 +62,11 @@
 
 /*login form*/
 
-.connexion_form_container
+.login_form_container
 {
 	background: #0484A4;
 	border-radius: 20px;
-	width: 500px;
+	width: 700px;
 	padding-left: 30px;
 	padding-top: 20px;
 	padding-bottom: 15px;
@@ -74,7 +74,7 @@
 	margin-top: 50px;
 }
 
-.connexion_form_title
+.login_form_title
 {
 	font-size: 1em;
 	margin-left: 10px;
@@ -82,27 +82,33 @@
 	margin-bottom: 30px;
 }
 
-.connexion_form_input_password
+.login_form_input_password
 {
 	margin-left: 12px;
 }
 
-.connexion_form_input_mail
+.login_form_input_mail
 {
 	margin-left: 94px;
 }
 
-.connexion_form
+.login_form
 {
 	color: white;
 }
 
-.connexion_form_container_input_password
+.login_form_container_input_password
 {
 	margin-top: 10px;
 }
 
-.connexion_form button
+.login_form input 
+{
+	margin-top: 15px;
+	width: 320px;
+}
+
+.login_form button
 {
 	margin-left: 160px; 
 	margin-top: 10px;
@@ -263,35 +269,35 @@
 
 .registration_form_input_name 
 {
-	margin-left: 165px;
+	margin-left: 215px;
 }
 
 .registration_form_input_lastname
 {
-	margin-left: 196px;
+	margin-left: 246px;
 }
 
 .registration_form_input_password
 {
-	margin-left: 112px;
+	margin-left: 165px;
 }
 
 .registration_form_input_mail
 {
-	margin-left: 200px;
+	margin-left: 250px;
 }
 
 .registration_form_input_mail_confirmation
 {
-	margin-left: 100px;
+	margin-left: 150px;
 }
 
-.connexion_form_input_password {
-    margin-left: 115px;
+.registration_form_input_password {
+    margin-left: 165px;
 }
 
-.connexion_form_input_password_confirmation {
-    margin-left: 15px;
+.registration_form_input_password_confirmation {
+    margin-left: 65px;
 }
 
 .registration_form

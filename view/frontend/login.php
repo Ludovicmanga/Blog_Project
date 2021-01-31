@@ -27,7 +27,7 @@ if(isset($_SESSION['userId'])){
   <?php 
 
    $backgroundImage = '../public/img/matrix.jpg'; 
-   $headerTitle = 'Connexion'; 
+   $headerTitle = 'login'; 
    $headerSubtitle = 'Connectez-vous à votre compte'; 
    require('include/pageheader.php'); 
 
@@ -38,12 +38,12 @@ if(isset($_SESSION['userId'])){
   
   <div class="container">
 
-<!-- connexion form --> 
+<!-- login form --> 
 
 
-  <div class="connexion_form_container">
-      <h1 class="connexion_form_title">Se connecter</h1>
-      <form class="connexion_form" method="POST" action="index.php?action=login">
+  <div class="login_form_container">
+      <h1 class="login_form_title">Se connecter</h1>
+      <form class="login_form" method="POST" action="index.php?action=login">
       <label>Votre mail</label> <input class="registration_form_input_mail" type="mail" placeholder="adresse mail *" name="mail">
       <span> <?= $user->getMailError();  ?></span>
       <br>

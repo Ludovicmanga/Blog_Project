@@ -50,12 +50,12 @@
         <br>
       </div>
       <div class="registration_form_container_input_password">
-        <label>Votre mot de passe</label> <input class="connexion_form_input_password"type="password" placeholder="votre mot de passe *" name="password">
+        <label>Votre mot de passe</label> <input class="registration_form_input_password"type="password" placeholder="votre mot de passe *" name="password">
         <span> <?= $user->getPasswordError() ?></span>
         <br>
       </div>
       <div class="registration_form_container_input_password_confirmation">
-        <label>Confirmer votre mot de passe</label> <input class="connexion_form_input_password_confirmation"type="password" placeholder="votre mot de passe *" name="confirmPassword">
+        <label>Confirmer votre mot de passe</label> <input class="registration_form_input_password_confirmation"type="password" placeholder="votre mot de passe *" name="confirmPassword">
         <span> <?= $user->getConfirmPasswordError() ?></span>
         <br>
       </div>
