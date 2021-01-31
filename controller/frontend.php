@@ -25,6 +25,15 @@ class Frontend
 	{
 		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
+		
+		$postToIncrementViews = new Post; 
+
+		$postToIncrementViews->setViews($post['views']);
+		$postToIncrementViews->setId($_GET['id']);
+
+		$postToIncrementViews->incrementPostViews(); 
+
+		$postManager->addIncrementedPostViews($postToIncrementViews); 
 
 		require('../view/frontend/post.php'); 
 	}

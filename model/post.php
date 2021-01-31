@@ -159,5 +159,13 @@ class Post
 	} 
 
 
+	// other methods
+
+	public function incrementPostViews()
+	{
+		$this->_views += 1;  
+	}
+
+
 
 }

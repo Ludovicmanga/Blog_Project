@@ -19,6 +19,16 @@
   <article>
     <div class="container">
 
+      <?= 
+
+        $post['views']; 
+        echo '<br><br>';
+        echo $postToIncrementViews->getViews(); 
+        echo '<br><br>';  
+        echo $postToIncrementViews->getId(); 
+        echo '<br><br>'; 
+      ?>
+
       <?= $post['content']; ?>
 
       <div class="row">

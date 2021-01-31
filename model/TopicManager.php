@@ -11,6 +11,4 @@ class TopicManager extends Manager
 		return $q; 
 	}
 
-
-
 }

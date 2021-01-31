@@ -36,7 +36,7 @@
       <label>Votre mail</label> <input class="registration_form_input_mail" type="mail" placeholder="adresse mail *" name="mail">
       <span> <?= $user->getMailError();  ?></span>
       <br>
-      <label>Confirmer votre mail</label> <input class="registration_form_input_mail_confirmation" type="mail" placeholder="adresse mail *" name="confirmMail">
+      <label>Confirmez votre mail</label> <input class="registration_form_input_mail_confirmation" type="mail" placeholder="Confirmer votre adresse mail *" name="confirmMail">
       <span> <?= $user->getConfirmMailError() ?></span>
       <br>
       <div class="registration_form_container_input_name">
@@ -55,7 +55,7 @@
         <br>
       </div>
       <div class="registration_form_container_input_password_confirmation">
-        <label>Confirmer votre mot de passe</label> <input class="registration_form_input_password_confirmation"type="password" placeholder="votre mot de passe *" name="confirmPassword">
+        <label>Confirmez votre mot de passe</label> <input class="registration_form_input_password_confirmation"type="password" placeholder="Confirmer votre mot de passe *" name="confirmPassword">
         <span> <?= $user->getConfirmPasswordError() ?></span>
         <br>
       </div>

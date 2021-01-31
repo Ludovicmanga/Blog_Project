@@ -21,6 +21,15 @@ class PostManager extends Manager
 		return $post; 
 	}
 
+	function addIncrementedPostViews($post)
+	{
+		$q = $this->db->prepare('INSERT INTO post (views) VALUES (:views) WHERE id = :id'); 
+		$q->bindValue('views', $post->getViews()); 
+		$q->bindValue('id', $post->getId()); 
+
+		$q->execute(); 
+	}
+
 	public function updatePost(Post $post)
 	{
 		$q = $this->db->prepare('UPDATE post SET title = :title, topicId = :topicId, subtitle = :subtitle, content = :content, modificationDate = NOW() WHERE id = :id');           
@@ -39,11 +48,11 @@ class PostManager extends Manager
 		
 		$q = $this->db->prepare('INSERT INTO post (title, subtitle, topicId, content, userId, creationDate) VALUES (:title, :subtitle, :topicId, :content, :userId, NOW())'); 
 		
-		$q->bindValue('title', $post->title()); 
-		$q->bindValue('subtitle', $post->subtitle()); 
-		$q->bindValue('topicId', $post->topicId()); 
-		$q->bindValue('userId', $post->userId());
-		$q->bindValue('content', $post->content()); 
+		$q->bindValue('title', $post->getTitle()); 
+		$q->bindValue('subtitle', $post->getSubtitle()); 
+		$q->bindValue('topicId', $post->getTopicId()); 
+		$q->bindValue('userId', $post->getUserId());
+		$q->bindValue('content', $post->getContent()); 
 
 		$q->execute(); 
 	}
