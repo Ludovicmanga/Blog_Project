@@ -59,12 +59,12 @@ class User
 
 	public function setConfirmMailError($confirmMailError) {
 		$this->_confirmMailError = $confirmMailError; 
-		return $this->_confirmMailError;  
+		return $this;  
 	}
 
 	public function setPassword($password) {
 		$this->_password = $password; 
-		return $this->_password;  
+		return $this;  
 	}
 
 	public function setPasswordError($passwordError) {

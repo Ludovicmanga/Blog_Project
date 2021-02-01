@@ -25,6 +25,15 @@ class Frontend
 	{
 		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
+		
+		$postToIncrementViews = new Post; 
+
+		$postToIncrementViews->setViews($post['views']);
+		$postToIncrementViews->setId($_GET['id']);
+
+		$postToIncrementViews->incrementPostViews(); 
+
+		$postManager->addIncrementedPostViews($postToIncrementViews); 
 
 		require('../view/frontend/post.php'); 
 	}
@@ -39,9 +48,9 @@ class Frontend
 			$message = new Message;  
 
 			$message
-				->setName($_POST_CLEAN['name']); 
-				->setLastName($_POST_CLEAN['lastName']); 
-				->setMail($_POST_CLEAN['mail']); 
+				->setName($_POST_CLEAN['name'])
+				->setLastName($_POST_CLEAN['lastName'])
+				->setMail($_POST_CLEAN['mail'])
 				->setMessageContent($_POST_CLEAN['messageContent'])
 			; 
 
@@ -53,17 +62,13 @@ class Frontend
 		}
 	}
 
-	public function messagesent()
-	{
-		
-		require('../view/frontend/messagesentview.php'); 
-	}
 
 	public function postCreation()
 	{
          if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+		 
 
          $postManager = new PostManager; 
        	 $newPost = new Post; 
@@ -72,7 +77,7 @@ class Frontend
        	 	->setTopicId($_POST_CLEAN['topicId'])
          	->setSubtitle($_POST_CLEAN['subtitle'])
          	->setuserId($_POST_CLEAN['userId'])
-         	->setContent($_POST_CLEAN['content'])
+         	->setContent($_POST['content'])
          ;
          $postManager->addPost($newPost);
 

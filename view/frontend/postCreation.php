@@ -5,7 +5,39 @@
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Le blog de Ludovic Manga</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/custom_style.css" rel="stylesheet">
+
+
+  <script src='vendor/tinymce/tinymce/tinymce.min.js' referrerpolicy="origin">
+  </script>
+  <script>
+    tinymce.init({
+      selector: '#blogTextArea'
+    });
+  </script>
+  
+</head>
+
 
 <body>
 
@@ -58,14 +90,9 @@
              ?>
              
           </select><br>
-          <div class="post_form_container_textarea">
-            <div>
-              <label>Contenu article</label>
-            </div>
-            <div>
-                <textarea class="post_form_textarea_content" name="content" required></textarea><br>
-            </div>
-          </div>
+         
+                <textarea id="blogTextArea" name="content"></textarea><br>
+           
           <div class="container_form_button"><button type="submit" name="submit">Envoyer</button>
           </form></div>
         </div>

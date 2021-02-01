@@ -27,13 +27,13 @@
 
 .input_name
 {
-	margin-left: 13px;
+	margin-left: 14px;
 }
 
 
 .input_mail
 {
-	margin-left: 47px;
+	margin-left: 48px;
 }
 
 .textarea_message
@@ -51,6 +51,11 @@
 	color: white;
 }
 
+.contact_form textarea
+{
+	width: 238px;
+}
+
 .contact_form button
 {
 	margin-left: 130px; 
@@ -62,11 +67,11 @@
 
 /*login form*/
 
-.connexion_form_container
+.login_form_container
 {
 	background: #0484A4;
 	border-radius: 20px;
-	width: 500px;
+	width: 700px;
 	padding-left: 30px;
 	padding-top: 20px;
 	padding-bottom: 15px;
@@ -74,7 +79,7 @@
 	margin-top: 50px;
 }
 
-.connexion_form_title
+.login_form_title
 {
 	font-size: 1em;
 	margin-left: 10px;
@@ -82,95 +87,40 @@
 	margin-bottom: 30px;
 }
 
-.connexion_form_input_password
-{
-	margin-left: 12px;
+.login_form_input_password {
+    margin-left: 67px;
 }
 
-.connexion_form_input_mail
+
+.login_form_input_mail
 {
 	margin-left: 94px;
 }
 
-.connexion_form
+.login_form
 {
 	color: white;
 }
 
-.connexion_form_container_input_password
+.login_form_container_input_password
 {
 	margin-top: 10px;
 }
 
-.connexion_form button
+.login_form input 
 {
-	margin-left: 160px; 
-	margin-top: 10px;
+	margin-top: 15px;
+	width: 320px;
+}
+
+.login_form button
+{
+	margin-left: 250px; 
+	margin-top: 30px;
 	margin-bottom: 5px;
 }
 
-/* post creation form */
 
-.post_form_container
-{
-	background: #0484A4;
-	border-radius: 20px;
-	width: 600px;
-	padding-left: 30px;
-	padding-top: 20px;
-	padding-bottom: 15px;
-	padding-right: 20px;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 15px;
-}
-
-.post_form_title
-{
-	font-size: 1em;
-	margin-left: 10px;
-	color: white;
-	margin-bottom: 30px;
-}
-
-.post_form_input_post_title
-{
-	margin-left: 62px;
-}
-
-.post_form_input_post_subtitle
-{
-	margin-left: 13px;
-}
-
-.post_form_input_post_topic
-{
-	margin-left: 62px;
-}
-
-.post_form_textarea_content
-{
-	margin-left: 32px;
-	width: 233px;
-}
-
-.post_form_container_textarea
-{
-	display: flex;
-}
-
-.post_form
-{
-	color: white;
-}
-
-.post_form button
-{
-	margin-left: 130px; 
-	margin-top: 10px;
-	margin-bottom: 5px;
-}
 
 /* post modification form*/
 
@@ -239,13 +189,13 @@
 	margin-bottom: 5px;
 }
 
-/*login form*/
+/*registration form*/
 
 .registration_form_container
 {
 	background: #0484A4;
 	border-radius: 20px;
-	width: 500px;
+	width: 800px;
 	padding-left: 30px;
 	padding-top: 20px;
 	padding-bottom: 15px;
@@ -261,14 +211,37 @@
 	margin-bottom: 30px;
 }
 
+.registration_form_input_name 
+{
+	margin-left: 215px;
+}
+
+.registration_form_input_lastname
+{
+	margin-left: 246px;
+}
+
 .registration_form_input_password
 {
-	margin-left: 12px;
+	margin-left: 165px;
 }
 
 .registration_form_input_mail
 {
-	margin-left: 94px;
+	margin-left: 250px;
+}
+
+.registration_form_input_mail_confirmation
+{
+	margin-left: 150px;
+}
+
+.registration_form_input_password {
+    margin-left: 165px;
+}
+
+.registration_form_input_password_confirmation {
+    margin-left: 65px;
 }
 
 .registration_form
@@ -276,14 +249,95 @@
 	color: white;
 }
 
-.registration_form_container_input_password
+.registration_form input 
 {
-	margin-top: 10px;
+	margin-top: 15px;
+	width: 320px;
 }
 
 .registration_form button
 {
-	margin-left: 160px; 
+	margin-left: 310px; 
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+/* Post creation form */
+
+/* post creation form */
+
+.post_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 1000px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+.post_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.post_form_input_post_title
+{
+	margin-left: 62px;
+	
+}
+
+.post_form_input_post_subtitle
+{
+	margin-left: 13px;
+	
+}
+
+.post_form_input_post_topic
+{
+	margin-left: 62px;
+	height: 38px;
+	
+}
+
+.post_form_input_post_title, .post_form_input_post_subtitle, .post_form_input_post_topic
+{
+	margin-top: 7px;
+	width: 600px;
+}
+
+.post_form
+{
+	color: white;
+}
+
+.post_form button
+{
+	margin-left: 130px; 
 	margin-top: 10px;
 	margin-bottom: 5px;
+}
+
+/* Text editor tinyMCE*/
+
+.tox-tinymce 
+{
+	width: 600px; 
+	margin-top: 10px;
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+#blogTextArea
+{
+	height: 700px;
+	width: 200px; 
 }
