@@ -28,7 +28,7 @@
   <link href="css/custom_style.css" rel="stylesheet">
 
 
-  <script src='https://cdn.tiny.cloud/1/4ljje8qjhk4bqiq9ka20uur3w633i4t2bxzqc35v6joawctf/tinymce/5/tinymce.min.js' referrerpolicy="origin">
+  <script src='vendor/tinymce/tinymce/tinymce.min.js' referrerpolicy="origin">
   </script>
   <script>
     tinymce.init({
