@@ -120,68 +120,7 @@
 	margin-bottom: 5px;
 }
 
-/* post creation form */
 
-.post_form_container
-{
-	background: #0484A4;
-	border-radius: 20px;
-	width: 600px;
-	padding-left: 30px;
-	padding-top: 20px;
-	padding-bottom: 15px;
-	padding-right: 20px;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 15px;
-}
-
-.post_form_title
-{
-	font-size: 1em;
-	margin-left: 10px;
-	color: white;
-	margin-bottom: 30px;
-}
-
-.post_form_input_post_title
-{
-	margin-left: 62px;
-}
-
-.post_form_input_post_subtitle
-{
-	margin-left: 13px;
-}
-
-.post_form_input_post_topic
-{
-	margin-left: 62px;
-}
-
-.post_form_textarea_content
-{
-	margin-left: 32px;
-	width: 233px;
-}
-
-.post_form_container_textarea
-{
-	display: flex;
-}
-
-.post_form
-{
-	color: white;
-}
-
-.post_form button
-{
-	margin-left: 130px; 
-	margin-top: 10px;
-	margin-bottom: 5px;
-}
 
 /* post modification form*/
 
@@ -321,4 +260,84 @@
 	margin-left: 310px; 
 	margin-top: 30px;
 	margin-bottom: 5px;
+}
+
+/* Post creation form */
+
+/* post creation form */
+
+.post_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 1000px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+.post_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.post_form_input_post_title
+{
+	margin-left: 62px;
+	
+}
+
+.post_form_input_post_subtitle
+{
+	margin-left: 13px;
+	
+}
+
+.post_form_input_post_topic
+{
+	margin-left: 62px;
+	height: 38px;
+	
+}
+
+.post_form_input_post_title, .post_form_input_post_subtitle, .post_form_input_post_topic
+{
+	margin-top: 7px;
+	width: 600px;
+}
+
+.post_form
+{
+	color: white;
+}
+
+.post_form button
+{
+	margin-left: 130px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+/* Text editor tinyMCE*/
+
+.tox-tinymce 
+{
+	width: 600px; 
+	margin-top: 10px;
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+#blogTextArea
+{
+	height: 700px;
+	width: 200px; 
 }

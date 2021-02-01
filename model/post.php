@@ -32,13 +32,13 @@ class Post
 	{
 		$this->_title = $title; 
 
-		return $this->_title; 
+		return $this; 
 	}
 
 	public function setSlug($slug)
 	{
 		$this->_slug = $slug; 
-		return $this->_slug; 
+		return $this; 
 	}
 
 	public function setViews($views)

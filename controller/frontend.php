@@ -67,7 +67,8 @@ class Frontend
 	{
          if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+		 
 
          $postManager = new PostManager; 
        	 $newPost = new Post; 
@@ -76,7 +77,7 @@ class Frontend
        	 	->setTopicId($_POST_CLEAN['topicId'])
          	->setSubtitle($_POST_CLEAN['subtitle'])
          	->setuserId($_POST_CLEAN['userId'])
-         	->setContent($_POST_CLEAN['content'])
+         	->setContent($_POST['content'])
          ;
          $postManager->addPost($newPost);
 
