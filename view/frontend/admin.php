@@ -40,10 +40,9 @@ if(!isset($_SESSION['userId'])){
       <li><a href="index.php?action=listUserPosts">Modifier ou supprimer un article</a></li>
     </ul>
 
-    <h1>Utilisateurs</h1>
+    <h1>Commentaires</h1>
     <ul>
-      <li><a href="">Créer un utilisateur</a></li>
-      <li><a href="">Modifier ou supprimer un utilisateur</a></li>
+      <li><a href="index.php?action=commentsToValidate">Commentaires à valider</a></li>
     </ul>
 
         <hr>

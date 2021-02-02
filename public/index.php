@@ -47,6 +47,8 @@ try {
 			$users->register(); 
 		} elseif($_GET['action'] === 'postCreation') {
 			$frontend->postCreation(); 
+		} elseif($_GET['action'] === 'commentsToValidate') {
+			$frontend->commentsToValidate(); 
 		} elseif($_GET['action'] === 'admin') {
 			$frontend->admin(); 
 		}  elseif($_GET['action'] === 'listUserPosts') {
