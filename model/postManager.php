@@ -21,9 +21,10 @@ class PostManager extends Manager
 		return $post; 
 	}
 
-	function addIncrementedPostViews($post)
+	function addIncrementedPostViews(Post $post)
 	{
-		$q = $this->db->prepare('INSERT INTO post (views) VALUES (:views) WHERE id = :id'); 
+		$q = $this->db->prepare('UPDATE post SET views = :views WHERE id = :id'); 
+
 		$q->bindValue('views', $post->getViews()); 
 		$q->bindValue('id', $post->getId()); 
 
