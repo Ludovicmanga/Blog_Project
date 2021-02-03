@@ -1,17 +1,24 @@
 <?php 
 
-use Model\Manager; 
-use Model\UserManager; 
-use Model\User; 
-use Model\PostManager; 
-use Model\Post; 
-use Model\TopicManager; 
-use Model\Topic; 
-use Model\MessageManager; 
-use Model\Message; 
+use Model\
+{
+	Manager,
+	UserManager,
+	User, 
+	PostManager,
+	Post,
+	TopicManager,
+	Topic, 
+	MessageManager, 
+	Message 
+}; 
 
-require('../Controller/frontend.php'); 
-require('../Controller/users.php'); 
+use Controller\
+{
+	frontend, 
+	users
+}
+; 
 
 
 function chargerClass($class)

@@ -1,14 +1,19 @@
 <?php
 
-use Model\Manager; 
-use Model\UserManager; 
-use Model\User; 
-use Model\PostManager; 
-use Model\Post; 
-use Model\TopicManager; 
-use Model\Topic; 
-use Model\MessageManager; 
-use Model\Message; 
+namespace Controller; 
+
+use Model\
+{
+	Manager,
+	UserManager,
+	User, 
+	PostManager,
+	Post,
+	TopicManager,
+	Topic, 
+	MessageManager, 
+	Message 
+}; 
 
 
 class Users
