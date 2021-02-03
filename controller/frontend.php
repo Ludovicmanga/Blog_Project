@@ -9,7 +9,8 @@ use Model\TopicManager;
 use Model\Topic; 
 use Model\MessageManager; 
 use Model\Message;
-
+use Model\Comment;
+use Model\CommentManager;
 
 class Frontend 
 {
@@ -35,8 +36,29 @@ class Frontend
 
 		$postManager->addIncrementedPostViews($postToIncrementViews); 
 
+		$commentManager = new CommentManager; 
+
+		$postComments = $commentManager->getAllPostComments($_GET['id']); 
+
+		if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
+			$comment = new Comment; 
+
+			$comment
+				->setCommentAuthor($_POST_CLEAN['commentAuthor'])
+				->setValidation('toValidate')
+				->setCommentContent($_POST_CLEAN['commentContent'])
+				->setPostId($_POST_CLEAN['postId'])
+			; 
+
+			$commentManager->sendToValidation($comment); 
+		}
+
 		require('../view/frontend/post.php'); 
 	}
+
 
 	public function home()
 	{
@@ -54,12 +76,12 @@ class Frontend
 				->setMessageContent($_POST_CLEAN['messageContent'])
 			; 
 
-			$messageManager->addMessage($message);
+			$messageManager->addMessage($message); 
+
+			}
 
 			require('../view/frontend/home.php'); 
-		} else {
-			require('../view/frontend/home.php'); 
-		}
+		
 	}
 
 
@@ -91,6 +113,7 @@ class Frontend
          }
 	}
 
+
 	public function postUpdate()
 	{
 
@@ -110,10 +133,11 @@ class Frontend
 	        	->setId($_POST_CLEAN['postId'])
 	        ;
 	        $postManager->updatePost($post); 
+
 			require('../view/frontend/postUpdate.php');  
 		} else {
 		
-				$getPost = $postManager->getPost($_GET['postId']); 
+				$post = $postManager->getPost($_GET['postId']); 
 				$topicManager = new TopicManager; 
        			$topics = $topicManager->getAllTopics(); 
 
@@ -127,6 +151,7 @@ class Frontend
 		require('../view/frontend/admin.php'); 
 	}
 
+
 	public function listUserPosts()
 	{
 
@@ -139,7 +164,38 @@ class Frontend
 	}
 
 
+	public function commentsToValidate()
+	{
+		session_start(); 
+		$commentManager = new CommentManager; 
 
+		if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
+			$comment = new Comment; 
+			$comment->setId($_POST_CLEAN['commentId']); 
+
+			if(isset($_POST_CLEAN['validateComment'])){
+
+				$commentManager->validateComment($comment->getId()); 
+
+			} 
+
+			if(isset($_POST_CLEAN['denyComment'])){
+
+				$commentManager->denyComment($comment->getId()); 
+
+			}
+
+		}
+
+		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
+
+		require('../view/frontend/commentsToValidate.php'); 
+	}
+
+		
 }
 
 

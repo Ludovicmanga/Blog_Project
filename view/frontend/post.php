@@ -17,6 +17,9 @@
 
   <!-- Post Content -->
   <article>
+
+    <h1>test anchor</h1>
+
     <div class="container">
 
       <?= 
@@ -28,7 +31,49 @@
 
       <?= $post['content']; ?>
 
-      
+         <?php 
+
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
+        echo '<br><p id="commentarySpace"><b>Votre commentaire a bien été soumis. Il sera soumis à validation par l\'auteur de l\'article</b></p><br>'; 
+
+      }
+
+      ?> 
+
+      <br>
+      <h1 >Espace commentaires</h1>
+
+
+      <form action="index.php?action=post&id= <?= $_GET['id'] ?>#commentarySpace" method="POST">
+        <input type="hidden" name="postId" value=" <?= $_GET['id'] ?> ">
+        <label>Votre nom</label> <br> <input type="text" name="commentAuthor"><br>
+        <label>Votre commentaire</label> <br> <textarea name="commentContent"></textarea><br>
+        <button type="submit" name="submit">Envoyer</button>
+      </form>
+      <br>
+
+      <?php
+
+      while($postComment = $postComments->fetch()){
+
+        ?>
+
+        <div>
+
+          <?= $postComment['commentAuthor'] ?><br>
+          <?= $postComment['creationDate'] ?><br>
+          <?= $postComment['commentContent'] ?><br>
+          <br>
+
+        </div>
+
+        <?php
+
+      }
+
+       ?>
+
     </div>
   </article>
 
