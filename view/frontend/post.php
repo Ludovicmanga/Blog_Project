@@ -18,8 +18,6 @@
   <!-- Post Content -->
   <article>
 
-    <h1>test anchor</h1>
-
     <div class="container">
 
       <?= 
@@ -27,6 +25,7 @@
         '<br>nombre de vues</> : '; 
         echo $postToIncrementViews->getViews(); 
         echo '<br><br>';  
+         
       ?>
 
       <?= $post['content']; ?>
