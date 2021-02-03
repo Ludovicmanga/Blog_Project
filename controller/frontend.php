@@ -151,6 +151,7 @@ class Frontend
 		require('../view/frontend/admin.php'); 
 	}
 
+
 	public function listUserPosts()
 	{
 
@@ -162,11 +163,11 @@ class Frontend
 		require('../view/frontend/listUserPosts.php'); 
 	}
 
+
 	public function commentsToValidate()
 	{
 		session_start(); 
 		$commentManager = new CommentManager; 
-		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -188,6 +189,8 @@ class Frontend
 			}
 
 		}
+
+		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
 
 		require('../view/frontend/commentsToValidate.php'); 
 	}

@@ -40,7 +40,7 @@
     		</p>
 
     	<form action="index.php?action=commentsToValidate" method="POST">
-    		<input type="hidden" name="commentId" value=" <?= $commentToValidate['id'] ?> ">
+    		<input type="hidden" name="commentId" value=" <?= $commentToValidate['commentId']; ?> ">
     		<button type="submit" name="validateComment">Valider le commentaire</button><br>
    			<button type="submit" name="denyComment">Refuser le commentaire</button><br><br>
     	</form>

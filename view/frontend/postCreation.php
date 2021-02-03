@@ -27,9 +27,11 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
   <link href="css/custom_style.css" rel="stylesheet">
 
+  <!-- tiny MCE initialisation --> 
 
   <script src='vendor/tinymce/tinymce/tinymce.min.js' referrerpolicy="origin">
   </script>
+
   <script>
     tinymce.init({
       selector: '#blogTextArea'
@@ -66,7 +68,14 @@
 
          if(isset($_POST['title'])){
 
-          echo '<b>votre article a bien été créé</b>'; 
+          echo '
+
+          <b>Votre article a bien été créé !</b><br><br>
+
+          <a href="index.php">Retourner à l\'accueil</a><br>
+          <a href="index.php?action=postCreation">Ecrire un autre article</a><br>
+
+          '; 
          
         } else {
 

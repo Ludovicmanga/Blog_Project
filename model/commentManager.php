@@ -18,7 +18,7 @@ class CommentManager extends Manager
 
  	public function getAllCommentsToValidate($userId)
  	{
- 		$q = $this->db->prepare('SELECT * FROM comment JOIN post WHERE post.Id = comment.postId AND validation = "toValidate" AND post.userId = ?'); 
+ 		$q = $this->db->prepare('SELECT *, comment.id AS commentId FROM comment JOIN post WHERE post.Id = comment.postId AND validation = "toValidate" AND post.userId = ?'); 
  		$q->execute(array($userId)); 
 
  		return $q; 
