@@ -12,7 +12,7 @@ if(!isset($_SESSION['userId'])){
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("include/pageHeadTemplate.php"); ?>
 
 <body>
 

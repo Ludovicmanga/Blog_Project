@@ -12,7 +12,9 @@ use Model\
 	TopicManager,
 	Topic, 
 	MessageManager, 
-	Message 
+	Message,
+	Comment,
+	CommentManager
 }; 
 
 

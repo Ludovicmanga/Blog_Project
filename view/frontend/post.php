@@ -11,6 +11,11 @@
 
   <?php require("include/navbar.php") ?>
 
+
+  <!-- Page Head -->
+
+  <?php require("include/pageHeadTemplate.php"); ?>
+
   <!-- Page Header -->
   
   <?php require("include/postHeader.php") ?>

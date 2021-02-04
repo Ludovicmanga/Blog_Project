@@ -41,7 +41,7 @@
                   <?= $data['subtitle'] ?>
                 </h3>
               </a>
-              <p class="post-meta">Posted by
+              <p class="post-meta">Posté par
                 <?= $data['author'] ?></p>
             </div>
             <hr>

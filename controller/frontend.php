@@ -12,7 +12,9 @@ use Model\
 	TopicManager,
 	Topic, 
 	MessageManager, 
-	Message 
+	Message,
+	Comment,
+	CommentManager
 }; 
 
 class Frontend 
@@ -65,8 +67,7 @@ class Frontend
 
 	public function home()
 	{
-			if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		 	$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
 			$messageManager = new MessageManager; 
@@ -80,40 +81,38 @@ class Frontend
 			; 
 
 			$messageManager->addMessage($message); 
+		} 
 
-			}
-
-			require('../view/frontend/home.php'); 
-		
+		require('../view/frontend/home.php'); 		
 	}
 
-
+	/**
+	 * Adding of a post
+	 */
 	public function postCreation()
 	{
-         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+			 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+			 
+	         $postManager = new PostManager; 
+	       	 $newPost = new Post; 
+	       	 $newPost
+	       	 	->setTitle($_POST_CLEAN['title']) 
+	       	 	->setTopicId($_POST_CLEAN['topicId'])
+	         	->setSubtitle($_POST_CLEAN['subtitle'])
+	         	->setuserId($_POST_CLEAN['userId'])
+	         	->setContent($_POST['content'])
+	         ;
+	         $postManager->addPost($newPost);
 
-		 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-		 
+	       	 require('../view/frontend/postCreation.php');
+	    } else {
 
-         $postManager = new PostManager; 
-       	 $newPost = new Post; 
-       	 $newPost
-       	 	->setTitle($_POST_CLEAN['title']) 
-       	 	->setTopicId($_POST_CLEAN['topicId'])
-         	->setSubtitle($_POST_CLEAN['subtitle'])
-         	->setuserId($_POST_CLEAN['userId'])
-         	->setContent($_POST['content'])
-         ;
-         $postManager->addPost($newPost);
+			$topicManager = new TopicManager; 
+	       	$topics = $topicManager->getAllTopics(); 
 
-       	 require('../view/frontend/postCreation.php');
-         } else {
-
-		$topicManager = new TopicManager; 
-       	$topics = $topicManager->getAllTopics(); 
-
-        	 require('../view/frontend/postCreation.php');
-         }
+	        	 require('../view/frontend/postCreation.php');
+	    }
 	}
 
 
@@ -125,9 +124,7 @@ class Frontend
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
-
 			$post = new Post; 
-
 			$post
 				->setTitle($_POST_CLEAN['title'])
 	        	->setTopicId($_POST_CLEAN['topicId'])
@@ -173,7 +170,6 @@ class Frontend
 		$commentManager = new CommentManager; 
 
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
 			$comment = new Comment; 
@@ -190,15 +186,10 @@ class Frontend
 				$commentManager->denyComment($comment->getId()); 
 
 			}
-
 		}
 
 		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
 
 		require('../view/frontend/commentsToValidate.php'); 
-	}
-
-		
+	}	
 }
-
-
