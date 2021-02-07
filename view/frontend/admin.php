@@ -1,5 +1,7 @@
 <?php 
 
+// if no session, we display the login form
+
 if(!isset($_SESSION['userId'])){
 
   require('view/frontend/login.php'); 
@@ -12,22 +14,23 @@ if(!isset($_SESSION['userId'])){
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php"); ?>
+<?php require("require/pageHeadTemplate.php"); ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
 
 <!-- Page Header -->
+
  <?php 
 
    $backgroundImage = '../public/img/admin.jpg'; 
    $headerTitle = 'Espace admin'; 
    $headerSubtitle = 'Gérez votre compte'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
 
@@ -54,7 +57,7 @@ if(!isset($_SESSION['userId'])){
 
     <!-- Pager -->
     
-    <?php require("include/pager.php") ?>
+    <?php require("require/pager.php") ?>
         
   </div>
 
@@ -62,12 +65,12 @@ if(!isset($_SESSION['userId'])){
 
   <!-- Footer -->
 
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
 
   <!-- bootstrap footer -->
   
-  <?php require("include/boostrapFooter.php") ?>
+  <?php require("require/boostrapFooter.php") ?>
 
 </body>
 

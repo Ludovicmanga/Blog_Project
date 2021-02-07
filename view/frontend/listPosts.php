@@ -2,23 +2,20 @@
 <html lang="en">
 
 <!-- header -->
-
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
-
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
     
     <!-- Page Header -->
-  
   <?php 
-
+  // styling of the header, thanks to require/pageheader
    $backgroundImage = '../public/img/newspaper.jpg'; 
    $headerTitle = 'Mes articles'; 
    $headerSubtitle = 'Plongez-vous dans mon actu'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
 
@@ -26,43 +23,20 @@
   <!-- Main Content -->
   
   <div class="container">
+     <?php 
 
-      <?php
-
-        while($data = $posts->fetch())
-        {
-          ?>
-          <div class="post-preview">
-              <a href= <?= 'index.php?action=post&id='.$data['post_id']?>>
-                <h2 class="post-title">
-                  <?= $data['title'] ?>
-                </h2>
-                <h3 class="post-subtitle">
-                  <?= $data['subtitle'] ?>
-                </h3>
-              </a>
-              <p class="post-meta">Posté par
-                <?= $data['author'] ?></p>
-            </div>
-            <hr>
-        <?php
-    }
-
-     ?> 
-        
-
+     //we fetch all the posts from the DB
+     require('../view/frontend/require/listAllPosts.php')
+     ?>
   </div>
 
   <hr>
 
   <!-- Footer -->
-
-    <?php require("include/footer.php") ?>
-
+    <?php require("require/footer.php") ?>
   
   <!-- bootstrap footer -->
-  
-  <?php require("include/boostrapFooter.php") ?>
+  <?php require("require/boostrapFooter.php") ?>
 
 </body>
 

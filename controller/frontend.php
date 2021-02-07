@@ -19,60 +19,69 @@ use Model\
 
 class Frontend 
 {
+
+	/**
+	 * Displaying of the list of all posts
+	 */
 	public function listPosts()
 	{
+		//the object postManager gets all posts from the DB 
 		$postManager = new PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
 		require ('../view/frontend/listPosts.php'); 
 	}
 
+	/**
+	 * Displaying of a particular post
+	 */
 	public function post()
 	{
+		// We get a particular post from the DB 
 		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
-		
-		$postToIncrementViews = new Post; 
 
+		// System of adding of views every time the post is gotten from DB
+		$postToIncrementViews = new Post; 
 		$postToIncrementViews->setViews($post['views']);
 		$postToIncrementViews->setId($_GET['id']);
-
 		$postToIncrementViews->incrementPostViews(); 
+		$postManager->addIncrementedPostViews($postToIncrementViews);
 
-		$postManager->addIncrementedPostViews($postToIncrementViews); 
-
+		// We get the post comments from the DB to display them
 		$commentManager = new CommentManager; 
-
 		$postComments = $commentManager->getAllPostComments($_GET['id']); 
 
+		// We verify whether the comment form was filled and clean $_POST 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
+			// if so, we send the added comment to validation from the post author
 			$comment = new Comment; 
-
 			$comment
 				->setCommentAuthor($_POST_CLEAN['commentAuthor'])
 				->setValidation('toValidate')
 				->setCommentContent($_POST_CLEAN['commentContent'])
 				->setPostId($_POST_CLEAN['postId'])
 			; 
-
 			$commentManager->sendToValidation($comment); 
 		}
 
 		require('../view/frontend/post.php'); 
 	}
 
-
+	/**
+	 * Displaying of home page
+	 */
 	public function home()
 	{
+		// We verify whether the message form was filled and clean $_POST
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		 	$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
+		 	//if so, we send the added message to the DB
 			$messageManager = new MessageManager; 
 			$message = new Message;  
-
 			$message
 				->setName($_POST_CLEAN['name'])
 				->setLastName($_POST_CLEAN['lastName'])
@@ -87,13 +96,15 @@ class Frontend
 	}
 
 	/**
-	 * Adding of a post
+	 * We display the post creation page
 	 */
 	public function postCreation()
 	{
+		// We verify whether the contact form was filled and clean $_POST
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			 $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 			 
+			 // if so, we send the added message to the DB
 	         $postManager = new PostManager; 
 	       	 $newPost = new Post; 
 	       	 $newPost
@@ -108,6 +119,7 @@ class Frontend
 	       	 require('../view/frontend/postCreation.php');
 	    } else {
 
+	    	//we get the topics from the DB to display it in the post creation form 
 			$topicManager = new TopicManager; 
 	       	$topics = $topicManager->getAllTopics(); 
 
@@ -115,15 +127,18 @@ class Frontend
 	    }
 	}
 
-
+	/**
+	* We display the post update page
+	*/ 
 	public function postUpdate()
 	{
-
 		$postManager = new PostManager; 
 
+		// We verify whether the update form was filled and clean $_POST 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+
+			//if so, we send the updated post to the DB
 			$post = new Post; 
 			$post
 				->setTitle($_POST_CLEAN['title'])
@@ -145,49 +160,55 @@ class Frontend
 		}	
 	}
 
-
+	/**
+	* We display the post admin page
+	*/ 
 	public function admin()
 	{
 		require('../view/frontend/admin.php'); 
 	}
 
-
+	/**
+	* We display the post created by a specific user 
+	*/ 
 	public function listUserPosts()
 	{
 
 		session_start(); 
 
+		// we get the all the posts from a specific user
 		$postManager = new PostManager; 
 		$userPosts = $postManager->getAllUserPosts($_SESSION['userId']); 
 
 		require('../view/frontend/listUserPosts.php'); 
 	}
 
-
+	/**
+	* We display to a specific user the comments needed validation 
+	*/ 
 	public function commentsToValidate()
 	{
 		session_start(); 
 		$commentManager = new CommentManager; 
 
+		// We check whether the use validated or denied the comment and clean $_POST
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
+			// We target the adequat comment by Id 
 			$comment = new Comment; 
 			$comment->setId($_POST_CLEAN['commentId']); 
 
+			// According to the validation or denial of the comment, we update the colum "isValidated" in DB
 			if(isset($_POST_CLEAN['validateComment'])){
-
 				$commentManager->validateComment($comment->getId()); 
-
 			} 
-
 			if(isset($_POST_CLEAN['denyComment'])){
-
 				$commentManager->denyComment($comment->getId()); 
-
 			}
 		}
 
+		// We get the list of all the comments needing validation by a specific user 
 		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
 
 		require('../view/frontend/commentsToValidate.php'); 

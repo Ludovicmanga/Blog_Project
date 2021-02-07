@@ -3,13 +3,13 @@
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
 
 <!-- Page Header -->
@@ -18,7 +18,7 @@
    $backgroundImage = '../public/img/admin.jpg'; 
    $headerTitle = 'valider vos commentaires'; 
    $headerSubtitle = 'Supprimer ou accepter les commentaires proposés'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
 
@@ -27,41 +27,22 @@
 
     <h1>Vos articles en attente de validation</h1>
 
-    <?php 
-
-    while($commentToValidate = $commentsToValidate->fetch()){
-
-    	?>
-
-    		<p>
-	    		 <?= $commentToValidate['commentAuthor']; ?><br>
-	    		 <?= $commentToValidate['creationDate']; ?><br>
-	    		 <?= $commentToValidate['commentContent'] ; ?><br>
-    		</p>
+    <?php     	
+    // We fetch the comments needing validation
+    	require('../view/frontend/require/disaplayCommentsToValidate.php'); 
+    ?>
 
     	<form action="index.php?action=commentsToValidate" method="POST">
     		<input type="hidden" name="commentId" value=" <?= $commentToValidate['commentId']; ?> ">
     		<button type="submit" name="validateComment">Valider le commentaire</button><br>
    			<button type="submit" name="denyComment">Refuser le commentaire</button><br><br>
     	</form>
-
-
-    <?php
-
-    }
-
-
-    ?>
-    
-
+   
         <hr>
-
-
-
 
     <!-- Pager -->
     
-    <?php require("include/pager.php") ?>
+    <?php require("require/pager.php") ?>
         
   </div>
 
@@ -69,12 +50,12 @@
 
   <!-- Footer -->
 
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
 
   <!-- bootstrap footer -->
   
-  <?php require("include/boostrapFooter.php") ?>
+  <?php require("require/boostrapFooter.php") ?>
 
 </body>
 

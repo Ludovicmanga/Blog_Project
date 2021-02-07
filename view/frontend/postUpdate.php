@@ -2,13 +2,13 @@
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
 <!-- Page Header -->
 
@@ -17,7 +17,7 @@
    $backgroundImage = '../public/img/post_writing.jpg'; 
    $headerTitle = 'Modifier un article'; 
    $headerSubtitle = 'Mettez à jour votre article'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
 
@@ -82,7 +82,7 @@
 
         <!-- Pager -->
     
-    <?php require("include/pager.php") ?>
+    <?php require("require/pager.php") ?>
 
   </div>
 
@@ -90,12 +90,12 @@
 
   <!-- Footer -->
 
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
  
   <!-- bootstrap footer -->
   
-  <?php require("include/boostrapFooter.php") ?>
+  <?php require("require/boostrapFooter.php") ?>
 
 </body>
 

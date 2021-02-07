@@ -3,25 +3,25 @@
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
   <!-- Page Header -->
   
   <?php 
 
+  // styling of the header, thanks to require/pageheader
    $backgroundImage = '../public/img/ludovic-carre.png'; 
    $headerTitle = 'Le blog de Ludovic'; 
    $headerSubtitle = 'Suivez-moi au quotidien'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
-
 
   <!-- Main Content -->
   <div class="container">
@@ -73,6 +73,7 @@
 
    <?php 
 
+   // we check whether a message was sent in the contact form
    if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    	echo '<b>Votre message a bien été envoyé!</b><br>'; 
@@ -107,7 +108,7 @@
 
     <!-- Pager -->
     
-    <?php require("include/pager.php") ?>
+    <?php require("require/pager.php") ?>
         
   </div>
 
@@ -115,12 +116,12 @@
 
   <!-- Footer -->
 
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
 
   <!-- bootstrap footer -->
   
-  <?php require("include/boostrapFooter.php") ?>
+  <?php require("require/boostrapFooter.php") ?>
 
 </body>
 

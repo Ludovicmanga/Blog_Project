@@ -2,8 +2,13 @@
 
 namespace Model; 
 
+/**
+* This class allows us to display the user entity
+*/
 class User
 {
+	//attributes
+
 	private $_name; 
 	private $_nameError; 
 	private $_lastName; 
@@ -19,7 +24,6 @@ class User
 
 
 	// Setters
-
 
 	public function setName($name) {
 		$this->_name = $name; 

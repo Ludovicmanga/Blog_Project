@@ -3,13 +3,13 @@
 
 <!-- header -->
 
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
   
 
@@ -38,7 +38,7 @@
         
         <!-- Pager -->
     
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
   </div>
 
@@ -46,12 +46,12 @@
 
   <!-- Footer -->
 
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
  
 
    <!-- bootstrap footer -->
    
-   <?php require("include/boostrapFooter.php") ?>
+   <?php require("require/boostrapFooter.php") ?>
 
 </body>
 
