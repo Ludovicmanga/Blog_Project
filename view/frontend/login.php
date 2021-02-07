@@ -1,10 +1,8 @@
-
 <?php 
 
+//we check whether a session exists. If so, we display the admin dashboard
 if(isset($_SESSION['userId'])){
-
   require('../view/frontend/admin.php'); 
-
 } else {
 
   ?>
@@ -60,19 +58,9 @@ if(isset($_SESSION['userId'])){
   <!-- bootstrap footer -->
   	<?php require("require/boostrapFooter.php") ?>
 
-
 </body>
-
 </html>
-
-
-
-
-
   <?php
-
-
 }
-
 ?>
 

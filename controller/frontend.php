@@ -19,7 +19,6 @@ use Model\
 
 class Frontend 
 {
-
 	/**
 	 * Displaying of the list of all posts
 	 */
@@ -29,6 +28,7 @@ class Frontend
 		$postManager = new PostManager; 
 		$posts = $postManager->getAllPosts(); 
 
+		// We display the view
 		require ('../view/frontend/listPosts.php'); 
 	}
 
@@ -67,6 +67,7 @@ class Frontend
 			$commentManager->sendToValidation($comment); 
 		}
 
+		// We display the view
 		require('../view/frontend/post.php'); 
 	}
 
@@ -92,6 +93,7 @@ class Frontend
 			$messageManager->addMessage($message); 
 		} 
 
+		// We display the view
 		require('../view/frontend/home.php'); 		
 	}
 
@@ -115,16 +117,15 @@ class Frontend
 	         	->setContent($_POST['content'])
 	         ;
 	         $postManager->addPost($newPost);
-
-	       	 require('../view/frontend/postCreation.php');
 	    } else {
 
 	    	//we get the topics from the DB to display it in the post creation form 
 			$topicManager = new TopicManager; 
 	       	$topics = $topicManager->getAllTopics(); 
-
-	        	 require('../view/frontend/postCreation.php');
 	    }
+
+	    // We display the view
+	    require('../view/frontend/postCreation.php');
 	}
 
 	/**
@@ -148,16 +149,15 @@ class Frontend
 	        	->setId($_POST_CLEAN['postId'])
 	        ;
 	        $postManager->updatePost($post); 
-
-			require('../view/frontend/postUpdate.php');  
 		} else {
 		
 				$post = $postManager->getPost($_GET['postId']); 
 				$topicManager = new TopicManager; 
        			$topics = $topicManager->getAllTopics(); 
+		} 
 
-			require('../view/frontend/postUpdate.php'); 
-		}	
+		// We display the view
+		require('../view/frontend/postUpdate.php');  
 	}
 
 	/**
@@ -211,6 +211,7 @@ class Frontend
 		// We get the list of all the comments needing validation by a specific user 
 		$commentsToValidate = $commentManager->getAllCommentsToValidate($_SESSION['userId']); 
 
+		// We display the view
 		require('../view/frontend/commentsToValidate.php'); 
 	}	
 }

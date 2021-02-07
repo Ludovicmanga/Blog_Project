@@ -115,6 +115,7 @@ class Users
 			}
 		}
 
+		// We display the view
 		require('../view/frontend/register.php');  
 	}
 
@@ -155,6 +156,7 @@ class Users
 			}
 		}
 
+		// We display the view
 		require('../view/frontend/login.php'); 
 	}
 
@@ -166,6 +168,7 @@ class Users
 
 	public function logout()
 	{
+		// We display the view 'logout'
 		require('../view/frontend/logout.php'); 
 	}
 
