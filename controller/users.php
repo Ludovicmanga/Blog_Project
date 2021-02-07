@@ -1,31 +1,38 @@
 <?php
 
-use Model\Manager; 
-use Model\UserManager; 
-use Model\User; 
-use Model\PostManager; 
-use Model\Post; 
-use Model\TopicManager; 
-use Model\Topic; 
-use Model\MessageManager; 
-use Model\Message; 
+namespace Controller; 
 
+use Model\
+{
+	Manager,
+	UserManager,
+	User, 
+	PostManager,
+	Post,
+	TopicManager,
+	Topic, 
+	MessageManager, 
+	Message,
+	Comment,
+	CommentManager
+}; 
 
 class Users
 {
-
+	/**
+	 * We display the registration form and operate the registration system
+	 */
 	public function register()
 	{
 		$userManager = new UserManager; 
-		$user = new User; 
+		$user = new User; 	
 
-
+		//We check whether the registrayion formm was filled and sanitize $_POST data
 		if($_SERVER['REQUEST_METHOD'] == 'POST') 
 		{
-			
-			//Sanitize post data
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
+			// We hydrate the user object
 			$user
 				->setName(trim($_POST_CLEAN['name']))
 				->setLastName(trim($_POST_CLEAN['lastName']))
@@ -35,12 +42,11 @@ class Users
 				->setConfirmPassword(trim($_POST_CLEAN['confirmPassword']))
 			; 
 
-
+			// We use REGEX to define accepted characters in password and names
 			$nameValidation = "/^[a-zA-Z0-9]*$/";
 			$passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";   
 
 			// validate name 
-
 			if(empty($user->getName())) {
 				$user->setNameError('Vous devez entrer un prénom'); 
 			} elseif (!preg_match($nameValidation, $user->getName())) {
@@ -48,7 +54,6 @@ class Users
 			} 
 
 			// validate last name
-
 			if(empty($user->getLastName())) {
 				$user->setLastNameError('Vous devez entrer un nom'); 
 			} elseif (!preg_match($nameValidation, $user->getLastName())) {
@@ -56,7 +61,6 @@ class Users
 			} 
 
 			 // validate email
-
 			if(empty($user->getMail())) {
 				$user->setMailError('Vous devez entrer une adresse e-mail'); 
 			} elseif (!filter_var($user->getMail(), FILTER_VALIDATE_EMAIL)) {
@@ -69,7 +73,6 @@ class Users
 			}
 
 			//validate confirm mail 
-
 			if(empty($user->confirmMail())) {
 				$user->setConfirmMailError('Vous devez entrer une adresse e-mail'); 
 			} else {
@@ -78,9 +81,7 @@ class Users
 				}
 			}
 
-
 			//validate password on length and numeric values
-
 			if(empty($user->getPassword())) {
 				$user->setPasswordError('Vous devez entrer un mot de passe'); 
 			} elseif (strlen($user->getPassword()) < 8) {
@@ -90,7 +91,6 @@ class Users
 			} 
 
 			//validate confirm password
-
 			if(empty($user->getConfirmPassword())) {
 				$user->setConfirmPasswordError('Vous devez confirmer votre mot de passe'); 
 			} else {
@@ -100,14 +100,12 @@ class Users
 			}
 
 			//make sure that errors are empty
-
 			if(empty($user->getNameError()) && empty($user->getLastNameError()) && empty($user->getMailError()) && empty($user->getConfirmMailError()) && empty($user->getPasswordError()) && empty($user->getConfirmPasswordError())) {
 
 				// Hash password
 				$user->setPassword(password_hash($user->getPassword(), PASSWORD_DEFAULT)); 
 
 				// Register user from model function 
-
 				if($userManager->register($user)){
 					// redirect to the login page
 					header('location: index.php?action=login'); 
@@ -117,6 +115,7 @@ class Users
 			}
 		}
 
+		// We display the view
 		require('../view/frontend/register.php');  
 	}
 
@@ -126,30 +125,29 @@ class Users
 		$userManager = new UserManager; 
 		$user = new User; 
 
+		// We check whether the login form was filled and clean $_POST data
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-			// Sanitize post data
-
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
+			// if so, we assign the form input to the user object
 			$user->setMail(trim($_POST_CLEAN['mail'])); 
 			$user->setPassword(trim($_POST_CLEAN['password'])); 
 
-			// validate mail
+			// We set errors if any input form is empty
 			if(empty($_POST_CLEAN['mail'])){
 				$user->setMailError('vous devez entrer une adresse mail');
 			}
-
-			// validate password
 			if(empty($_POST_CLEAN['password'])){
 				$user->setPasswordError('vous devez entrer un mot de passe');
 			}
 
-			// check if all errors are empty
-
+			// We check if all errors are empty / If not, we create an error message
 			if(empty($user->getMailError()) && empty($user->getPasswordError())){
+
+				// We operate the login process in DB
 				$loggedInUser = $userManager->login($user->getMail(), $user->getPassword()); 
 
+				// if the login process is successful, we create a user session
 				if($loggedInUser){
 					$this->createUserSession($loggedInUser); 
 				} else {
@@ -158,6 +156,7 @@ class Users
 			}
 		}
 
+		// We display the view
 		require('../view/frontend/login.php'); 
 	}
 
@@ -169,6 +168,7 @@ class Users
 
 	public function logout()
 	{
+		// We display the view 'logout'
 		require('../view/frontend/logout.php'); 
 	}
 

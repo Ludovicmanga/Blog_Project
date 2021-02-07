@@ -2,8 +2,14 @@
 
 namespace Model; 
 
+/**
+* This class allows us to display the message entity 
+*/
 class Message
 {
+
+	// attributes
+
 	private $_id; 
 	private $_name; 
 	private $_lastName; 

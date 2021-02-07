@@ -2,9 +2,13 @@
 
 namespace Model; 
 
+/**
+* This class allows us to display the post entity 
+*/
 class Post
 {
-	//attribute
+	//attributes
+
 	private $_id; 
 	private $_title; 
 	private $_slug; 
@@ -18,7 +22,6 @@ class Post
 	private $_subtitle; 
 	private $_topic;  
 
-	//methods
 	//setters
 
 	public function setId($id)
@@ -95,7 +98,6 @@ class Post
 		return $this;
 	}
 
-
 		//getters
 
 	public function getId()
@@ -161,6 +163,9 @@ class Post
 
 	// other methods
 
+	/**
+	* We add 1 to the number of postviews, every time a post is displayed
+	*/
 	public function incrementPostViews()
 	{
 		$this->_views += 1;  

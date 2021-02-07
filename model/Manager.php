@@ -1,6 +1,10 @@
 <?php 
 
-namespace Model; 
+namespace Model;
+
+/**
+* Class that will allow to avoid writing the PDO creation instruction for every Manager type class
+*/ 
 
 Class Manager
 {

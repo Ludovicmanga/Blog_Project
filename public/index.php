@@ -1,30 +1,47 @@
 <?php 
 
-use Model\Manager; 
-use Model\UserManager; 
-use Model\User; 
-use Model\PostManager; 
-use Model\Post; 
-use Model\TopicManager; 
-use Model\Topic; 
-use Model\MessageManager; 
-use Model\Message; 
+use Model\
+{
+	Manager,
+	UserManager,
+	User, 
+	PostManager,
+	Post,
+	TopicManager,
+	Topic, 
+	MessageManager, 
+	Message 
+}; 
 
-require('../Controller/frontend.php'); 
-require('../Controller/users.php'); 
+use Controller\
+{
+	frontend, 
+	users
+}
+; 
 
+/**
+* Automatisation of the 'require' of classes thanks to spl_autoload_register
+*/
 
+// we create the 'chargerClass'
 function chargerClass($class)
 {
 	$className = '../'.str_replace('\\', '/', $class).'.php'; 
 	require($className); 
 }
 
+//We pass it in spl_autoload_register
 spl_autoload_register('chargerClass'); 
 
-
+// We create the controller objects
 $frontend = new Frontend; 
 $users = new Users; 
+
+/**
+* According to what is written in 'action', display a specific page ; If nothing is in action, display the home page.
+If an error occured, display it
+*/
 
 try {
 	if (isset($_GET['action'])) {

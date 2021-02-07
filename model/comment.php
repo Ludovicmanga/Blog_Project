@@ -2,6 +2,9 @@
 
 namespace Model; 
 
+/**
+* This class allows us to display the comment entity
+*/
 Class Comment 
 {
 
@@ -78,7 +81,5 @@ Class Comment
 	{
 		return $this->commentAuthor; 
 	} 
-
-
 
 }

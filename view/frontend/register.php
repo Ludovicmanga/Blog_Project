@@ -2,34 +2,28 @@
 <html lang="en">
 
 <!-- header -->
-
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
-
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
   <!-- Page Header -->
-
   <?php 
 
+   // styling of the header, thanks to require/pageheader
    $backgroundImage = '../public/img/matrix.jpg'; 
    $headerTitle = 'Créer un compte'; 
    $headerSubtitle = 'Créer un nouvel espace membre'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
    
-
   <!-- Main Content -->
-  
   <div class="container">
 
-<!-- connexion form --> 
-
-
+<!-- login form --> 
    <div class="registration_form_container">
       <h1 class="registration_form_title">Créer un compte</h1>
       <form class="registration_form" method="POST" action="index.php?action=register">
@@ -64,21 +58,15 @@
         <button type="submit">Se connecter</button>
       </div>
       </form>
-    </div>
-    
+    </div>  
   </div>
-
   <hr>
 
   <!-- Footer -->
-
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
 
   <!-- bootstrap footer -->
-
-  <?php require("include/boostrapFooter.php") ?>
-
+  	<?php require("require/boostrapFooter.php") ?>
 
 </body>
-
 </html>

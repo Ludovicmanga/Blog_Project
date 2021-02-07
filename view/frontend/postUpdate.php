@@ -1,47 +1,39 @@
 <html lang="en">
 
 <!-- header -->
-
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
-
-  <?php require("include/navbar.php") ?>
+  <?php require("require/navbar.php") ?>
 
 <!-- Page Header -->
-
 <?php 
-
+	
+   // styling of the header, thanks to require/pageheader
    $backgroundImage = '../public/img/post_writing.jpg'; 
    $headerTitle = 'Modifier un article'; 
    $headerSubtitle = 'Mettez à jour votre article'; 
-   require('include/pageheader.php'); 
+   require('require/pageheader.php'); 
 
   ?>
 
   <!-- Main Content -->
-  
   <div class="container">
-
 
   <!-- Main Content -->
   <div class="container">
 
-      
       <!-- Contact form -->
-
-     <?php
-     
+    <?php
+	     
+     // If the update form was filled, we display an alternative message
      if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
        echo '<p> Votre article a bien été modifié!<p/><br>'; 
 
       } else {
-
         ?>
-
         <div class="post_modification_form_container">
           <h1 class="post_form_title">Modifier un article</h1>
           <form action="index.php?action=postUpdate" method = "POST" class="post_modification_form">
@@ -49,16 +41,7 @@
           <label>Titre article</label><input class= "post_modification_form_input_post_title" type="text" name="title" value="<?= $post['title'];?>"><br>
           <label>Sous-titre article</label> <input class="post_modification_form_input_post_subtitle"type="text" name="subtitle" value="<?= $post['subtitle'];?>"><br>
           <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>
-
-            <?php
-
-            while($topicsFetch = $topics->fetch()){
-
-              echo '<option name="topicId" value='.$topicsFetch['id'].'>'.$topicsFetch['topic_content'].'</option>'; 
-            }
-
-             ?>
-             
+            <?php require('../view/frontend/require/getSelectTopics.php'); ?>
           </select><br>
           <div class="post_form_container_textarea">
             <div>
@@ -75,28 +58,18 @@
         </div>
 
         <?php
-
       }
-
-       ?> 
+    ?> 
 
         <!-- Pager -->
-    
-    <?php require("include/pager.php") ?>
-
+    <?php require("require/pager.php") ?>
   </div>
-
   <hr>
 
   <!-- Footer -->
-
-    <?php require("include/footer.php") ?>
-
+    <?php require("require/footer.php") ?>
  
   <!-- bootstrap footer -->
-  
-  <?php require("include/boostrapFooter.php") ?>
-
+  <?php require("require/boostrapFooter.php") ?>
 </body>
-
 </html>

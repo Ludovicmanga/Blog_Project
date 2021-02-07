@@ -2,48 +2,41 @@
 <html lang="en">
 
 <!-- header -->
-
-<?php require("include/pageHeadTemplate.php") ?>
+<?php require("require/pageHeadTemplate.php") ?>
 
 <body>
 
   <!-- Navigation -->
+  <?php require("require/navbar.php") ?>
 
-  <?php require("include/navbar.php") ?>
+  <!-- Page Head -->
+  <?php require("require/pageHeadTemplate.php"); ?>
 
   <!-- Page Header -->
-  
-  <?php require("include/postHeader.php") ?>
+  <?php require("require/postHeader.php") ?>
 
   <!-- Post Content -->
   <article>
-
     <div class="container">
-
       <?= 
 
+      // We display the number of views of the post
         '<br>nombre de vues</> : '; 
         echo $postToIncrementViews->getViews(); 
         echo '<br><br>';  
-         
-      ?>
 
-      <?= $post['content']; ?>
-
-         <?php 
-
-      if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        
+      // We display the post content from the DB 
+      echo $post['content']; 
+      
+      // We check whether the commentary form was filled 
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
         echo '<br><p id="commentarySpace"><b>Votre commentaire a bien été soumis. Il sera soumis à validation par l\'auteur de l\'article</b></p><br>'; 
-
       }
-
       ?> 
-
       <br>
+
+      <!-- We display the form allowing to post comments-->
       <h1 >Espace commentaires</h1>
-
-
       <form action="index.php?action=post&id= <?= $_GET['id'] ?>#commentarySpace" method="POST">
         <input type="hidden" name="postId" value=" <?= $_GET['id'] ?> ">
         <label>Votre nom</label> <br> <input type="text" name="commentAuthor"><br>
@@ -51,41 +44,21 @@
         <button type="submit" name="submit">Envoyer</button>
       </form>
       <br>
-
       <?php
 
-      while($postComment = $postComments->fetch()){
-
-        ?>
-
-        <div>
-
-          <?= $postComment['commentAuthor'] ?><br>
-          <?= $postComment['creationDate'] ?><br>
-          <?= $postComment['commentContent'] ?><br>
-          <br>
-
-        </div>
-
-        <?php
-
-      }
-
+      	//We get the comments of a post
+      	require('getPostComments.php'); 
        ?>
-
     </div>
   </article>
 
   <hr>
 
     <!-- Footer -->
-
-    <?php require("include/footer.php") ?>
+    <?php require("require/footer.php") ?>
  
     <!-- bootstrap footer -->
-
-   <?php require("include/boostrapFooter.php") ?>
+   <?php require("require/boostrapFooter.php") ?>
 
 </body>
-
 </html>
