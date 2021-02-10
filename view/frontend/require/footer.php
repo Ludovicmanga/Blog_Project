@@ -30,6 +30,7 @@
             </li>
           </ul>
           <p class="copyright text-muted">Copyright &copy; Mon site 2021</p>
+          <p class="copyright text-muted"><a href="index.php?action=login">Se connecter</a>
         </div>
       </div>
     </div>
