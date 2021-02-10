@@ -43,8 +43,8 @@ class Frontend
 
 		// System of adding of views every time the post is gotten from DB
 		$postToIncrementViews = new Post; 
-		$postToIncrementViews->setViews($post['views']);
 		$postToIncrementViews->setId($_GET['id']);
+		$postToIncrementViews->setViews($post['views']);
 		$postToIncrementViews->incrementPostViews(); 
 		$postManager->addIncrementedPostViews($postToIncrementViews);
 

@@ -17,19 +17,6 @@ class PostManager extends Manager
 	}
 
 	/**
-	 * 	We get the posts from a specific user, using the userId
-	 */
-	public function getAllUserPosts($userId)
-	{
-		// Preparation of the query
-		$q = $this->db->prepare('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id AND userId = :userId ORDER BY creationDate DESC'); 
-
-		// We execute the query
-		$q->execute([':userId' => $userId]); 
-		return $q; 
-	}
-
-	/**
 	 * 	We get a specific post using the postId
 	 */
 	public function getPost($postId)
@@ -45,6 +32,19 @@ class PostManager extends Manager
 	}
 
 	/**
+	 * 	We get the posts from a specific user, using the userId
+	 */
+	public function getAllUserPosts($userId)
+	{
+		// Preparation of the query
+		$q = $this->db->prepare('SELECT *, post.id AS post_id, name AS author FROM post INNER JOIN user WHERE post.userId = user.id AND userId = :userId ORDER BY creationDate DESC'); 
+
+		// We execute the query
+		$q->execute([':userId' => $userId]); 
+		return $q; 
+	}
+
+	/**
 	 * 	For the checking of the number of views - we add to the DB the incremented view in the post table
 	 */
 	function addIncrementedPostViews(Post $post)
@@ -53,8 +53,8 @@ class PostManager extends Manager
 		$q = $this->db->prepare('UPDATE post SET views = :views WHERE id = :id'); 
 
 		// We bind the value o f $post to the query  
-		$q->bindValue('views', $post->getViews()); 
-		$q->bindValue('id', $post->getId()); 
+		$q->bindValue('views', $post->getViews(), \PDO::PARAM_INT); 
+		$q->bindValue('id', $post->getId(), \PDO::PARAM_INT); 
 
 		// We execute the query
 		$q->execute(); 
