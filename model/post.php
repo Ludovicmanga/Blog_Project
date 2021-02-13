@@ -12,7 +12,6 @@ class Post
 	private $_id; 
 	private $_title; 
 	private $_slug; 
-	private $_views;
 	private $_image; 
 	private $_content; 
 	private $_userId; 
@@ -23,6 +22,7 @@ class Post
 	private $_topic;  
 
 	//setters
+
 
 	public function setId($id)
 	{
@@ -159,18 +159,6 @@ class Post
 	{
 		return $this->_topicId; 
 	} 
-
-
-	// other methods
-
-	/**
-	* We add 1 to the number of postviews, every time a post is displayed
-	*/
-	public function incrementPostViews()
-	{
-		$this->_views += 1;  
-	}
-
 
 
 }

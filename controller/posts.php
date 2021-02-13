@@ -35,18 +35,13 @@ class Posts
 	/**
 	 * Displaying of a particular post
 	 */
+
+
 	public function post()
 	{
 		// We get a particular post from the DB 
 		$postManager = new PostManager; 
 		$post = $postManager->getPost($_GET['id']); 
-
-		// System of adding of views every time the post is gotten from DB
-		$postToIncrementViews = new Post; 
-		$postToIncrementViews->setId($_GET['id']);
-		$postToIncrementViews->setViews($post['views']);
-		$postToIncrementViews->incrementPostViews(); 
-		$postManager->addIncrementedPostViews($postToIncrementViews);
 
 		// We get the post comments from the DB to display them
 		$commentManager = new CommentManager; 

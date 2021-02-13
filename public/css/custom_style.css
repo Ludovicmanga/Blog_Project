@@ -121,6 +121,38 @@
 }
 
 
+/* Comments form*/
+
+.comments_form
+{
+	width: 400px;
+	border-radius: 30px;
+	background: #0484A4;
+	margin-top : 15px;
+}
+
+.nameLabel_comments_form, .nameInput_comments_form, .commentLabel_comments_form , .commentContent_comments_form
+{
+	margin-left: 50px;
+}
+
+.nameLabel_comments_form, .commentLabel_comments_form
+{
+	margin-top: 15px;
+}
+
+.nameInput_comments_form
+{
+	width: 280px;
+}
+
+
+.comments_form button
+{
+	margin-top: 15px; 
+	margin-bottom: 15px; 
+	margin-left: 130px; 
+}
 
 /* post modification form*/
 

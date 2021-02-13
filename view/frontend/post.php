@@ -18,12 +18,7 @@
   <!-- Post Content -->
   <article>
     <div class="container">
-      <?= 
-
-      // We display the number of views of the post
-        '<br>nombre de vues</> : '; 
-        echo $postToIncrementViews->getViews(); 
-        echo '<br><br>';  
+      <?php
 
       // We display the post content from the DB 
       echo $post['content']; 
@@ -37,10 +32,10 @@
 
       <!-- We display the form allowing to post comments-->
       <h1 >Espace commentaires</h1>
-      <form action="index.php?action=post&id= <?= $_GET['id'] ?>#commentarySpace" method="POST">
+      <form action="index.php?action=post&id= <?= $_GET['id'] ?>#commentarySpace" class="comments_form" method="POST">
         <input type="hidden" name="postId" value=" <?= $_GET['id'] ?> ">
-        <label>Votre nom</label> <br> <input type="text" name="commentAuthor"><br>
-        <label>Votre commentaire</label> <br> <textarea name="commentContent"></textarea><br>
+        <label class= "nameLabel_comments_form">Votre nom</label> <br> <input type="text" name="commentAuthor" class= "nameInput_comments_form"><br>
+        <label class= "commentLabel_comments_form">Votre commentaire</label> <br> <textarea name="commentContent" class= "commentContent_comments_form"></textarea><br>
         <button type="submit" name="submit">Envoyer</button>
       </form>
       <br>
