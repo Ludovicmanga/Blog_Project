@@ -44,24 +44,9 @@ class PostManager extends Manager
 		return $q; 
 	}
 
-	/**
-	 * 	For the checking of the number of views - we add to the DB the incremented view in the post table
-	 */
-	function addIncrementedPostViews(Post $post)
-	{
-		// Preparation of the query
-		$q = $this->db->prepare('UPDATE post SET views = :views WHERE id = :id'); 
-
-		// We bind the value of $post to the query  
-		$q->bindValue('views', $post->getViews()); 
-		$q->bindValue('id', $post->getId()); 
-
-		// We execute the query
-		$q->execute(); 
-	}
 
 	/**
-	 * 	Wee update the post table with the updated value
+	 * 	We update the post table with the updated value
 	 */
 	public function updatePost(Post $post)
 	{	
