@@ -4,7 +4,7 @@
 
 if(!isset($_SESSION['userId'])){
 
-  require('view/frontend/login.php'); 
+  require 'view/frontend/login.php'; 
 
 } else {
 
@@ -14,13 +14,13 @@ if(!isset($_SESSION['userId'])){
 
 <!-- header -->
 
-<?php require("require/pageHeadTemplate.php"); ?>
+<?php require 'require/pageHeadTemplate.php' ; ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ?>
 
 
 <!-- Page Header -->
@@ -30,7 +30,7 @@ if(!isset($_SESSION['userId'])){
    $backgroundImage = '../public/img/admin.jpg'; 
    $headerTitle = 'Espace admin'; 
    $headerSubtitle = 'Gérez votre compte'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php'; 
 
   ?>
 
@@ -57,7 +57,7 @@ if(!isset($_SESSION['userId'])){
 
     <!-- Pager -->
     
-    <?php require("require/pager.php") ?>
+    <?php require 'require/pager.php' ; ?>
         
   </div>
 
@@ -65,12 +65,12 @@ if(!isset($_SESSION['userId'])){
 
   <!-- Footer -->
 
-    <?php require("require/footer.php") ?>
+    <?php require 'require/footer.php' ; ?>
 
 
   <!-- bootstrap footer -->
   
-  <?php require("require/boostrapFooter.php") ?>
+  <?php require 'require/boostrapFooter.php' ; ?>
 
 </body>
 

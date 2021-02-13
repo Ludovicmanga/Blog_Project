@@ -2,18 +2,18 @@
 <html lang="en">
 
 <!-- header -->
-<?php require("../view/frontend/require/pageHeadTemplate.php") ?>
+<?php require '../view/frontend/require/pageHeadTemplate.php' ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php require("../view/frontend/require/navbar.php") ?>
+  <?php require '../view/frontend/require/navbar.php' ?>
 
   <!-- Page Head -->
-  <?php require("../view/frontend/require/pageHeadTemplate.php"); ?>
+  <?php require '../view/frontend/require/pageHeadTemplate.php'; ?>
 
   <!-- Page Header -->
-  <?php require("../view/frontend/require/postHeader.php") ?>
+  <?php require '../view/frontend/require/postHeader.php' ?>
 
   <!-- Post Content -->
   <article>
@@ -47,7 +47,7 @@
       <?php
 
       	//We get the comments of a post
-      	require('../view/frontend/require/getPostComments.php'); 
+      	require '../view/frontend/require/getPostComments.php'; 
        ?>
     </div>
   </article>

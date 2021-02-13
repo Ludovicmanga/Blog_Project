@@ -2,7 +2,7 @@
 
 //we check whether a session exists. If so, we display the admin dashboard
 if(isset($_SESSION['userId'])){
-  require('../view/frontend/admin.php'); 
+  require '../view/frontend/admin.php' ; 
 } else {
 
   ?>
@@ -11,12 +11,12 @@ if(isset($_SESSION['userId'])){
 <html lang="en">
 
 <!-- header -->
-<?php require("require/pageHeadTemplate.php") ?>
+<?php require 'require/pageHeadTemplate.php' ; ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ; ?>
 
   <!-- Page Header -->
   <?php 
@@ -25,7 +25,7 @@ if(isset($_SESSION['userId'])){
    $backgroundImage = '../public/img/matrix.jpg'; 
    $headerTitle = 'Connexion'; 
    $headerSubtitle = 'Connectez-vous à votre compte'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php'; 
   ?>
 
   <!-- Main Content -->
@@ -53,10 +53,10 @@ if(isset($_SESSION['userId'])){
   <hr>
 
   <!-- Footer -->
-  	<?php require("require/footer.php") ?>
+  	<?php require 'require/footer.php' ;  ?>
 
   <!-- bootstrap footer -->
-  	<?php require("require/boostrapFooter.php") ?>
+  	<?php require 'require/boostrapFooter.php' ; ?>
 
 </body>
 </html>

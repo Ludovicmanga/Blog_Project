@@ -52,9 +52,9 @@ class PostManager extends Manager
 		// Preparation of the query
 		$q = $this->db->prepare('UPDATE post SET views = :views WHERE id = :id'); 
 
-		// We bind the value o f $post to the query  
-		$q->bindValue('views', $post->getViews(), \PDO::PARAM_INT); 
-		$q->bindValue('id', $post->getId(), \PDO::PARAM_INT); 
+		// We bind the value of $post to the query  
+		$q->bindValue('views', $post->getViews()); 
+		$q->bindValue('id', $post->getId()); 
 
 		// We execute the query
 		$q->execute(); 

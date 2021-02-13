@@ -1,12 +1,12 @@
 <html lang="en">
 
 <!-- header -->
-<?php require("require/pageHeadTemplate.php") ?>
+<?php require 'require/pageHeadTemplate.php' ;  ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ?>
 
 <!-- Page Header -->
 <?php 
@@ -15,7 +15,7 @@
    $backgroundImage = '../public/img/post_writing.jpg'; 
    $headerTitle = 'Modifier un article'; 
    $headerSubtitle = 'Mettez à jour votre article'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php'; 
 
   ?>
 
@@ -41,7 +41,7 @@
           <label>Titre article</label><input class= "post_modification_form_input_post_title" type="text" name="title" value="<?= $post['title'];?>"><br>
           <label>Sous-titre article</label> <input class="post_modification_form_input_post_subtitle"type="text" name="subtitle" value="<?= $post['subtitle'];?>"><br>
           <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>
-            <?php require('../view/frontend/require/getSelectTopics.php'); ?>
+            <?php require '../view/frontend/require/getSelectTopics.php' ; ?>
           </select><br>
           <div class="post_form_container_textarea">
             <div>
@@ -62,14 +62,14 @@
     ?> 
 
         <!-- Pager -->
-    <?php require("require/pager.php") ?>
+    <?php require 'require/pager.php' ; ?>
   </div>
   <hr>
 
   <!-- Footer -->
-    <?php require("require/footer.php") ?>
+    <?php require 'require/footer.php' ;s ?>
  
   <!-- bootstrap footer -->
-  <?php require("require/boostrapFooter.php") ?>
+  <?php require 'require/boostrapFooter.php' ; ?>
 </body>
 </html>

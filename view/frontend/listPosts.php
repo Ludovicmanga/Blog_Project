@@ -2,12 +2,12 @@
 <html lang="en">
 
 <!-- header -->
-<?php require("require/pageHeadTemplate.php") ?>
+<?php require 'require/pageHeadTemplate.php' ;  ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ; ?>
     
     <!-- Page Header -->
   <?php 
@@ -15,7 +15,7 @@
    $backgroundImage = '../public/img/newspaper.jpg'; 
    $headerTitle = 'Mes articles'; 
    $headerSubtitle = 'Plongez-vous dans mon actu'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php' ; ; 
 
   ?>
 
@@ -26,17 +26,17 @@
      <?php 
 
      //we fetch all the posts from the DB
-     require('../view/frontend/require/listAllPosts.php')
+     require '../view/frontend/require/listAllPosts.php' ;
      ?>
   </div>
 
   <hr>
 
   <!-- Footer -->
-    <?php require("require/footer.php") ?>
+    <?php require 'require/footer.php' ; ?>
   
   <!-- bootstrap footer -->
-  <?php require("require/boostrapFooter.php") ?>
+  <?php require 'require/boostrapFooter.php' ;  ?>
 
 </body>
 
