@@ -3,13 +3,13 @@
 
 <!-- header -->
 
-<?php require("require/pageHeadTemplate.php") ?>
+<?php require 'require/pageHeadTemplate.php' ; ?>
 
 <body>
 
   <!-- Navigation -->
 
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ; ?>
 
   <!-- Page Header -->
   
@@ -19,7 +19,7 @@
    $backgroundImage = '../public/img/ludovic-carre.png'; 
    $headerTitle = 'Le blog de Ludovic'; 
    $headerSubtitle = 'Suivez-moi au quotidien'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php'; 
 
   ?>
 
@@ -108,7 +108,7 @@
 
     <!-- Pager -->
     
-    <?php require("require/pager.php") ?>
+    <?php require 'require/pager.php' ; ?>
         
   </div>
 
@@ -116,12 +116,12 @@
 
   <!-- Footer -->
 
-    <?php require("require/footer.php") ?>
+    <?php require 'require/footer.php' ; ?>
 
 
   <!-- bootstrap footer -->
   
-  <?php require("require/boostrapFooter.php") ?>
+  <?php require 'require/boostrapFooter.php' ;  ?>
 
 </body>
 

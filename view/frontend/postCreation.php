@@ -4,12 +4,12 @@
 <html lang="en">
 
 <!-- header -->
-<?php require('../view/frontend/require/postCreationHeader.php') ?>
+<?php require '../view/frontend/require/postCreationHeader.php';  ?>
 
 <body>
 
   <!-- Navigation -->
-  <?php require("require/navbar.php") ?>
+  <?php require 'require/navbar.php' ?>
 
   <!-- Page Header -->
   <?php 
@@ -17,7 +17,7 @@
    $backgroundImage = '../public/img/post_writing.jpg'; 
    $headerTitle = 'Ecrire un article'; 
    $headerSubtitle = 'Postez votre plus belle création'; 
-   require('require/pageheader.php'); 
+   require 'require/pageheader.php'; 
   
   ?>
 
@@ -46,7 +46,7 @@
 			          <?php
 
 			          // we get a select type / dropdown menu displaying the list of all existing topics in the DB
-			           require('../view/frontend/require/getSelectTopics.php')
+			           require '../view/frontend/require/getSelectTopics.php'; 
 			           ?>
 			          </select><br>
 			                <textarea id="blogTextArea" name="content"></textarea><br>
@@ -61,11 +61,11 @@
   <hr>
 
   <!-- Footer -->
-    <?php require("require/footer.php") ?>
+    <?php require 'require/footer.php' ; ?>
  
 
    <!-- bootstrap footer -->
-   <?php require("require/boostrapFooter.php") ?>
+   <?php require 'require/boostrapFooter.php' ;?>
 
 </body>
 

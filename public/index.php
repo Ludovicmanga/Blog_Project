@@ -16,7 +16,8 @@ use Model\
 use Controller\
 {
 	frontend, 
-	users
+	users, 
+	posts
 }
 ; 
 
@@ -28,7 +29,7 @@ use Controller\
 function chargerClass($class)
 {
 	$className = '../'.str_replace('\\', '/', $class).'.php'; 
-	require($className); 
+	require $className; 
 }
 
 //We pass it in spl_autoload_register
@@ -37,6 +38,7 @@ spl_autoload_register('chargerClass');
 // We create the controller objects
 $frontend = new Frontend; 
 $users = new Users; 
+$posts = new Posts; 
 
 /**
 * According to what is written in 'action', display a specific page ; If nothing is in action, display the home page.
@@ -46,10 +48,10 @@ If an error occured, display it
 try {
 	if (isset($_GET['action'])) {
 		if ($_GET['action'] === 'listPosts') {
-			$frontend->listPosts(); 
+			$posts->listPosts(); 
 		} elseif ($_GET['action'] === 'post') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
-				$frontend->post(); 
+				$posts->post(); 
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
@@ -63,16 +65,16 @@ try {
 		elseif($_GET['action'] === 'register') {
 			$users->register(); 
 		} elseif($_GET['action'] === 'postCreation') {
-			$frontend->postCreation(); 
+			$posts->postCreation(); 
 		} elseif($_GET['action'] === 'commentsToValidate') {
-			$frontend->commentsToValidate(); 
+			$posts->commentsToValidate(); 
 		} elseif($_GET['action'] === 'admin') {
-			$frontend->admin(); 
+			$users->admin(); 
 		}  elseif($_GET['action'] === 'listUserPosts') {
-			$frontend->listUserPosts(); 
+			$posts->listUserPosts(); 
 		} elseif($_GET['action'] === 'postUpdate') {
 			if(isset($_GET['postId']) OR $_POST['postId']) {
-				$frontend->postUpdate();
+				$posts->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
 			}

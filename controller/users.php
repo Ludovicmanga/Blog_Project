@@ -116,7 +116,7 @@ class Users
 		}
 
 		// We display the view
-		require('../view/frontend/register.php');  
+		require '../view/frontend/register.php';  
 	}
 
 
@@ -157,7 +157,7 @@ class Users
 		}
 
 		// We display the view
-		require('../view/frontend/login.php'); 
+		require'../view/frontend/login.php'; 
 	}
 
 	public function createUserSession($user){
@@ -169,7 +169,7 @@ class Users
 	public function logout()
 	{
 		// We display the view 'logout'
-		require('../view/frontend/logout.php'); 
+		require '../view/frontend/logout.php'; 
 	}
 
 }
