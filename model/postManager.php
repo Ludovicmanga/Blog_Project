@@ -69,14 +69,33 @@ class PostManager extends Manager
 	 */
 	public function deletePost(Post $post)
 	{	
-		// Preparation of the query
-		$q = $this->db->prepare('DELETE FROM post WHERE id = :id');	
 
-		// We bind the value o f $post to the query          	
+		/**
+		 * 	We start by suppressing all the post comments 
+		 */
+
+		//Preparation of the query
+		$q = $this->db->prepare('DELETE FROM comment WHERE postId = :id');	
+
+		// We bind the value of $post to the query       
 		$q->bindValue(':id', $post->getId()); 
 
 		// We execute the query
 		$q->execute(); 
+
+
+		/**
+		 * 	We then supress the post
+		 */
+
+		// Preparation of the query
+		$q2 = $this->db->prepare('DELETE FROM post WHERE id = :id');	
+
+		// We bind the value of $post to the query          	
+		$q2->bindValue(':id', $post->getId()); 
+
+		// We execute the query
+		$q2->execute(); 
 	}
 
 
