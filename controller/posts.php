@@ -117,7 +117,16 @@ class Posts
 	        	->setContent($_POST_CLEAN['content'])
 	        	->setId($_POST_CLEAN['postId'])
 	        ;
-	        $postManager->updatePost($post); 
+
+	        //either we suppress it
+	        if(isset($_POST_CLEAN['suppress'])){
+	        	$postManager->deletePost($post); 
+	        	//or we update it
+	        } elseif(isset($_POST_CLEAN['update'])) {
+	        	$postManager->updatePost($post); 
+	        }
+
+	        
 		} else {
 		
 				$post = $postManager->getPost($_GET['postId']); 

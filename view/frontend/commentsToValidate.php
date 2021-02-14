@@ -27,9 +27,11 @@
 
     <h1>Vos articles en attente de validation</h1>
 
-    <?php     	
+    <?php
+
     // We fetch the comments needing validation
-    	require '../view/frontend/require/disaplayCommentsToValidate.php'; 
+    	require '../view/frontend/require/displayCommentsToValidate.php'; 
+
     ?>
 
     	<form action="index.php?action=commentsToValidate" method="POST">

@@ -65,6 +65,22 @@ class PostManager extends Manager
 	}
 
 	/**
+	 * 	We delete the post table for the selected post 
+	 */
+	public function deletePost(Post $post)
+	{	
+		// Preparation of the query
+		$q = $this->db->prepare('DELETE FROM post WHERE id = :id');	
+
+		// We bind the value o f $post to the query          	
+		$q->bindValue(':id', $post->getId()); 
+
+		// We execute the query
+		$q->execute(); 
+	}
+
+
+	/**
 	 * 	We add the post that just was created with the post creation form 
 	 */
 	public function addPost(Post $post)

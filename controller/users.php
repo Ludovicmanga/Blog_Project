@@ -119,7 +119,6 @@ class Users
 		require '../view/frontend/register.php';  
 	}
 
-
 	public function login()
 	{
 		$userManager = new UserManager; 
@@ -164,6 +163,14 @@ class Users
 		session_start(); 
 		$_SESSION['userId'] = $user['id'] ; 
 		$_SESSION['mail'] = $user['mail'] ; 
+	}
+
+	/**
+	* We display the post admin page
+	*/ 
+	public function admin()
+	{
+		require '../view/frontend/admin.php'; 
 	}
 
 	public function logout()

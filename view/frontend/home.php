@@ -75,7 +75,6 @@
 
    // we check whether a message was sent in the contact form
    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
    	echo '<b>Votre message a bien été envoyé!</b><br>'; 
 
   } else {
