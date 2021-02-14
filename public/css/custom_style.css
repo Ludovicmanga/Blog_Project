@@ -141,7 +141,7 @@
 	margin-top: 15px;
 }
 
-.nameInput_comments_form
+.nameInput_comments_form, .commentContact
 {
 	width: 280px;
 }
@@ -372,4 +372,12 @@
 {
 	height: 700px;
 	width: 200px; 
+}
+
+/*Comments to Validate */
+
+.commentToValidate
+{
+	background: grey; 
+	border-radius: 30px;
 }

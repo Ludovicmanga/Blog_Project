@@ -30,7 +30,14 @@
 	     
      // If the update form was filled, we display an alternative message
      if($_SERVER['REQUEST_METHOD'] == 'POST') {
-       echo '<p> Votre article a bien été modifié!<p/><br>'; 
+      $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      if(isset($_POST_CLEAN['update'])){
+        echo $post->getId().'<p><b>Votre article a bien été modifié!</b><p/><br>'; 
+      } elseif(isset($_POST_CLEAN['suppress'])){
+          echo $post->getId().'<p><b> Votre article a bien été supprimé!</b><p/><br>'; 
+      }
+
+       
 
       } else {
         ?>
@@ -53,8 +60,9 @@
                 </textarea><br>
             </div>
           </div>
-          <div class="container_form_button"><button type="submit" name="submit">Modifier</button>
-          </form></div>
+          <div class="container_form_button"><button type="submit" name="update">Modifier l'article</button></div>
+          <div class="container_form_button"><button type="submit" name="suppress">Supprimer l'article</button></div>
+         </form>
         </div>
 
         <?php
@@ -67,7 +75,7 @@
   <hr>
 
   <!-- Footer -->
-    <?php require 'require/footer.php' ;s ?>
+    <?php require 'require/footer.php' ; ?>
  
   <!-- bootstrap footer -->
   <?php require 'require/boostrapFooter.php' ; ?>
