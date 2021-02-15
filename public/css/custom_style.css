@@ -1,329 +1,383 @@
-/* contact form homepage */
+/*contact form homepage*/
 
-.form_container {
-  background: #0484A4;
-  border-radius: 20px;
-  width: 400px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  margin-top: 50px;
+.form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 400px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
 }
 
-.form_title {
-  font-size: 1em;
-  margin-left: 10px;
-  color: white;
-  margin-bottom: 30px;
+.form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
 }
 
-.input_lastname {
-  margin-left: 43px;
+.input_lastname
+{
+	margin-left: 43px;
 }
 
-.input_name {
-  margin-left: 14px;
-}
-
-
-.input_mail {
-  margin-left: 48px;
-}
-
-.textarea_message {
-  margin-left: 14px;
-}
-
-.contact_form_container_textarea {
-  display: flex;
-}
-
-.contact_form {
-  color: white;
-}
-
-.contact_form textarea {
-  width: 238px;
-}
-
-.contact_form button {
-  margin-left: 130px; 
-  margin-top: 10px;
-  margin-bottom: 5px;
-
+.input_name
+{
+	margin-left: 14px;
 }
 
 
-/* login form */
-
-.login_form_container {
-  background: #0484A4;
-  border-radius: 20px;
-  width: 700px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  margin-top: 50px;
+.input_mail
+{
+	margin-left: 48px;
 }
 
-.login_form_title {
-  font-size: 1em;
-  margin-left: 10px;
-  color: white;
-  margin-bottom: 30px;
+.textarea_message
+{
+	margin-left: 14px;
+}
+
+.contact_form_container_textarea
+{
+	display: flex;
+}
+
+.contact_form
+{
+	color: white;
+}
+
+.contact_form textarea
+{
+	width: 238px;
+}
+
+.contact_form button
+{
+	margin-left: 130px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+
+}
+
+
+/*login form*/
+
+.login_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 700px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+}
+
+.login_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
 }
 
 .login_form_input_password {
-  margin-left: 67px;
+    margin-left: 67px;
 }
 
 
-.login_form_input_mail {
-  margin-left: 94px;
+.login_form_input_mail
+{
+	margin-left: 94px;
 }
 
-.login_form {
-  color: white;
+.login_form
+{
+	color: white;
 }
 
-.login_form_container_input_password {
-  margin-top: 10px;
+.login_form_container_input_password
+{
+	margin-top: 10px;
 }
 
-.login_form input  {
-  margin-top: 15px;
-  width: 320px;
+.login_form input 
+{
+	margin-top: 15px;
+	width: 320px;
 }
 
-.login_form button {
-  margin-left: 250px; 
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-
-
-/* Comments form */
-
-.comments_form {
-  width: 400px;
-  border-radius: 30px;
-  background: #0484A4;
-  margin-top : 15px;
-}
-
-.nameLabel_comments_form, .nameInput_comments_form, .commentLabel_comments_form , .commentContent_comments_form {
-  margin-left: 50px;
-}
-
-.nameLabel_comments_form, .commentLabel_comments_form {
-  margin-top: 15px;
-}
-
-.nameInput_comments_form, .commentContact {
-  width: 280px;
+.login_form button
+{
+	margin-left: 250px; 
+	margin-top: 30px;
+	margin-bottom: 5px;
 }
 
 
-.comments_form button {
-  margin-top: 15px; 
-  margin-bottom: 15px; 
-  margin-left: 130px; 
+/* Comments form*/
+
+.comments_form
+{
+	width: 400px;
+	border-radius: 30px;
+	background: #0484A4;
+	margin-top : 15px;
+}
+
+.nameLabel_comments_form, .nameInput_comments_form, .commentLabel_comments_form , .commentContent_comments_form
+{
+	margin-left: 50px;
+}
+
+.nameLabel_comments_form, .commentLabel_comments_form
+{
+	margin-top: 15px;
+}
+
+.nameInput_comments_form, .commentContact
+{
+	width: 280px;
+}
+
+
+.comments_form button
+{
+	margin-top: 15px; 
+	margin-bottom: 15px; 
+	margin-left: 130px; 
 }
 
 /* post modification form*/
 
-.post_modification_form_container {
-  background: #0484A4;
-  border-radius: 20px;
-  width: 900px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
+.post_modification_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 900px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
 }
 
-.post_modification_form_title {
-  font-size: 1em;
-  margin-left: 10px;
-  color: white;
-  margin-bottom: 30px;
+.post_modification_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
 }
 
-.post_modification_form_input_post_title {
-  margin-left: 62px;
-  width: 610px;
+.post_modification_form_input_post_title
+{
+	margin-left: 62px;
+	width: 610px;
 }
 
-.post_modification_form_input_post_subtitle {
-  margin-left: 13px;
-  width: 610px;
+.post_modification_form_input_post_subtitle
+{
+	margin-left: 13px;
+	width: 610px;
 }
 
-.post_modification_form_input_post_topic {
-  margin-left: 62px;
-  width: 610px;
+.post_modification_form_input_post_topic
+{
+	margin-left: 62px;
+	width: 610px;
 }
 
-.post_modification_form_textarea_content {
-  margin-left: 32px;
-  width: 610px;
-  height: 700px;
+.post_modification_form_textarea_content
+{
+	margin-left: 32px;
+	width: 610px;
+	height: 700px;
 }
 
-.post_modification_form_container_textarea {
-  display: flex;
+.post_modification_form_container_textarea
+{
+	display: flex;
 }
 
-.post_modification_form {
-  color: white;
+.post_modification_form
+{
+	color: white;
 }
 
-.post_modification_form button {
-  margin-left: 390px; 
-  margin-top: 10px;
-  margin-bottom: 5px;
+.post_modification_form button
+{
+	margin-left: 390px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
 
-/* registration form */
+/*registration form*/
 
-.registration_form_container {
-  background: #0484A4;
-  border-radius: 20px;
-  width: 800px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  margin-top: 50px;
+.registration_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 800px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
 }
 
-.registration_form_title {
-  font-size: 1em;
-  margin-left: 10px;
-  color: white;
-  margin-bottom: 30px;
+.registration_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
 }
 
-.registration_form_input_name {
-  margin-left: 215px;
+.registration_form_input_name 
+{
+	margin-left: 215px;
 }
 
-.registration_form_input_lastname {
-  margin-left: 246px;
+.registration_form_input_lastname
+{
+	margin-left: 246px;
+}
+
+.registration_form_input_password
+{
+	margin-left: 165px;
+}
+
+.registration_form_input_mail
+{
+	margin-left: 250px;
+}
+
+.registration_form_input_mail_confirmation
+{
+	margin-left: 150px;
 }
 
 .registration_form_input_password {
-  margin-left: 165px;
-}
-
-.registration_form_input_mail {
-  margin-left: 250px;
-}
-
-.registration_form_input_mail_confirmation {
-  margin-left: 150px;
-}
-
-.registration_form_input_password {
-  margin-left: 165px;
+    margin-left: 165px;
 }
 
 .registration_form_input_password_confirmation {
-  margin-left: 65px;
+    margin-left: 65px;
 }
 
-.registration_form {
-  color: white;
+.registration_form
+{
+	color: white;
 }
 
-.registration_form input {
-  margin-top: 15px;
-  width: 320px;
+.registration_form input 
+{
+	margin-top: 15px;
+	width: 320px;
 }
 
-.registration_form button {
-  margin-left: 310px; 
-  margin-top: 30px;
-  margin-bottom: 5px;
+.registration_form button
+{
+	margin-left: 310px; 
+	margin-top: 30px;
+	margin-bottom: 5px;
 }
 
 /* Post creation form */
 
 /* post creation form */
 
-.post_form_container {
-  background: #0484A4;
-  border-radius: 20px;
-  width: 1000px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
+.post_form_container
+{
+	background: #0484A4;
+	border-radius: 20px;
+	width: 1000px;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
 }
 
-.post_form_title {
-  font-size: 1em;
-  margin-left: 10px;
-  color: white;
-  margin-bottom: 30px;
+.post_form_title
+{
+	font-size: 1em;
+	margin-left: 10px;
+	color: white;
+	margin-bottom: 30px;
 }
 
-.post_form_input_post_title {
-  margin-left: 62px;	
-}
-
-.post_form_input_post_subtitle {
-  margin-left: 13px;	
-}
-
-.post_form_input_post_topic {
-  margin-left: 62px;
-  height: 38px;
+.post_form_input_post_title
+{
+	margin-left: 62px;
 	
 }
 
-.post_form_input_post_title, .post_form_input_post_subtitle, .post_form_input_post_topic {
-  margin-top: 7px;
-  width: 600px;
+.post_form_input_post_subtitle
+{
+	margin-left: 13px;
+	
 }
 
-.post_form {
-  color: white;
+.post_form_input_post_topic
+{
+	margin-left: 62px;
+	height: 38px;
+	
 }
 
-.post_form button {
-  margin-left: 130px; 
-  margin-top: 10px;
-  margin-bottom: 5px;
+.post_form_input_post_title, .post_form_input_post_subtitle, .post_form_input_post_topic
+{
+	margin-top: 7px;
+	width: 600px;
+}
+
+.post_form
+{
+	color: white;
+}
+
+.post_form button
+{
+	margin-left: 130px; 
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
 
 /* Text editor tinyMCE*/
 
-.tox-tinymce {
-  width: 600px; 
-  margin-top: 10px;
-  margin-left: auto; 
-  margin-right: auto; 
+.tox-tinymce 
+{
+	width: 600px; 
+	margin-top: 10px;
+	margin-left: auto; 
+	margin-right: auto; 
 }
 
-#blogTextArea {
-  height: 700px;
-  width: 200px; 
+#blogTextArea
+{
+	height: 700px;
+	width: 200px; 
 }
 
-/* Comments to Validate */
+/*Comments to Validate */
 
-.commentToValidate {
-  background: grey; 
-  border-radius: 30px;
+.commentToValidate
+{
+	background: grey; 
+	border-radius: 30px;
 }

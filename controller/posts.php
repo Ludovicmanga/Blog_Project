@@ -122,9 +122,11 @@ class Posts
 	        if(isset($_POST_CLEAN['suppress'])){
 	        	$postManager->deletePost($post); 
 	        	//or we update it
-	        } elseif(isset($_POST_CLEAN['update'])){
+	        } elseif(isset($_POST_CLEAN['update'])) {
 	        	$postManager->updatePost($post); 
 	        }
+
+	        
 		} else {
 		
 				$post = $postManager->getPost($_GET['postId']); 

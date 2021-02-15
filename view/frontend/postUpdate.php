@@ -32,9 +32,9 @@
      if($_SERVER['REQUEST_METHOD'] == 'POST') {
       $_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
       if(isset($_POST_CLEAN['update'])){
-        echo '<p><b>Votre article a bien été modifié!</b><p/><br>'; 
+        echo $post->getId().'<p><b>Votre article a bien été modifié!</b><p/><br>'; 
       } elseif(isset($_POST_CLEAN['suppress'])){
-          echo '<p><b> Votre article a bien été supprimé!</b><p/><br>'; 
+          echo $post->getId().'<p><b> Votre article a bien été supprimé!</b><p/><br>'; 
       }
 
        
