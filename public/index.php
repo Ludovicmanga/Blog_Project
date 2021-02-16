@@ -46,34 +46,34 @@ If an error occured, display it
 */
 
 try {
-	if (isset($_GET['action'])) {
-		if ($_GET['action'] === 'listPosts') {
+	if (filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING)) {
+		if (filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'listPosts') {
 			$posts->listPosts(); 
-		} elseif ($_GET['action'] === 'post') {
-			if(isset($_GET['id']) && $_GET['id'] > 0) {
+		} elseif (filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'post') {
+			if(filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT) && filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT) > 0) {
 				$posts->post(); 
 			} else {
 				throw new Exception('Aucun identifiant');	
 			}
-		} elseif($_GET['action'] === 'home') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'home') {
 			$frontend->home(); 
-		} elseif($_GET['action'] === 'login') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'login') {
 			$users->login(); 
-		} elseif($_GET['action'] === 'logout') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'logout') {
 			$users->logout(); 
 		} 
-		elseif($_GET['action'] === 'register') {
+		elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'register') {
 			$users->register(); 
-		} elseif($_GET['action'] === 'postCreation') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'postCreation') {
 			$posts->postCreation(); 
-		} elseif($_GET['action'] === 'commentsToValidate') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'commentsToValidate') {
 			$posts->commentsToValidate(); 
-		} elseif($_GET['action'] === 'admin') {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'admin') {
 			$users->admin(); 
-		}  elseif($_GET['action'] === 'listUserPosts') {
+		}  elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'listUserPosts') {
 			$posts->listUserPosts(); 
-		} elseif($_GET['action'] === 'postUpdate') {
-			if(isset($_GET['postId']) OR $_POST['postId']) {
+		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'postUpdate') {
+			if(filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT) OR filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT)) {
 				$posts->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 
