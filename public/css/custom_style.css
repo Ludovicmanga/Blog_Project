@@ -19,10 +19,12 @@
 
 .input_lastname {
   margin-left: 43px;
+
 }
 
 .input_name {
   margin-left: 14px;
+
 }
 
 
@@ -32,18 +34,22 @@
 
 .textarea_message {
   margin-left: 14px;
+
 }
 
 .contact_form_container_textarea {
   display: flex;
+
 }
 
 .contact_form {
   color: white;
+
 }
 
 .contact_form textarea {
   width: 238px;
+
 }
 
 .contact_form button {
@@ -74,19 +80,23 @@
 
 .login_form_input_password {
   margin-left: 67px;
+
 }
 
 
 .login_form_input_mail {
   margin-left: 94px;
+
 }
 
 .login_form {
   color: white;
+
 }
 
 .login_form_container_input_password {
   margin-top: 10px;
+
 }
 
 .login_form input {
@@ -117,16 +127,19 @@
 .commentLabel_comments_form , 
 .commentContent_comments_form {
   margin-left: 50px;
+
 }
 
 .nameLabel_comments_form, 
 .commentLabel_comments_form {
   margin-top: 15px;
+
 }
 
 .nameInput_comments_form, 
 .commentContact {
   width: 280px;
+
 }
 
 
@@ -171,6 +184,7 @@
 .post_modification_form_input_post_topic {
   margin-left: 62px;
   width: 610px;
+
 }
 
 .post_modification_form_textarea_content {
@@ -182,10 +196,12 @@
 
 .post_modification_form_container_textarea {
   display: flex;
+
 }
 
 .post_modification_form {
   color: white;
+
 }
 
 .post_modification_form button {
@@ -216,26 +232,32 @@
 
 .registration_form_input_name {
   margin-left: 215px;
+
 }
 
 .registration_form_input_lastname {
   margin-left: 246px;
+
 }
 
 .registration_form_input_password {
   margin-left: 165px;
+
 }
 
 .registration_form_input_mail {
   margin-left: 250px;
+
 }
 
 .registration_form_input_mail_confirmation {
   margin-left: 150px;
+
 }
 
 .registration_form_input_password_confirmation {
   margin-left: 65px;
+
 }
 
 .registration_form {
@@ -275,11 +297,13 @@
 }
 
 .post_form_input_post_title {
-  margin-left: 62px;	
+  margin-left: 62px;
+
 }
 
 .post_form_input_post_subtitle {
-  margin-left: 13px;	
+  margin-left: 13px;
+
 }
 
 .post_form_input_post_topic {
@@ -298,6 +322,7 @@
 
 .post_form {
   color: white;
+  
 }
 
 .post_form button {
