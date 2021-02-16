@@ -1,7 +1,7 @@
 /* contact form homepage */
 
 .form_container {
-  background: #0484A4;
+  background: #0484a4;
   border-radius: 20px;
   width: 400px;
   padding: 20px 20px 15px 30px; 
@@ -10,9 +10,10 @@
 
 .form_title {
   font-size: 1em;
-  margin-left: 10px;
   color: white;
+  margin-left: 10px;
   margin-bottom: 30px;
+
 }
 
 .input_lastname {
@@ -51,11 +52,10 @@
 
 }
 
-
 /* login form */
 
 .login_form_container {
-  background: #0484A4;
+  background: #0484a4;
   border-radius: 20px;
   width: 700px;
   padding : 20px 20px 15px 30px ;
@@ -64,9 +64,10 @@
 
 .login_form_title {
   font-size: 1em;
-  margin-left: 10px;
   color: white;
+  margin-left: 10px;
   margin-bottom: 30px;
+
 }
 
 .login_form_input_password {
@@ -86,7 +87,7 @@
   margin-top: 10px;
 }
 
-.login_form input  {
+.login_form input {
   margin-top: 15px;
   width: 320px;
 }
@@ -95,15 +96,15 @@
   margin-left: 250px; 
   margin-top: 30px;
   margin-bottom: 5px;
-}
 
+}
 
 /* Comments form */
 
 .comments_form {
   width: 400px;
   border-radius: 30px;
-  background: #0484A4;
+  background: #0484a4;
   margin-top : 15px;
 }
 
@@ -124,12 +125,13 @@
   margin-top: 15px; 
   margin-bottom: 15px; 
   margin-left: 130px; 
+
 }
 
 /* post modification form*/
 
 .post_modification_form_container {
-  background: #0484A4;
+  background: #0484a4;
   border-radius: 20px;
   width: 900px;
   padding: 20px 20px 15px 30px; 
@@ -138,8 +140,8 @@
 
 .post_modification_form_title {
   font-size: 1em;
-  margin-left: 10px;
   color: white;
+  margin-left: 10px;
   margin-bottom: 30px;
 }
 
@@ -176,12 +178,13 @@
   margin-left: 390px; 
   margin-top: 10px;
   margin-bottom: 5px;
+
 }
 
 /* registration form */
 
 .registration_form_container {
-  background: #0484A4;
+  background: #0484a4;
   border-radius: 20px;
   width: 800px;
   padding: 20px 20px 15px 30px; 
@@ -190,8 +193,8 @@
 
 .registration_form_title {
   font-size: 1em;
-  margin-left: 10px;
   color: white;
+  margin-left: 10px;
   margin-bottom: 30px;
 }
 
@@ -236,6 +239,7 @@
   margin-left: 310px; 
   margin-top: 30px;
   margin-bottom: 5px;
+
 }
 
 /* Post creation form */
@@ -243,7 +247,7 @@
 /* post creation form */
 
 .post_form_container {
-  background: #0484A4;
+  background: #0484a4;
   border-radius: 20px;
   width: 1000px;
   padding: 20px 20px 15px 30px; 
@@ -252,9 +256,10 @@
 
 .post_form_title {
   font-size: 1em;
-  margin-left: 10px;
   color: white;
+  margin-left: 10px;
   margin-bottom: 30px;
+
 }
 
 .post_form_input_post_title {
@@ -268,7 +273,6 @@
 .post_form_input_post_topic {
   margin-left: 62px;
   height: 38px;
-	
 }
 
 .post_form_input_post_title, .post_form_input_post_subtitle, .post_form_input_post_topic {
@@ -284,6 +288,7 @@
   margin-left: 130px; 
   margin-top: 10px;
   margin-bottom: 5px;
+
 }
 
 /* Text editor tinyMCE*/
@@ -293,11 +298,12 @@
   margin-top: 10px;
   margin-left: auto; 
   margin-right: auto; 
+  
 }
 
 #blogTextArea {
   height: 700px;
-  width: 200px; 
+  width: 200px;
 }
 
 /* Comments to Validate */
