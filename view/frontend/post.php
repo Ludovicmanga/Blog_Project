@@ -32,8 +32,8 @@
 
       <!-- We display the form allowing to post comments-->
       <h1 >Espace commentaires</h1>
-      <form action="index.php?action=post&id= <?= $_GET['id'] ?>#commentarySpace" class="comments_form" method="POST">
-        <input type="hidden" name="postId" value=" <?= $_GET['id'] ?> ">
+      <form action="index.php?action=post&id= <?= filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT) ?>#commentarySpace" class="comments_form" method="POST">
+        <input type="hidden" name="postId" value=" <?= filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT) ?> ">
         <label class= "nameLabel_comments_form">Votre nom</label> <br> <input type="text" name="commentAuthor" class= "nameInput_comments_form"><br>
         <label class= "commentLabel_comments_form">Votre commentaire</label> <br> <textarea name="commentContent" class= "commentContent_comments_form"></textarea><br>
         <button type="submit" name="submit">Envoyer</button>

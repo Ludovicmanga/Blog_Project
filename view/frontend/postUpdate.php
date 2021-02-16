@@ -44,7 +44,7 @@
         <div class="post_modification_form_container">
           <h1 class="post_form_title">Modifier un article</h1>
           <form action="index.php?action=postUpdate" method = "POST" class="post_modification_form">
-          <input type="hidden" name="postId" value=" <?= $_GET['postId'] ?> ">
+          <input type="hidden" name="postId" value=" <?= filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT) ?> ">
           <label>Titre article</label><input class= "post_modification_form_input_post_title" type="text" name="title" value="<?= $post['title'];?>"><br>
           <label>Sous-titre article</label> <input class="post_modification_form_input_post_subtitle"type="text" name="subtitle" value="<?= $post['subtitle'];?>"><br>
           <label>Sujet article</label> <select class="post_form_input_post_topic" name="topicId" type="mail" required>

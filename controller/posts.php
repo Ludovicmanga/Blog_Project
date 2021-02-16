@@ -36,16 +36,18 @@ class Posts
 	 * Displaying of a particular post
 	 */
 
-
 	public function post()
 	{
+		//We clean the $_GET data
+		$_GET_CLEAN = filter_input(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
+
 		// We get a particular post from the DB 
 		$postManager = new PostManager; 
-		$post = $postManager->getPost($_GET['id']); 
+		$post = $postManager->getPost($_GET_CLEAN['id']); 
 
 		// We get the post comments from the DB to display them
 		$commentManager = new CommentManager; 
-		$postComments = $commentManager->getAllPostComments($_GET['id']); 
+		$postComments = $commentManager->getAllPostComments($_GET_CLEAN['id']); 
 
 		// We verify whether the comment form was filled and clean $_POST 
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -102,9 +104,12 @@ class Posts
 	*/ 
 	public function postUpdate()
 	{
+		// We clean $_GET
+		$_GET_CLEAN = filter_input(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
+
 		$postManager = new PostManager; 
 
-		// We verify whether the update form was filled and clean $_POST 
+		// We verify whether the update form was filled and clean $_POST
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$_POST_CLEAN = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
 
@@ -127,7 +132,7 @@ class Posts
 	        }
 		} else {
 		
-				$post = $postManager->getPost($_GET['postId']); 
+				$post = $postManager->getPost($_GET_CLEAN['postId']); 
 				$topicManager = new TopicManager; 
        			$topics = $topicManager->getAllTopics(); 
 		} 
