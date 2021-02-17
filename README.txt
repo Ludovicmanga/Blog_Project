@@ -17,3 +17,4 @@ The project was used using PHP and Javascript.
 FontAwesome, Bootstrap and tinyMCEs libraries were also used.
 
 Copyright Ludovic Manga-Jocky - 2021
+Codacy Badge
