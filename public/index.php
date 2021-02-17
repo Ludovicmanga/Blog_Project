@@ -73,7 +73,7 @@ try {
 		}  elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'listUserPosts') {
 			$posts->listUserPosts(); 
 		} elseif(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING) === 'postUpdate') {
-			if(filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT) OR filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT)) {
+			if(filter_input(INPUT_GET, "postId", FILTER_SANITIZE_NUMBER_INT) OR filter_input(INPUT_POST, "postId", FILTER_SANITIZE_NUMBER_INT)) {
 				$posts->postUpdate();
 			} else {
 				throw new Exception('pas d\'identifiant de post'); 

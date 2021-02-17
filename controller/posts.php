@@ -39,7 +39,7 @@ class Posts
 	public function post()
 	{
 		//We clean the $_GET data
-		$_GET_CLEAN = filter_input(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
+		$_GET_CLEAN = filter_input_array(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
 
 		// We get a particular post from the DB 
 		$postManager = new PostManager; 
@@ -105,7 +105,7 @@ class Posts
 	public function postUpdate()
 	{
 		// We clean $_GET
-		$_GET_CLEAN = filter_input(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
+		$_GET_CLEAN = filter_input_array(INPUT_GET, FILTER_SANITIZE_NUMBER_INT); 
 
 		$postManager = new PostManager; 
 
