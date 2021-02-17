@@ -54,13 +54,13 @@
             </div>
             <div>
                 <textarea class="post_modification_form_textarea_content" name="content">
-                  <?= $post['content'];  ?>
+                  <?= strip_tags($post['content']); ?> 
                 </textarea><br>
             </div>
           </div>
           <div class="container_form_button"><button type="submit" name="update">Modifier l'article</button></div>
           <div class="container_form_button"><button type="submit" name="suppress">Supprimer l'article</button></div>
-         </form>
+          </form>
         </div>
 
         <?php
