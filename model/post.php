@@ -11,11 +11,9 @@ class Post
 
 	private $_id; 
 	private $_title; 
-	private $_slug; 
 	private $_image; 
 	private $_content; 
 	private $_userId; 
-	private $_published; 
 	private $_creationDate;
 	private $_modificationDate; 
 	private $_subtitle; 
@@ -35,12 +33,6 @@ class Post
 	{
 		$this->_title = $title; 
 
-		return $this; 
-	}
-
-	public function setSlug($slug)
-	{
-		$this->_slug = $slug; 
 		return $this; 
 	}
 
@@ -65,12 +57,6 @@ class Post
 	public function setUserId($userId)
 	{
 		$this->_userId = $userId; 
-		return $this; 
-	}
-
-	public function setPublished($published)
-	{
-		$this->_published = $published; 
 		return $this; 
 	}
 
@@ -109,12 +95,7 @@ class Post
 	{
 		return $this->_title; 
 	} 
-
-	public function getSlug()
-	{
-		return $this->_slug; 
-	} 
-
+	
 	public function getViews()
 	{
 		return $this->_views; 
@@ -133,11 +114,6 @@ class Post
 	public function getUserId()
 	{
 		return $this->_userId; 
-	} 
-
-	public function getPublished()
-	{
-		return $this->_published; 
 	} 
 
 	public function getCreationDate()
