@@ -18,14 +18,14 @@
   <!-- Post Content -->
   <article>
     <div class="container">
-      <?=
+      <?php
 
       // We display the post content from the DB 
-      $post['content']; 
+      echo $post['content']; 
       
       // We check whether the commentary form was filled 
       if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
-        '<br><p id="commentarySpace"><b>Votre commentaire a bien été soumis. Il sera soumis à validation par l\'auteur de l\'article</b></p><br>'; 
+        echo '<br><p id="commentarySpace"><b>Votre commentaire a bien été soumis. Il sera soumis à validation par l\'auteur de l\'article</b></p><br>'; 
       }
       ?> 
       <br>
