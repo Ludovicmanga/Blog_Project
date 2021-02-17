@@ -110,7 +110,7 @@ class Users
 					// redirect to the login page
 					header('location: index.php?action=login'); 
 				} else {
-					die('une erreur s\'est produite'); 
+					throw new Exception('une erreur s\'est produite'); 
 				}
 			}
 		}
